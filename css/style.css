@@ -54,7 +54,7 @@
 }
 
 /* ─────────────────────────────────────────────────────────────
-   COLORFUL FLAT LIGHT THEME (HUMAN-CRAFTED, NO BLURRY GRADIENTS/GLOWS)
+   COLORFUL FLAT LIGHT THEME (HUMAN-CRAFTED, ZERO BLURRY GLOWS)
 ───────────────────────────────────────────────────────────── */
 [data-theme="light"] {
   /* Surfaces */
@@ -133,14 +133,14 @@ body {
 
 /* Custom Scrollbars */
 ::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
+  width: 8px;
+  height: 8px;
 }
 ::-webkit-scrollbar-track {
   background: transparent;
 }
 ::-webkit-scrollbar-thumb {
-  background: rgba(148, 163, 184, 0.3);
+  background: rgba(148, 163, 184, 0.35);
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
@@ -644,7 +644,6 @@ body {
   border-left: 4px solid #94a3b8;
 }
 
-/* Color Accent Stripes on Cards in Light Mode */
 [data-theme="light"] #acc-identity { border-left-color: #2563eb; }
 [data-theme="light"] #acc-archetypes { border-left-color: #7c3aed; }
 [data-theme="light"] #acc-skills { border-left-color: #059669; }
@@ -739,14 +738,6 @@ body {
 [data-theme="light"] #acc-telemetry .acc-summary-badge { background: #ecfeff; border-color: #a5f3fc; color: #0e7490; }
 [data-theme="light"] #acc-socials .acc-summary-badge { background: #fff1f2; border-color: #fecdd3; color: #be123c; }
 [data-theme="light"] #acc-visibility .acc-summary-badge { background: #f8fafc; border-color: #e2e8f0; color: #475569; }
-
-[data-theme="light"] #cardIdentity .acc-summary-badge { background: #eff6ff; border-color: #bfdbfe; color: #1d4ed8; }
-[data-theme="light"] #cardArchetype .acc-summary-badge { background: #faf5ff; border-color: #e9d5ff; color: #7e22ce; }
-[data-theme="light"] #cardSkills .acc-summary-badge { background: #ecfdf5; border-color: #a7f3d0; color: #047857; }
-[data-theme="light"] #cardProjects .acc-summary-badge { background: #fffbeb; border-color: #fde68a; color: #b45309; }
-[data-theme="light"] #cardStatusBio .acc-summary-badge { background: #eef2ff; border-color: #c7d2fe; color: #4338ca; }
-[data-theme="light"] #cardTelemetry .acc-summary-badge { background: #ecfeff; border-color: #a5f3fc; color: #0e7490; }
-[data-theme="light"] #cardSocials .acc-summary-badge { background: #fff1f2; border-color: #fecdd3; color: #be123c; }
 
 .acc-chevron {
   font-size: 0.9rem;
@@ -921,7 +912,7 @@ body {
   border-color: #2563eb;
 }
 
-/* Archetypes Grid - Rich & Distinct Flat Cards */
+/* Archetypes Grid */
 .archetype-grid-container, .archetype-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -987,7 +978,7 @@ body {
   line-height: 1.25;
 }
 
-/* Tech Stack Selector - Color-Categorized Chips & Items */
+/* Tech Stack Selector */
 .skill-filter-bar {
   margin-bottom: 0.4rem;
   width: 100%;
@@ -1034,7 +1025,6 @@ body {
   border-color: var(--accent-cyan);
 }
 
-/* Flat Colorful Category Pills in Light Mode */
 [data-theme="light"] .skill-chip,
 [data-theme="light"] .category-tab {
   background: #f1f5f9;
@@ -1054,34 +1044,6 @@ body {
   border-color: #0f172a;
   color: #ffffff;
   font-weight: 700;
-}
-
-[data-theme="light"] .skill-chip[data-category="frontend"].active,
-[data-theme="light"] .category-tab[data-category="frontend"].active {
-  background: #2563eb;
-  border-color: #1d4ed8;
-  color: #ffffff;
-}
-
-[data-theme="light"] .skill-chip[data-category="backend"].active,
-[data-theme="light"] .category-tab[data-category="backend"].active {
-  background: #059669;
-  border-color: #047857;
-  color: #ffffff;
-}
-
-[data-theme="light"] .skill-chip[data-category="devops"].active,
-[data-theme="light"] .category-tab[data-category="devops"].active {
-  background: #ea580c;
-  border-color: #c2410c;
-  color: #ffffff;
-}
-
-[data-theme="light"] .skill-chip[data-category="languages"].active,
-[data-theme="light"] .category-tab[data-category="languages"].active {
-  background: #7c3aed;
-  border-color: #6d28d9;
-  color: #ffffff;
 }
 
 .tech-stack-container, .tech-grid {
@@ -1316,7 +1278,7 @@ input:checked + .switch-knob:before, input:checked + .slider:before {
 }
 
 /* ─────────────────────────────────────────────────────────────
-   5. RIGHT CANVAS PANEL (LIVE STUDIO MOCKUP)
+   5. RIGHT CANVAS PANEL (LIVE STUDIO MOCKUP & SCROLL CONTAINER)
 ───────────────────────────────────────────────────────────── */
 .canvas-panel, .preview-container {
   background: var(--bg-canvas);
@@ -1452,14 +1414,14 @@ input:checked + .switch-knob:before, input:checked + .slider:before {
   transform: translateY(-1px);
 }
 
-/* Canvas Scrollable Workspace */
+/* Canvas Scrollable Workspace - Fluid Scrolling */
 .canvas-body, .preview-body {
   flex: 1 1 0%;
   overflow-y: auto !important;
   overflow-x: hidden;
   height: 100%;
   min-height: 0;
-  padding: 2rem 2.5rem 8rem 2.5rem;
+  padding: 2rem 2.5rem 10rem 2.5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1477,11 +1439,12 @@ input:checked + .switch-knob:before, input:checked + .slider:before {
   background: var(--mock-bg);
   border: 1px solid var(--mock-border);
   border-radius: 12px;
-  overflow: hidden;
+  overflow: visible;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
   box-sizing: border-box;
   transition: background 0.2s ease, border-color 0.2s ease;
+  flex-shrink: 0;
 }
 
 [data-theme="dark"] .github-mockup-frame {
@@ -1652,13 +1615,14 @@ input:checked + .switch-knob:before, input:checked + .slider:before {
 
 /* Mockup Content Rendered */
 .mockup-content-body, .mockup-window-body {
-  padding: 2.5rem 2.5rem 3.5rem 2.5rem;
+  padding: 2.5rem 2.5rem 4rem 2.5rem;
   background: var(--mock-bg);
   color: var(--mock-text);
   font-size: 0.95rem;
   line-height: 1.65;
   box-sizing: border-box;
   width: 100%;
+  border-radius: 0 0 12px 12px;
 }
 
 /* Markdown Specific Typography */
@@ -1765,6 +1729,7 @@ input:checked + .switch-knob:before, input:checked + .slider:before {
   margin: 1.25rem 0;
   color: var(--mock-text);
   box-sizing: border-box;
+  max-width: 100%;
 }
 
 .mockup-content-body code, .mockup-window-body code {

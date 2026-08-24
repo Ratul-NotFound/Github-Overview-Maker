@@ -148,6 +148,7 @@ function applyThemeMode(mode) {
 function toggleThemeMode() {
   const nextMode = state.themeMode === "light" ? "dark" : "light";
   applyThemeMode(nextMode);
+  updateStudio();
   showToast(nextMode === "light" ? "☀️ Switched to Light Theme" : "🌙 Switched to Dark Theme");
 }
 
@@ -561,24 +562,68 @@ function buildProjectsMarkdown(u, arch, style) {
 }
 
 // -------------------------------------------------------------
+// HELPER: DYNAMIC WIDGET THEMES (LIGHT / DARK AWARE)
+// -------------------------------------------------------------
+function getWidgetTheme(arch) {
+  const isLight = state.themeMode === "light";
+  if (isLight) {
+    return {
+      statsTheme: "default",
+      statsBg: "ffffff",
+      statsTitle: "0969da",
+      statsText: "1f2328",
+      statsIcon: "0969da",
+      statsBorder: "d0d7de",
+      streakTheme: "default",
+      streakBg: "ffffff",
+      streakRing: "0969da",
+      streakFire: "2563eb",
+      streakLabel: "0969da",
+      streakSide: "57606a",
+      trophyTheme: "flat",
+      activityTheme: "github-light",
+      typingColor: "0969DA"
+    };
+  }
+  return {
+    statsTheme: arch.id === "neofetch" ? "merko" : (arch.id === "minimal" ? "dark" : (arch.id === "kawaii" ? "dracula" : "tokyonight")),
+    statsBg: (arch.bg || "#0d1117").replace("#", ""),
+    statsTitle: (arch.accent || "#58a6ff").replace("#", ""),
+    statsText: "c9d1d9",
+    statsIcon: (arch.accent2 || arch.accent || "#58a6ff").replace("#", ""),
+    statsBorder: "30363d",
+    streakTheme: arch.id === "neofetch" ? "merko" : (arch.id === "minimal" ? "dark" : (arch.id === "kawaii" ? "dracula" : "tokyonight")),
+    streakBg: (arch.bg || "#0d1117").replace("#", ""),
+    streakRing: (arch.accent || "#58a6ff").replace("#", ""),
+    streakFire: (arch.accent2 || "#f59e0b").replace("#", ""),
+    streakLabel: (arch.accent || "#58a6ff").replace("#", ""),
+    streakSide: "94a3b8",
+    trophyTheme: arch.id === "neofetch" ? "matrix" : (arch.id === "kawaii" ? "dracula" : "tokyonight"),
+    activityTheme: "react-dark",
+    typingColor: (arch.accent || "#00f0ff").replace("#", "")
+  };
+}
+
+// -------------------------------------------------------------
 // HELPER: BUILD CONTRIBUTION GRAPH
 // -------------------------------------------------------------
 function buildGraphMarkdown(u, arch, mode) {
   if (!state.toggles.graphs) return "";
+  const wt = getWidgetTheme(arch);
   let out = "";
 
   if (mode === "snake") {
     out += `<div align="center">\n  <picture>\n    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/${u}/${u}/output/github-contribution-grid-snake-dark.svg">\n    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/${u}/${u}/output/github-contribution-grid-snake.svg">\n    <img alt="Snake eating contribution grid" src="https://raw.githubusercontent.com/${u}/${u}/output/github-contribution-grid-snake.svg">\n  </picture>\n</div>\n\n`;
   } else if (mode === "3d") {
-    out += `<div align="center">\n  <img src="https://github-profile-trophy.vercel.app/?username=${u}&theme=${arch.id === "neofetch" ? "matrix" : (arch.id === "kawaii" ? "dracula" : "tokyonight")}&no-frame=true&no-bg=true&margin_w=8" width="100%" />\n</div>\n\n`;
+    out += `<div align="center">\n  <img src="https://github-profile-trophy.vercel.app/?username=${u}&theme=${wt.trophyTheme}&no-frame=true&no-bg=true&margin_w=8" width="100%" />\n</div>\n\n`;
   } else if (mode === "streak") {
-    out += `<div align="center">\n  <img src="https://github-readme-streak-stats.herokuapp.com/?user=${u}&theme=${arch.id === "neofetch" ? "matrix" : (arch.id === "minimal" ? "dark" : "tokyonight")}&hide_border=true" height="165" />\n</div>\n\n`;
+    out += `<div align="center">\n  <img src="https://github-readme-streak-stats.herokuapp.com/?user=${u}&theme=${wt.streakTheme}&background=${wt.streakBg}&ring=${wt.streakRing}&fire=${wt.streakFire}&currStreakLabel=${wt.streakLabel}&sideLabels=${wt.streakSide}&hide_border=true" height="165" />\n</div>\n\n`;
   } else if (mode === "all") {
-    out += `<div align="center">\n  <img src="https://github-readme-activity-graph.vercel.app/graph?username=${u}&theme=react-dark&hide_border=true&area=true" width="100%" />\n</div>\n\n`;
-    out += `<div align="center">\n  <img src="https://github-readme-streak-stats.herokuapp.com/?user=${u}&theme=tokyonight&hide_border=true" height="165" />\n</div>\n\n`;
+    out += `<div align="center">\n  <img src="https://github-readme-activity-graph.vercel.app/graph?username=${u}&theme=${wt.activityTheme}&hide_border=true&area=true" width="100%" />\n</div>\n\n`;
+    out += `<div align="center">\n  <img src="https://github-readme-streak-stats.herokuapp.com/?user=${u}&theme=${wt.streakTheme}&background=${wt.streakBg}&ring=${wt.streakRing}&fire=${wt.streakFire}&currStreakLabel=${wt.streakLabel}&sideLabels=${wt.streakSide}&hide_border=true" height="165" />\n</div>\n\n`;
   } else {
     // Default Activity Graph Wave
-    out += `<div align="center">\n  <img src="https://github-readme-activity-graph.vercel.app/graph?username=${u}&theme=react-dark&hide_border=true&area=true" width="100%" />\n</div>\n\n`;
+    out += `<div align="center">\n  <img src="https://github-readme-activity-graph.vercel.app/graph?username=${u}&theme=${wt.activityTheme}&hide_border=true&area=true" width="100%" />\n</div>\n\n`;
   }
 
   return out;
@@ -1295,7 +1340,13 @@ function updateStudio() {
 
   // Render Visual Preview with Theme Colors & Typography
   if (DOM.livePreviewContainer) {
-    DOM.livePreviewContainer.style.backgroundColor = arch.bg;
+    if (state.themeMode === "light") {
+      DOM.livePreviewContainer.style.backgroundColor = "#ffffff";
+      DOM.livePreviewContainer.style.color = "#1f2328";
+    } else {
+      DOM.livePreviewContainer.style.backgroundColor = arch.bg || "#0d1117";
+      DOM.livePreviewContainer.style.color = "#c9d1d9";
+    }
     DOM.livePreviewContainer.style.fontFamily = arch.font;
     DOM.livePreviewContainer.innerHTML = renderMarkdownToHtml(md, arch);
   }
