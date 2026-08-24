@@ -382,17 +382,29 @@ function attachEventListeners() {
     });
   });
 
-  // Sidebar Tabs Navigation
-  document.querySelectorAll(".nav-tab-btn").forEach(btn => {
-    btn.addEventListener("click", () => {
-      document.querySelectorAll(".nav-tab-btn").forEach(b => b.classList.remove("active"));
-      document.querySelectorAll(".editor-section").forEach(sec => sec.classList.remove("active"));
-      btn.classList.add("active");
-      const targetId = btn.dataset.target;
-      const targetSec = document.getElementById(targetId);
-      if (targetSec) targetSec.classList.add("active");
+  // Sidebar Accordion Expand/Collapse Listeners
+  document.querySelectorAll(".accordion-header").forEach(header => {
+    header.addEventListener("click", () => {
+      const card = header.closest(".accordion-card");
+      if (card) card.classList.toggle("open");
     });
   });
+
+  // Quick Accordion Controls (Expand All / Collapse All)
+  const btnExpandAll = document.getElementById("btnExpandAll");
+  const btnCollapseAll = document.getElementById("btnCollapseAll");
+  if (btnExpandAll) {
+    btnExpandAll.addEventListener("click", () => {
+      document.querySelectorAll(".accordion-card").forEach(c => c.classList.add("open"));
+      showToast("📂 Expanded all customizer modules");
+    });
+  }
+  if (btnCollapseAll) {
+    btnCollapseAll.addEventListener("click", () => {
+      document.querySelectorAll(".accordion-card").forEach(c => c.classList.remove("open"));
+      showToast("📁 Collapsed all modules");
+    });
+  }
 
   // Tab View Switcher (Preview vs Code)
   if (DOM.tabLivePreview) {
@@ -1193,6 +1205,16 @@ function updateStudio() {
   if (DOM.mockHandle) DOM.mockHandle.textContent = `@${u}`;
   if (DOM.mockHeadline) DOM.mockHeadline.textContent = headline;
   if (DOM.readmeFileName) DOM.readmeFileName.textContent = `${u} / README.md`;
+
+  // Update Accordion Summary Badges
+  const summaryIdentity = document.getElementById("summaryIdentity");
+  if (summaryIdentity) summaryIdentity.textContent = u;
+
+  const summaryArchetype = document.getElementById("summaryArchetype");
+  if (summaryArchetype) {
+    const archName = arch.name.replace(/[^a-zA-Z0-9 ]/g, "").trim();
+    summaryArchetype.textContent = archName;
+  }
 
   const avatarLetters = document.querySelectorAll(".avatar-letter");
   avatarLetters.forEach(el => {

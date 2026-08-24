@@ -61,258 +61,316 @@
   <!-- Main Workstation Layout -->
   <div class="studio-workstation">
     
-    <!-- Left Panel: Customizer Sidebar -->
+    <!-- Left Panel: Customizer Sidebar with Accordion Organization -->
     <aside class="sidebar-panel">
       
-      <!-- Sidebar Section Tabs Navigator -->
-      <nav class="sidebar-nav">
-        <button class="nav-tab-btn active" data-target="sec-identity">
-          <span>👤</span> Identity
-        </button>
-        <button class="nav-tab-btn" data-target="sec-archetypes">
-          <span>🎨</span> Archetype
-        </button>
-        <button class="nav-tab-btn" data-target="sec-skills">
-          <span>🛠️</span> Skills
-        </button>
-        <button class="nav-tab-btn" data-target="sec-projects">
-          <span>🚀</span> Projects
-        </button>
-        <button class="nav-tab-btn" data-target="sec-telemetry">
-          <span>📊</span> Metrics
-        </button>
-        <button class="nav-tab-btn" data-target="sec-bio">
-          <span>⚡</span> Bio
-        </button>
-        <button class="nav-tab-btn" data-target="sec-socials">
-          <span>🌐</span> Socials
-        </button>
-        <button class="nav-tab-btn" data-target="sec-visibility">
-          <span>⚙️</span> Toggles
-        </button>
-      </nav>
+      <!-- Sidebar Control Bar -->
+      <div class="sidebar-top-bar">
+        <div class="sidebar-title-box">
+          <span class="sidebar-heading">Studio Customizer</span>
+          <span class="sidebar-subheading">9 Modules Available</span>
+        </div>
+        <div class="accordion-quick-controls">
+          <button id="btnExpandAll" class="quick-toggle-btn" title="Expand All Sections">Expand All</button>
+          <button id="btnCollapseAll" class="quick-toggle-btn" title="Collapse All Sections">Collapse</button>
+        </div>
+      </div>
 
-      <div class="sidebar-content">
+      <!-- Accordion Sections List -->
+      <div class="sidebar-accordion-list">
         
         <!-- 1. Profile Identity -->
-        <div class="editor-section active" id="sec-identity">
-          <div class="section-header">
-            <h3>Profile Identity</h3>
-            <span class="section-pill">Step 1</span>
-          </div>
-          <div class="form-field">
-            <label for="inputUsername">GitHub Username</label>
-            <div class="input-prefix-wrapper">
-              <span class="input-prefix">github.com/</span>
-              <input type="text" id="inputUsername" class="studio-input with-prefix" placeholder="username" value="alexdev">
+        <div class="accordion-card open" id="acc-identity">
+          <div class="accordion-header">
+            <div class="accordion-header-left">
+              <span class="acc-icon">👤</span>
+              <span class="acc-title">Profile Identity</span>
+            </div>
+            <div class="accordion-header-right">
+              <span class="acc-summary-badge" id="summaryIdentity">alexdev</span>
+              <span class="acc-chevron">▾</span>
             </div>
           </div>
-          <div class="form-field">
-            <label for="inputName">Display Name</label>
-            <input type="text" id="inputName" class="studio-input" placeholder="e.g. Alex Vance" value="Alex Vance">
-          </div>
-          <div class="form-field">
-            <label for="inputHeadline">Headline & Specialization</label>
-            <input type="text" id="inputHeadline" class="studio-input" placeholder="e.g. Full-Stack Architect // Cloud & Distributed Systems" value="Full-Stack Cyber Architect // Cloud & Systems">
-          </div>
-          
-          <div class="divider-line"></div>
-          
-          <div class="section-header" style="margin-top: 1rem;">
-            <h3>Animated Typing Bios</h3>
-            <span class="section-pill">Live SVG</span>
-          </div>
-          <div class="form-field">
-            <label for="typingLine1">Line 1</label>
-            <input type="text" id="typingLine1" class="studio-input" value="Architecting Scalable High-Performance Systems ⚡">
-          </div>
-          <div class="form-field">
-            <label for="typingLine2">Line 2</label>
-            <input type="text" id="typingLine2" class="studio-input" value="Full-Stack TypeScript, Rust & Go Engineer 🚀">
-          </div>
-          <div class="form-field">
-            <label for="typingLine3">Line 3</label>
-            <input type="text" id="typingLine3" class="studio-input" value="Sub-millisecond Latency Obsessive 🧠">
+          <div class="accordion-content">
+            <div class="form-field">
+              <label for="inputUsername">GitHub Username</label>
+              <div class="input-prefix-wrapper">
+                <span class="input-prefix">github.com/</span>
+                <input type="text" id="inputUsername" class="studio-input with-prefix" placeholder="username" value="alexdev">
+              </div>
+            </div>
+            <div class="form-field">
+              <label for="inputName">Display Name</label>
+              <input type="text" id="inputName" class="studio-input" placeholder="e.g. Alex Vance" value="Alex Vance">
+            </div>
+            <div class="form-field">
+              <label for="inputHeadline">Headline & Specialization</label>
+              <input type="text" id="inputHeadline" class="studio-input" placeholder="e.g. Full-Stack Architect // Cloud & Distributed Systems" value="Full-Stack Cyber Architect // Cloud & Systems">
+            </div>
           </div>
         </div>
 
         <!-- 2. Design Archetypes -->
-        <div class="editor-section" id="sec-archetypes">
-          <div class="section-header">
-            <h3>Design Archetypes</h3>
-            <span class="section-pill">8 Modes</span>
+        <div class="accordion-card open" id="acc-archetypes">
+          <div class="accordion-header">
+            <div class="accordion-header-left">
+              <span class="acc-icon">🎨</span>
+              <span class="acc-title">Design Archetypes</span>
+            </div>
+            <div class="accordion-header-right">
+              <span class="acc-summary-badge" id="summaryArchetype">Cyberpunk</span>
+              <span class="acc-chevron">▾</span>
+            </div>
           </div>
-          <p class="section-desc">Select a crafted aesthetic archetype with tailored typography and layout.</p>
-          <div class="archetype-grid-container" id="archetypeGrid">
-            <!-- Populated dynamically by JS -->
+          <div class="accordion-content">
+            <p class="section-desc">Choose a handcrafted aesthetic mode with tailored layout, themes & fonts.</p>
+            <div class="archetype-grid-container" id="archetypeGrid">
+              <!-- Populated dynamically by JS -->
+            </div>
           </div>
         </div>
 
         <!-- 3. Tech Stack Matrix -->
-        <div class="editor-section" id="sec-skills">
-          <div class="section-header">
-            <h3>Tech Stack & Toolchain</h3>
-            <span class="section-pill" id="skillCount">16 selected</span>
+        <div class="accordion-card open" id="acc-skills">
+          <div class="accordion-header">
+            <div class="accordion-header-left">
+              <span class="acc-icon">🛠️</span>
+              <span class="acc-title">Tech Stack & Badges</span>
+            </div>
+            <div class="accordion-header-right">
+              <span class="acc-summary-badge badge-cyan" id="skillCount">16 selected</span>
+              <span class="acc-chevron">▾</span>
+            </div>
           </div>
-          <div class="skill-filter-bar">
-            <input type="text" id="techSearchInput" class="studio-input search-input" placeholder="🔍 Search technologies...">
-          </div>
-          <div class="skill-category-chips" id="techCategories">
-            <button class="skill-chip active" data-cat="all">All</button>
-            <button class="skill-chip" data-cat="languages">Languages</button>
-            <button class="skill-chip" data-cat="frontend">Frontend</button>
-            <button class="skill-chip" data-cat="backend">Backend</button>
-            <button class="skill-chip" data-cat="cloud">Cloud/DevOps</button>
-            <button class="skill-chip" data-cat="database">Databases</button>
-          </div>
-          <div class="tech-stack-container" id="techGrid">
-            <!-- Populated dynamically by JS -->
+          <div class="accordion-content">
+            <div class="skill-filter-bar">
+              <input type="text" id="techSearchInput" class="studio-input search-input" placeholder="🔍 Search technologies (e.g. react, rust, aws)...">
+            </div>
+            <div class="skill-category-chips" id="techCategories">
+              <button class="skill-chip active" data-cat="all">All</button>
+              <button class="skill-chip" data-cat="languages">Languages</button>
+              <button class="skill-chip" data-cat="frontend">Frontend</button>
+              <button class="skill-chip" data-cat="backend">Backend</button>
+              <button class="skill-chip" data-cat="cloud">Cloud/DevOps</button>
+              <button class="skill-chip" data-cat="database">Databases</button>
+            </div>
+            <div class="tech-stack-container" id="techGrid">
+              <!-- Populated dynamically by JS -->
+            </div>
           </div>
         </div>
 
         <!-- 4. Featured Projects -->
-        <div class="editor-section" id="sec-projects">
-          <div class="section-header">
-            <h3>Featured Projects Studio</h3>
-            <span class="section-pill" id="projectCount">3 projects</span>
+        <div class="accordion-card open" id="acc-projects">
+          <div class="accordion-header">
+            <div class="accordion-header-left">
+              <span class="acc-icon">🚀</span>
+              <span class="acc-title">Featured Projects Studio</span>
+            </div>
+            <div class="accordion-header-right">
+              <span class="acc-summary-badge badge-emerald" id="projectCount">3 projects</span>
+              <span class="acc-chevron">▾</span>
+            </div>
           </div>
-          <div class="form-field">
-            <label for="selectProjectStyle">Showcase Layout Style</label>
-            <select id="selectProjectStyle" class="studio-select">
-              <option value="bento">🍱 Modern Bento Card Matrix</option>
-              <option value="pinned">📌 GitHub Pinned Repos Style</option>
-              <option value="table">📊 Structured Developer Table</option>
-              <option value="minimal">🖤 Minimalist Status List</option>
-            </select>
-          </div>
-          <div id="projectsListContainer" class="projects-stack-list">
-            <!-- Dynamic Project Cards Rendered by JS -->
-          </div>
-          <button id="btnAddProject" class="add-dashed-button">
-            <span>➕</span> Add Project Item
-          </button>
-        </div>
-
-        <!-- 5. Metrics & Telemetry -->
-        <div class="editor-section" id="sec-telemetry">
-          <div class="section-header">
-            <h3>Activity & Telemetry</h3>
-            <span class="section-pill">Synced</span>
-          </div>
-          <div class="form-field">
-            <label for="selectGraphStyle">Telemetry / Graph Style</label>
-            <select id="selectGraphStyle" class="studio-select">
-              <option value="activity">🌊 Real-time Activity Wave Graph</option>
-              <option value="streak">⚡ Commit Streak Flame Tracker</option>
-              <option value="3d">🏆 GitHub Trophy Showcase</option>
-              <option value="snake">🐍 Snake Eating Contribution Grid</option>
-              <option value="all">🚀 All-in-One Complete Telemetry</option>
-            </select>
+          <div class="accordion-content">
+            <div class="form-field">
+              <label for="selectProjectStyle">Showcase Layout Style</label>
+              <select id="selectProjectStyle" class="studio-select">
+                <option value="bento">🍱 Modern Bento Card Matrix</option>
+                <option value="pinned">📌 GitHub Pinned Repos Style</option>
+                <option value="table">📊 Structured Developer Table</option>
+                <option value="minimal">🖤 Minimalist Status List</option>
+              </select>
+            </div>
+            <div id="projectsListContainer" class="projects-stack-list">
+              <!-- Dynamic Project Cards Rendered by JS -->
+            </div>
+            <button id="btnAddProject" class="add-dashed-button">
+              <span>➕</span> Add Project Item
+            </button>
           </div>
         </div>
 
-        <!-- 6. Bio & Focus Matrix -->
-        <div class="editor-section" id="sec-bio">
-          <div class="section-header">
-            <h3>Bio & Focus Matrix</h3>
-            <span class="section-pill">Directives</span>
+        <!-- 5. Animated Typing Bios -->
+        <div class="accordion-card" id="acc-typing">
+          <div class="accordion-header">
+            <div class="accordion-header-left">
+              <span class="acc-icon">✍️</span>
+              <span class="acc-title">Animated Typing Bios</span>
+            </div>
+            <div class="accordion-header-right">
+              <span class="acc-summary-badge">3 lines</span>
+              <span class="acc-chevron">▾</span>
+            </div>
           </div>
-          <div class="form-field">
-            <label for="statusWorking">🔭 Currently Working On</label>
-            <input type="text" id="statusWorking" class="studio-input" value="Next-generation cloud orchestrators & microservices">
-          </div>
-          <div class="form-field">
-            <label for="statusLearning">🌱 Currently Learning & Researching</label>
-            <input type="text" id="statusLearning" class="studio-input" value="Rust kernel programming & WebGPU shaders">
-          </div>
-          <div class="form-field">
-            <label for="statusAskMe">💬 Ask Me About</label>
-            <input type="text" id="statusAskMe" class="studio-input" value="React, Next.js, Distributed DBs, Rust, Kafka & CI/CD">
-          </div>
-          <div class="form-field">
-            <label for="statusFunFact">⚡ Fun Fact / Secret Fuel</label>
-            <input type="text" id="statusFunFact" class="studio-input" value="Powered by dark roast espresso, mechanical keyboards & lo-fi">
+          <div class="accordion-content">
+            <div class="form-field">
+              <label for="typingLine1">Line 1</label>
+              <input type="text" id="typingLine1" class="studio-input" value="Architecting Scalable High-Performance Systems ⚡">
+            </div>
+            <div class="form-field">
+              <label for="typingLine2">Line 2</label>
+              <input type="text" id="typingLine2" class="studio-input" value="Full-Stack TypeScript, Rust & Go Engineer 🚀">
+            </div>
+            <div class="form-field">
+              <label for="typingLine3">Line 3</label>
+              <input type="text" id="typingLine3" class="studio-input" value="Sub-millisecond Latency Obsessive 🧠">
+            </div>
           </div>
         </div>
 
-        <!-- 7. Socials & Sponsors -->
-        <div class="editor-section" id="sec-socials">
-          <div class="section-header">
-            <h3>Social Network Hub</h3>
-            <span class="section-pill">Connect</span>
+        <!-- 6. Focus & Bio Matrix -->
+        <div class="accordion-card" id="acc-bio">
+          <div class="accordion-header">
+            <div class="accordion-header-left">
+              <span class="acc-icon">⚡</span>
+              <span class="acc-title">Bio & Focus Directives</span>
+            </div>
+            <div class="accordion-header-right">
+              <span class="acc-summary-badge">Directives</span>
+              <span class="acc-chevron">▾</span>
+            </div>
           </div>
-          <div class="form-field">
-            <label for="socialLinkedin">LinkedIn Username</label>
-            <input type="text" id="socialLinkedin" class="studio-input" placeholder="username" value="alex-vance">
-          </div>
-          <div class="form-field">
-            <label for="socialTwitter">Twitter / X Handle</label>
-            <input type="text" id="socialTwitter" class="studio-input" placeholder="handle" value="alexvance_dev">
-          </div>
-          <div class="form-field">
-            <label for="socialDiscord">Discord Server / ID</label>
-            <input type="text" id="socialDiscord" class="studio-input" placeholder="ID or Invite" value="alexvance">
-          </div>
-          <div class="form-field">
-            <label for="socialPortfolio">Portfolio Website</label>
-            <input type="text" id="socialPortfolio" class="studio-input" placeholder="https://..." value="https://alexvance.io">
-          </div>
-          <div class="form-field">
-            <label for="socialEmail">Contact Email</label>
-            <input type="email" id="socialEmail" class="studio-input" placeholder="you@domain.com" value="alex@vance.dev">
-          </div>
-          <div class="form-field">
-            <label for="sponsorBuyMeCoffee">Buy Me A Coffee</label>
-            <input type="text" id="sponsorBuyMeCoffee" class="studio-input" placeholder="username" value="alexvance">
+          <div class="accordion-content">
+            <div class="form-field">
+              <label for="statusWorking">🔭 Currently Working On</label>
+              <input type="text" id="statusWorking" class="studio-input" value="Next-generation cloud orchestrators & microservices">
+            </div>
+            <div class="form-field">
+              <label for="statusLearning">🌱 Currently Learning & Researching</label>
+              <input type="text" id="statusLearning" class="studio-input" value="Rust kernel programming & WebGPU shaders">
+            </div>
+            <div class="form-field">
+              <label for="statusAskMe">💬 Ask Me About</label>
+              <input type="text" id="statusAskMe" class="studio-input" value="React, Next.js, Distributed DBs, Rust, Kafka & CI/CD">
+            </div>
+            <div class="form-field">
+              <label for="statusFunFact">⚡ Fun Fact / Secret Fuel</label>
+              <input type="text" id="statusFunFact" class="studio-input" value="Powered by dark roast espresso, mechanical keyboards & lo-fi">
+            </div>
           </div>
         </div>
 
-        <!-- 8. Section Toggles -->
-        <div class="editor-section" id="sec-visibility">
-          <div class="section-header">
-            <h3>Section Visibility</h3>
-            <span class="section-pill">Toggles</span>
+        <!-- 7. Metrics & Telemetry -->
+        <div class="accordion-card" id="acc-telemetry">
+          <div class="accordion-header">
+            <div class="accordion-header-left">
+              <span class="acc-icon">📊</span>
+              <span class="acc-title">Contribution Telemetry</span>
+            </div>
+            <div class="accordion-header-right">
+              <span class="acc-summary-badge badge-amber">Synced</span>
+              <span class="acc-chevron">▾</span>
+            </div>
           </div>
-          <div class="toggles-grid">
-            <div class="toggle-card">
-              <span>Header Banner</span>
-              <label class="switch-toggle"><input type="checkbox" id="toggleHeader" checked><span class="switch-knob"></span></label>
+          <div class="accordion-content">
+            <div class="form-field">
+              <label for="selectGraphStyle">Telemetry / Graph Style</label>
+              <select id="selectGraphStyle" class="studio-select">
+                <option value="activity">🌊 Real-time Activity Wave Graph</option>
+                <option value="streak">⚡ Commit Streak Flame Tracker</option>
+                <option value="3d">🏆 GitHub Trophy Showcase</option>
+                <option value="snake">🐍 Snake Eating Contribution Grid</option>
+                <option value="all">🚀 All-in-One Complete Telemetry</option>
+              </select>
             </div>
-            <div class="toggle-card">
-              <span>Typing Animation</span>
-              <label class="switch-toggle"><input type="checkbox" id="toggleTyping" checked><span class="switch-knob"></span></label>
+          </div>
+        </div>
+
+        <!-- 8. Social Networks & Links -->
+        <div class="accordion-card" id="acc-socials">
+          <div class="accordion-header">
+            <div class="accordion-header-left">
+              <span class="acc-icon">🌐</span>
+              <span class="acc-title">Social Networks & Links</span>
             </div>
-            <div class="toggle-card">
-              <span>Featured Projects</span>
-              <label class="switch-toggle"><input type="checkbox" id="toggleProjects" checked><span class="switch-knob"></span></label>
+            <div class="accordion-header-right">
+              <span class="acc-summary-badge">Connected</span>
+              <span class="acc-chevron">▾</span>
             </div>
-            <div class="toggle-card">
-              <span>Status & Bio</span>
-              <label class="switch-toggle"><input type="checkbox" id="toggleStatusBio" checked><span class="switch-knob"></span></label>
+          </div>
+          <div class="accordion-content">
+            <div class="form-field">
+              <label for="socialLinkedin">LinkedIn Username</label>
+              <input type="text" id="socialLinkedin" class="studio-input" placeholder="username" value="alex-vance">
             </div>
-            <div class="toggle-card">
-              <span>Contribution Graph</span>
-              <label class="switch-toggle"><input type="checkbox" id="toggleGraphs" checked><span class="switch-knob"></span></label>
+            <div class="form-field">
+              <label for="socialTwitter">Twitter / X Handle</label>
+              <input type="text" id="socialTwitter" class="studio-input" placeholder="handle" value="alexvance_dev">
             </div>
-            <div class="toggle-card">
-              <span>GitHub Stats & Streak</span>
-              <label class="switch-toggle"><input type="checkbox" id="toggleStats" checked><span class="switch-knob"></span></label>
+            <div class="form-field">
+              <label for="socialDiscord">Discord Server / ID</label>
+              <input type="text" id="socialDiscord" class="studio-input" placeholder="ID or Invite" value="alexvance">
             </div>
-            <div class="toggle-card">
-              <span>Top Languages</span>
-              <label class="switch-toggle"><input type="checkbox" id="toggleLanguages" checked><span class="switch-knob"></span></label>
+            <div class="form-field">
+              <label for="socialPortfolio">Portfolio Website</label>
+              <input type="text" id="socialPortfolio" class="studio-input" placeholder="https://..." value="https://alexvance.io">
             </div>
-            <div class="toggle-card">
-              <span>Trophy Showcase</span>
-              <label class="switch-toggle"><input type="checkbox" id="toggleTrophies" checked><span class="switch-knob"></span></label>
+            <div class="form-field">
+              <label for="socialEmail">Contact Email</label>
+              <input type="email" id="socialEmail" class="studio-input" placeholder="you@domain.com" value="alex@vance.dev">
             </div>
-            <div class="toggle-card">
-              <span>Views Counter</span>
-              <label class="switch-toggle"><input type="checkbox" id="toggleViews" checked><span class="switch-knob"></span></label>
+            <div class="form-field">
+              <label for="sponsorBuyMeCoffee">Buy Me A Coffee</label>
+              <input type="text" id="sponsorBuyMeCoffee" class="studio-input" placeholder="username" value="alexvance">
             </div>
-            <div class="toggle-card">
-              <span>Studio Backlink</span>
-              <label class="switch-toggle"><input type="checkbox" id="toggleViralBadge" checked><span class="switch-knob"></span></label>
+          </div>
+        </div>
+
+        <!-- 9. Section Visibility Toggles -->
+        <div class="accordion-card" id="acc-visibility">
+          <div class="accordion-header">
+            <div class="accordion-header-left">
+              <span class="acc-icon">⚙️</span>
+              <span class="acc-title">Section Visibility Toggles</span>
+            </div>
+            <div class="accordion-header-right">
+              <span class="acc-summary-badge">Toggles</span>
+              <span class="acc-chevron">▾</span>
+            </div>
+          </div>
+          <div class="accordion-content">
+            <div class="toggles-grid">
+              <div class="toggle-card">
+                <span>Header Banner</span>
+                <label class="switch-toggle"><input type="checkbox" id="toggleHeader" checked><span class="switch-knob"></span></label>
+              </div>
+              <div class="toggle-card">
+                <span>Typing Animation</span>
+                <label class="switch-toggle"><input type="checkbox" id="toggleTyping" checked><span class="switch-knob"></span></label>
+              </div>
+              <div class="toggle-card">
+                <span>Featured Projects</span>
+                <label class="switch-toggle"><input type="checkbox" id="toggleProjects" checked><span class="switch-knob"></span></label>
+              </div>
+              <div class="toggle-card">
+                <span>Status & Bio</span>
+                <label class="switch-toggle"><input type="checkbox" id="toggleStatusBio" checked><span class="switch-knob"></span></label>
+              </div>
+              <div class="toggle-card">
+                <span>Contribution Graph</span>
+                <label class="switch-toggle"><input type="checkbox" id="toggleGraphs" checked><span class="switch-knob"></span></label>
+              </div>
+              <div class="toggle-card">
+                <span>GitHub Stats & Streak</span>
+                <label class="switch-toggle"><input type="checkbox" id="toggleStats" checked><span class="switch-knob"></span></label>
+              </div>
+              <div class="toggle-card">
+                <span>Top Languages</span>
+                <label class="switch-toggle"><input type="checkbox" id="toggleLanguages" checked><span class="switch-knob"></span></label>
+              </div>
+              <div class="toggle-card">
+                <span>Trophy Showcase</span>
+                <label class="switch-toggle"><input type="checkbox" id="toggleTrophies" checked><span class="switch-knob"></span></label>
+              </div>
+              <div class="toggle-card">
+                <span>Views Counter</span>
+                <label class="switch-toggle"><input type="checkbox" id="toggleViews" checked><span class="switch-knob"></span></label>
+              </div>
+              <div class="toggle-card">
+                <span>Studio Backlink</span>
+                <label class="switch-toggle"><input type="checkbox" id="toggleViralBadge" checked><span class="switch-knob"></span></label>
+              </div>
             </div>
           </div>
         </div>
