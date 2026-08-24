@@ -1,7 +1,7 @@
 {
-  "name": "github-profile-studio",
-  "version": "1.0.0",
-  "description": "The Ultimate Aesthetic GitHub Profile Decorator & Generator",
+  "name": "git-view-pro",
+  "version": "2.5.0",
+  "description": "Git View Pro — World-Class Profile README Builder & Architecture Studio",
   "scripts": {
     "dev": "npx -y serve . -p 3000",
     "start": "npx -y serve . -p 3000",

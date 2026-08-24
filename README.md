@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=1,13,24,30&height=220&section=header&text=GITHUB%20PROFILE%20STUDIO&fontSize=38&fontColor=ffffff&animation=twinkling&fontAlignY=38&desc=The%20Ultimate%20Aesthetic%20GitHub%20Profile%20Decorator%20%26%20Generator&descAlignY=62&descSize=16" width="100%"/>
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=1,13,24,30&height=220&section=header&text=GIT%20VIEW%20PRO&fontSize=38&fontColor=ffffff&animation=twinkling&fontAlignY=38&desc=World-Class%20Profile%20README%20Builder%20%26%20Architecture%20Studio&descAlignY=62&descSize=16" width="100%"/>
 </div>
 
 <div align="center">
@@ -20,7 +20,7 @@
 > **No setup needed!** Open `index.html` in your browser (or host it on GitHub Pages in 1-click) to customize your username, select themes, click tech stack badges, and copy the ready-to-use markdown with one click!
 
 <div align="center">
-  <h3>✨ <a href="index.html">Launch GitHub Profile Studio Generator</a> ✨</h3>
+  <h3>🚀 <a href="index.html">Launch Git View Pro Studio</a> 🚀</h3>
 </div>
 
 ---

@@ -55,7 +55,7 @@ const state = {
   },
   activeTab: "preview",
   activeCategory: "all",
-  themeMode: localStorage.getItem("studio_theme") || "dark"
+  themeMode: localStorage.getItem("studio_theme") || "light"
 };
 
 // DOM References
@@ -153,6 +153,82 @@ function toggleThemeMode() {
 }
 
 // -------------------------------------------------------------
+// DYNAMIC ADJUSTABLE SIDEBAR (DRAGGABLE RESIZER)
+// -------------------------------------------------------------
+function setupSidebarResizer() {
+  const resizer = document.getElementById("sidebarResizer");
+  const workstation = document.getElementById("studioWorkstation");
+  const sidebar = document.getElementById("sidebarPanel");
+  if (!resizer || !workstation || !sidebar) return;
+
+  const setWidth = (w) => {
+    document.documentElement.style.setProperty("--sidebar-width", `${w}px`);
+    workstation.style.setProperty("--sidebar-width", `${w}px`);
+    sidebar.style.width = `${w}px`;
+  };
+
+  // Restore saved width from localStorage if present
+  const savedWidth = localStorage.getItem("studio_sidebar_width");
+  if (savedWidth && window.innerWidth >= 992) {
+    const w = parseInt(savedWidth, 10);
+    if (!isNaN(w) && w >= 320 && w <= window.innerWidth - 380) {
+      setWidth(w);
+    }
+  }
+
+  let isDragging = false;
+
+  const startDrag = (e) => {
+    if (window.innerWidth < 992) return;
+    isDragging = true;
+    document.body.classList.add("is-resizing");
+    workstation.classList.add("is-resizing");
+    resizer.classList.add("active");
+    if (e.cancelable) e.preventDefault();
+  };
+
+  const onDrag = (e) => {
+    if (!isDragging) return;
+    const clientX = e.type.startsWith("touch") ? e.touches[0].clientX : e.clientX;
+    const minWidth = 340;
+    const maxWidth = Math.max(380, window.innerWidth - 420);
+    const newWidth = Math.min(Math.max(clientX, minWidth), maxWidth);
+
+    setWidth(newWidth);
+  };
+
+  const stopDrag = () => {
+    if (!isDragging) return;
+    isDragging = false;
+    document.body.classList.remove("is-resizing");
+    workstation.classList.remove("is-resizing");
+    resizer.classList.remove("active");
+
+    // Save current width
+    const currentW = parseInt(sidebar.style.width || "480", 10);
+    if (currentW) {
+      localStorage.setItem("studio_sidebar_width", currentW);
+    }
+  };
+
+  resizer.addEventListener("mousedown", startDrag);
+  resizer.addEventListener("touchstart", startDrag, { passive: false });
+
+  document.addEventListener("mousemove", onDrag);
+  document.addEventListener("touchmove", onDrag, { passive: false });
+
+  document.addEventListener("mouseup", stopDrag);
+  document.addEventListener("touchend", stopDrag);
+
+  // Double click resizer to reset to default 480px width
+  resizer.addEventListener("dblclick", () => {
+    setWidth(480);
+    localStorage.setItem("studio_sidebar_width", 480);
+    showToast("Sidebar width reset to default (480px)");
+  });
+}
+
+// -------------------------------------------------------------
 // APP INITIALIZATION
 // -------------------------------------------------------------
 function initApp() {
@@ -162,6 +238,7 @@ function initApp() {
   renderTechGrid();
   attachEventListeners();
   populateModalCatalog();
+  setupSidebarResizer();
   updateStudio();
 }
 
@@ -188,14 +265,18 @@ function renderArchetypeSelectors() {
     });
   }
 
-  // Horizontal top bar
+  // Quick theme selector in body canvas header
   if (DOM.templateBar) {
-    DOM.templateBar.innerHTML = `<span class="template-bar-label">⚡ Archetypes:</span>`;
+    DOM.templateBar.innerHTML = "";
     Object.keys(APP_DATA.archetypes).forEach(key => {
       const arch = APP_DATA.archetypes[key];
       const chip = document.createElement("button");
-      chip.className = `template-chip ${state.currentArchetype === key ? "active" : ""}`;
-      chip.textContent = arch.name;
+      chip.className = `canvas-theme-chip ${state.currentArchetype === key ? "active" : ""}`;
+      chip.innerHTML = `
+        <span class="chip-color-dot" style="background: ${arch.accent};"></span>
+        <span>${arch.name.split(" ")[0]}</span>
+      `;
+      chip.title = `Switch to ${arch.name} (${arch.tag})`;
       chip.addEventListener("click", () => setArchetype(key));
       DOM.templateBar.appendChild(chip);
     });
@@ -207,7 +288,7 @@ function setArchetype(key) {
   state.currentArchetype = key;
   renderArchetypeSelectors();
   updateStudio();
-  showToast(`✨ Switched to ${APP_DATA.archetypes[key].name}!`);
+  showToast(`Switched to ${APP_DATA.archetypes[key].name}`);
 }
 
 // -------------------------------------------------------------
@@ -728,7 +809,7 @@ function generateMarkdown() {
       }
 
       if (state.toggles.viralBadge) {
-        md += `<div align="center">\n  <code>[ SYS_OK ] &nbsp; Crafted with <a href="https://github.com/Ratul-NotFound/Github-Overview-Maker">GitHub Profile Studio</a> &nbsp; [ EOF ]</code>\n</div>\n`;
+        md += `<div align="center">\n  <code>[ SYS_OK ] &nbsp; Crafted with <a href="https://github.com/Ratul-NotFound/Github-Overview-Maker">Git View Pro</a> &nbsp; [ EOF ]</code>\n</div>\n`;
       }
       return md;
     }
@@ -795,7 +876,7 @@ function generateMarkdown() {
       }
 
       if (state.toggles.viralBadge) {
-        md += `<div align="center">\n  <sub>🍱 Engineered with <a href="https://github.com/Ratul-NotFound/Github-Overview-Maker">GitHub Profile Studio</a></sub>\n</div>\n`;
+        md += `<div align="center">\n  <sub>🍱 Engineered with <a href="https://github.com/Ratul-NotFound/Github-Overview-Maker">Git View Pro</a></sub>\n</div>\n`;
       }
       return md;
     }
@@ -876,7 +957,7 @@ function generateMarkdown() {
 
       md += `<div align="center">\n  <img src="https://capsule-render.vercel.app/api?type=soft&color=gradient&customColorList=2,6,12&height=80&section=footer" width="100%"/>\n</div>\n\n`;
       if (state.toggles.viralBadge) {
-        md += `<div align="center">\n  <sub>⚜️ Forged at the Guild with <a href="https://github.com/Ratul-NotFound/Github-Overview-Maker">GitHub Profile Studio</a></sub>\n</div>\n`;
+        md += `<div align="center">\n  <sub>⚜️ Forged at the Guild with <a href="https://github.com/Ratul-NotFound/Github-Overview-Maker">Git View Pro</a></sub>\n</div>\n`;
       }
       return md;
     }
@@ -953,7 +1034,7 @@ function generateMarkdown() {
       }
 
       if (state.toggles.viralBadge) {
-        md += `<div align="center">\n  <sub>👾 INSERT COIN • Made with <a href="https://github.com/Ratul-NotFound/Github-Overview-Maker">GitHub Profile Studio</a></sub>\n</div>\n`;
+        md += `<div align="center">\n  <sub>👾 INSERT COIN • Made with <a href="https://github.com/Ratul-NotFound/Github-Overview-Maker">Git View Pro</a></sub>\n</div>\n`;
       }
       return md;
     }
@@ -1015,7 +1096,7 @@ function generateMarkdown() {
 
       md += `<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=34,36,44&height=80&section=footer" width="100%"/>\n\n`;
       if (state.toggles.viralBadge) {
-        md += `<div align="center">\n  <sub>💖 Crafted with love using <a href="https://github.com/Ratul-NotFound/Github-Overview-Maker">GitHub Profile Studio</a></sub>\n</div>\n`;
+        md += `<div align="center">\n  <sub>💖 Crafted with love using <a href="https://github.com/Ratul-NotFound/Github-Overview-Maker">Git View Pro</a></sub>\n</div>\n`;
       }
       return md;
     }
@@ -1085,7 +1166,7 @@ function generateMarkdown() {
 
       md += `<img src="https://capsule-render.vercel.app/api?type=soft&color=gradient&customColorList=20,24,26,28&height=80&section=footer" width="100%"/>\n\n`;
       if (state.toggles.viralBadge) {
-        md += `<div align="center">\n  <sub>✦ Launched into orbit with <a href="https://github.com/Ratul-NotFound/Github-Overview-Maker">GitHub Profile Studio</a></sub>\n</div>\n`;
+        md += `<div align="center">\n  <sub>✦ Launched into orbit with <a href="https://github.com/Ratul-NotFound/Github-Overview-Maker">Git View Pro</a></sub>\n</div>\n`;
       }
       return md;
     }
@@ -1153,7 +1234,7 @@ function generateMarkdown() {
       }
 
       if (state.toggles.viralBadge) {
-        md += `<p align="center"><sub>Built with <a href="https://github.com/Ratul-NotFound/Github-Overview-Maker">GitHub Profile Studio</a></sub></p>\n`;
+        md += `<p align="center"><sub>Built with <a href="https://github.com/Ratul-NotFound/Github-Overview-Maker">Git View Pro</a></sub></p>\n`;
       }
       return md;
     }
@@ -1221,7 +1302,7 @@ function generateMarkdown() {
 
       md += `<img src="https://capsule-render.vercel.app/api?type=waving&color=auto&customColorList=1,13,24&height=80&section=footer" width="100%"/>\n\n`;
       if (state.toggles.viralBadge) {
-        md += `<div align="center">\n  <sub>⚡ Neural interface powered by <a href="https://github.com/Ratul-NotFound/Github-Overview-Maker">GitHub Profile Studio</a></sub>\n</div>\n`;
+        md += `<div align="center">\n  <sub>⚡ Neural interface powered by <a href="https://github.com/Ratul-NotFound/Github-Overview-Maker">Git View Pro</a></sub>\n</div>\n`;
       }
       return md;
     }
@@ -1371,7 +1452,7 @@ function copyMarkdownAction() {
         copyBtn.style.color = "";
       }, 2200);
     }
-    showToast("✨ Markdown copied to clipboard! Paste into your profile README.md");
+    showToast("📋 Markdown copied to clipboard!");
   };
 
   if (navigator.clipboard && navigator.clipboard.writeText) {
@@ -1394,7 +1475,7 @@ function fallbackCopy(text) {
   ta.select();
   document.execCommand("copy");
   document.body.removeChild(ta);
-  showToast("✨ Markdown copied to clipboard!");
+  showToast("📋 Markdown copied to clipboard!");
 }
 
 function downloadReadmeAction() {
