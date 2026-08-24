@@ -198,25 +198,25 @@ function renderProjectsList() {
         <strong style="font-size: 0.8rem; color: var(--accent-cyan);">Project #${idx + 1}</strong>
         <button class="btn-remove" data-index="${idx}">✕ Remove</button>
       </div>
-      <div class="form-group">
+      <div class="form-field">
         <label>Project Name</label>
-        <input type="text" class="form-control proj-name" data-index="${idx}" value="${proj.name}" placeholder="e.g. QuantumFlow Engine">
+        <input type="text" class="studio-input proj-name" data-index="${idx}" value="${proj.name}" placeholder="e.g. QuantumFlow Engine">
       </div>
-      <div class="form-group">
+      <div class="form-field">
         <label>Repository Name</label>
-        <input type="text" class="form-control proj-repo" data-index="${idx}" value="${proj.repo}" placeholder="e.g. quantumflow-engine">
+        <input type="text" class="studio-input proj-repo" data-index="${idx}" value="${proj.repo}" placeholder="e.g. quantumflow-engine">
       </div>
-      <div class="form-group">
+      <div class="form-field">
         <label>Description</label>
-        <input type="text" class="form-control proj-desc" data-index="${idx}" value="${proj.desc}" placeholder="Concise project overview">
+        <input type="text" class="studio-input proj-desc" data-index="${idx}" value="${proj.desc}" placeholder="Concise project overview">
       </div>
-      <div class="form-group">
+      <div class="form-field">
         <label>Tech Stack Tags</label>
-        <input type="text" class="form-control proj-tags" data-index="${idx}" value="${proj.tags}" placeholder="e.g. Rust, Kafka, Docker">
+        <input type="text" class="studio-input proj-tags" data-index="${idx}" value="${proj.tags}" placeholder="e.g. Rust, Kafka, Docker">
       </div>
-      <div class="form-group">
+      <div class="form-field">
         <label>Live Demo / URL</label>
-        <input type="text" class="form-control proj-demo" data-index="${idx}" value="${proj.demoUrl || ""}" placeholder="https://...">
+        <input type="text" class="studio-input proj-demo" data-index="${idx}" value="${proj.demoUrl || ""}" placeholder="https://...">
       </div>
     `;
     DOM.projectsListContainer.appendChild(item);
@@ -373,9 +373,9 @@ function attachEventListeners() {
 
   // Skill Search & Tabs
   if (DOM.techSearchInput) DOM.techSearchInput.addEventListener("input", renderTechGrid);
-  document.querySelectorAll(".category-tab").forEach(tab => {
+  document.querySelectorAll(".category-tab, .skill-chip").forEach(tab => {
     tab.addEventListener("click", () => {
-      document.querySelectorAll(".category-tab").forEach(t => t.classList.remove("active"));
+      document.querySelectorAll(".category-tab, .skill-chip").forEach(t => t.classList.remove("active"));
       tab.classList.add("active");
       state.activeCategory = tab.dataset.cat;
       renderTechGrid();
