@@ -1,0 +1,18 @@
+{
+  "name": "github-profile-studio",
+  "version": "1.0.0",
+  "description": "The Ultimate Aesthetic GitHub Profile Decorator & Generator",
+  "scripts": {
+    "dev": "npx -y serve . -p 3000",
+    "start": "npx -y serve . -p 3000",
+    "preview": "npx -y serve . -p 3000"
+  },
+  "keywords": [
+    "github-profile",
+    "github-components",
+    "readme-generator",
+    "profile-decorator"
+  ],
+  "author": "",
+  "license": "MIT"
+}
