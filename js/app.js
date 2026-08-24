@@ -1,4 +1,4 @@
-﻿/**
+/**
  * ===================================================================
  * GITHUB PROFILE STUDIO - CORE ENGINE & THEME GENERATOR
  * Ultra-Rich, Deeply Distinct Archetypes & Full Customization System
@@ -102,6 +102,10 @@ const DOM = {
   sponsorKoFi: document.getElementById("sponsorKoFi"),
   mockupWindow: document.getElementById("mockupWindow"),
   mockupAddressBar: document.getElementById("mockupAddressBar"),
+  mockDisplayName: document.getElementById("mockDisplayName"),
+  mockHandle: document.getElementById("mockHandle"),
+  mockHeadline: document.getElementById("mockHeadline"),
+  readmeFileName: document.getElementById("readmeFileName"),
   livePreviewContainer: document.getElementById("livePreviewContainer"),
   markdownCodeContainer: document.getElementById("markdownCodeContainer"),
   rawMarkdownOutput: document.getElementById("rawMarkdownOutput"),
@@ -375,6 +379,18 @@ function attachEventListeners() {
       tab.classList.add("active");
       state.activeCategory = tab.dataset.cat;
       renderTechGrid();
+    });
+  });
+
+  // Sidebar Tabs Navigation
+  document.querySelectorAll(".nav-tab-btn").forEach(btn => {
+    btn.addEventListener("click", () => {
+      document.querySelectorAll(".nav-tab-btn").forEach(b => b.classList.remove("active"));
+      document.querySelectorAll(".editor-section").forEach(sec => sec.classList.remove("active"));
+      btn.classList.add("active");
+      const targetId = btn.dataset.target;
+      const targetSec = document.getElementById(targetId);
+      if (targetSec) targetSec.classList.add("active");
     });
   });
 
@@ -1161,16 +1177,27 @@ function updateStudio() {
   const md = generateMarkdown();
   const arch = APP_DATA.archetypes[state.currentArchetype] || APP_DATA.archetypes.cyberpunk;
   const u = state.username || "alexdev";
+  const name = state.name || "Alex Vance";
+  const headline = state.headline || "Full-Stack Cyber Architect // Cloud & Distributed Systems";
 
   // Update raw markdown code container
   if (DOM.rawMarkdownOutput) {
     DOM.rawMarkdownOutput.textContent = md;
   }
 
-  // Update mock address bar
+  // Update mock address bar & realistic GitHub profile header
   if (DOM.mockupAddressBar) {
-    DOM.mockupAddressBar.innerHTML = `<span>📄 github.com/${u}/README.md</span>`;
+    DOM.mockupAddressBar.innerHTML = `<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg><span>github.com/${u}/README.md</span>`;
   }
+  if (DOM.mockDisplayName) DOM.mockDisplayName.textContent = name;
+  if (DOM.mockHandle) DOM.mockHandle.textContent = `@${u}`;
+  if (DOM.mockHeadline) DOM.mockHeadline.textContent = headline;
+  if (DOM.readmeFileName) DOM.readmeFileName.textContent = `${u} / README.md`;
+
+  const avatarLetters = document.querySelectorAll(".avatar-letter");
+  avatarLetters.forEach(el => {
+    el.textContent = (name.charAt(0) || u.charAt(0) || "A").toUpperCase();
+  });
 
   // Render Visual Preview with Theme Colors & Typography
   if (DOM.livePreviewContainer) {
@@ -1185,12 +1212,31 @@ function updateStudio() {
 // -------------------------------------------------------------
 function copyMarkdownAction() {
   const md = generateMarkdown();
+  const copyBtn = DOM.btnCopyMarkdown;
+  const originalHtml = copyBtn ? copyBtn.innerHTML : "";
+
+  const handleSuccess = () => {
+    if (copyBtn) {
+      copyBtn.innerHTML = `<span>✓</span> Copied!`;
+      copyBtn.style.borderColor = "var(--accent-emerald)";
+      copyBtn.style.color = "var(--accent-emerald)";
+      setTimeout(() => {
+        copyBtn.innerHTML = originalHtml;
+        copyBtn.style.borderColor = "";
+        copyBtn.style.color = "";
+      }, 2200);
+    }
+    showToast("✨ Markdown copied to clipboard! Paste into your profile README.md");
+  };
+
   if (navigator.clipboard && navigator.clipboard.writeText) {
-    navigator.clipboard.writeText(md).then(() => {
-      showToast("✨ Markdown copied to clipboard! Ready to paste into README.md");
-    }).catch(() => fallbackCopy(md));
+    navigator.clipboard.writeText(md).then(handleSuccess).catch(() => {
+      fallbackCopy(md);
+      handleSuccess();
+    });
   } else {
     fallbackCopy(md);
+    handleSuccess();
   }
 }
 
