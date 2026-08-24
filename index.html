@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GitHub Profile Studio | Professional Profile Decorator & Generator</title>
+  <title>GitHub Profile Studio | Professional Profile README Generator</title>
   <meta name="description" content="Design and generate viral, aesthetic GitHub Profile READMEs with 8 professional design archetypes, project showcase styles, synced contribution graphs, widgets, and themes.">
   <link rel="stylesheet" href="css/style.css">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>">
@@ -15,43 +15,49 @@
     <a href="#" class="brand">
       <div class="brand-icon-box">⚡</div>
       <div class="brand-text">
-        <h1>GitHub Profile Studio</h1>
+        <div class="brand-title-row">
+          <h1>GitHub Profile Studio</h1>
+          <span class="pro-tag">PRO</span>
+        </div>
         <p>Professional Developer Overview Design System</p>
       </div>
     </a>
 
     <div class="nav-actions">
-      <button id="btnExploreComponents" class="btn btn-secondary">
-        🧩 Component Library
+      <button id="btnExploreComponents" class="btn btn-secondary" title="Browse pre-made markdown components">
+        <span>🧩</span> Component Catalog
       </button>
-      <button id="btnRandomize" class="btn btn-secondary">
-        🎲 Randomize
+      <button id="btnRandomize" class="btn btn-secondary" title="Randomize theme and skills">
+        <span>🎲</span> Randomize
       </button>
-      <button id="btnReset" class="btn btn-secondary">
-        🔄 Reset
+      <button id="btnReset" class="btn btn-secondary" title="Reset all settings to default">
+        <span>🔄</span> Reset
       </button>
-      <a href="https://github.com" target="_blank" id="starRepoBtn" class="btn btn-star">
-        ⭐ Star on GitHub
+      <a href="https://github.com/Ratul-NotFound/Github-Overview-Maker" target="_blank" id="starRepoBtn" class="btn btn-star">
+        <span>⭐</span> Star on GitHub
       </a>
     </div>
   </header>
 
   <!-- Instant Preset Archetypes Bar -->
   <div class="template-bar" id="templateBar">
-    <!-- Populated by JS -->
+    <!-- Populated dynamically by JS -->
   </div>
 
-  <!-- Main Container -->
+  <!-- Main App Layout -->
   <main class="app-container">
     
     <!-- Left Sidebar: Customizer & Controls -->
     <aside class="editor-sidebar">
       
-      <!-- 1. Profile Info -->
+      <!-- 1. Profile Identity -->
       <section class="control-section">
         <div class="section-title">
-          <span>👤 Profile Identity</span>
-          <span class="badge">Core</span>
+          <div class="title-left">
+            <span class="title-icon">👤</span>
+            <span>Profile Identity</span>
+          </div>
+          <span class="badge badge-primary">Core</span>
         </div>
         <div class="form-group">
           <label for="inputUsername">GitHub Username</label>
@@ -62,28 +68,58 @@
           <input type="text" id="inputName" class="form-control" placeholder="e.g. Alex Developer" value="Alex Vance">
         </div>
         <div class="form-group">
-          <label for="inputHeadline">Headline & Specialization</label>
-          <input type="text" id="inputHeadline" class="form-control" placeholder="e.g. Full-Stack Architect & Open-Source Creator" value="Full-Stack Cyber Architect // Cloud & Systems">
+          <label for="inputHeadline">Headline & Title</label>
+          <input type="text" id="inputHeadline" class="form-control" placeholder="e.g. Full-Stack Architect // Cloud & Distributed Systems" value="Full-Stack Cyber Architect // Cloud & Systems">
         </div>
       </section>
 
-      <!-- 2. Radical Design Archetypes -->
+      <!-- 2. Rotating Bios (Typing SVG) -->
       <section class="control-section">
         <div class="section-title">
-          <span>🎨 Design Archetype</span>
-          <span class="badge">8 Modes</span>
+          <div class="title-left">
+            <span class="title-icon">✍️</span>
+            <span>Animated Typing Bio</span>
+          </div>
+          <span class="badge badge-cyan">Live SVG</span>
+        </div>
+        <div class="form-group">
+          <label for="typingLine1">Typing Line 1</label>
+          <input type="text" id="typingLine1" class="form-control" value="Architecting Scalable High-Performance Systems ⚡">
+        </div>
+        <div class="form-group">
+          <label for="typingLine2">Typing Line 2</label>
+          <input type="text" id="typingLine2" class="form-control" value="Full-Stack TypeScript, Rust & Go Engineer 🚀">
+        </div>
+        <div class="form-group">
+          <label for="typingLine3">Typing Line 3</label>
+          <input type="text" id="typingLine3" class="form-control" value="Sub-millisecond Latency Obsessive 🧠">
+        </div>
+      </section>
+
+      <!-- 3. Design Archetypes -->
+      <section class="control-section">
+        <div class="section-title">
+          <div class="title-left">
+            <span class="title-icon">🎨</span>
+            <span>Design Archetype</span>
+          </div>
+          <span class="badge badge-purple">8 Modes</span>
         </div>
         <div class="archetype-grid" id="archetypeGrid">
-          <!-- Populated by JS -->
+          <!-- Populated dynamically by JS -->
         </div>
       </section>
 
-      <!-- 3. Projects Showcase Studio (Multiple Projects & Styles) -->
+      <!-- 4. Featured Projects Studio -->
       <section class="control-section">
         <div class="section-title">
-          <span>🚀 Featured Projects Studio</span>
-          <span class="badge" id="projectCount">3 projects</span>
+          <div class="title-left">
+            <span class="title-icon">🚀</span>
+            <span>Featured Projects Studio</span>
+          </div>
+          <span class="badge badge-emerald" id="projectCount">3 projects</span>
         </div>
+        
         <div class="form-group">
           <label for="selectProjectStyle">Showcase Layout Style</label>
           <select id="selectProjectStyle" class="form-control">
@@ -94,119 +130,115 @@
           </select>
         </div>
 
-        <div id="projectsListContainer">
+        <div id="projectsListContainer" class="projects-list-container">
           <!-- Dynamic Project Cards Rendered by JS -->
         </div>
 
-        <button id="btnAddProject" class="btn-add-item">+ Add Another Project</button>
+        <button id="btnAddProject" class="btn btn-dashed-add">
+          <span>➕</span> Add Project Item
+        </button>
       </section>
 
-      <!-- 4. Synced GitHub Contribution Graphs -->
+      <!-- 5. Tech Stack & Badge Matrix -->
       <section class="control-section">
         <div class="section-title">
-          <span>📈 Synced Contribution Graphs</span>
-          <span class="badge">Live Sync</span>
+          <div class="title-left">
+            <span class="title-icon">🛠️</span>
+            <span>Tech Stack & Badges</span>
+          </div>
+          <span class="badge badge-blue" id="skillCount">16 selected</span>
+        </div>
+
+        <div class="search-box">
+          <input type="text" id="techSearchInput" class="form-control form-control-sm" placeholder="🔍 Filter technologies (e.g. react, rust, aws)...">
+        </div>
+
+        <div class="category-tabs" id="techCategories">
+          <button class="category-tab active" data-cat="all">All</button>
+          <button class="category-tab" data-cat="languages">Languages</button>
+          <button class="category-tab" data-cat="frontend">Frontend</button>
+          <button class="category-tab" data-cat="backend">Backend</button>
+          <button class="category-tab" data-cat="cloud">Cloud / DevOps</button>
+          <button class="category-tab" data-cat="database">Databases</button>
+        </div>
+
+        <div class="tech-grid" id="techGrid">
+          <!-- Populated dynamically by JS -->
+        </div>
+      </section>
+
+      <!-- 6. Contribution Graphs & Activity -->
+      <section class="control-section">
+        <div class="section-title">
+          <div class="title-left">
+            <span class="title-icon">📊</span>
+            <span>Contribution Telemetry</span>
+          </div>
+          <span class="badge badge-amber">Synced</span>
         </div>
         <div class="form-group">
-          <label for="selectGraphStyle">Contribution Graph Mode</label>
+          <label for="selectGraphStyle">Telemetry / Graph Style</label>
           <select id="selectGraphStyle" class="form-control">
-            <option value="activity">📊 Synced GitHub Activity Graph</option>
+            <option value="activity">🌊 Real-time Activity Wave Graph</option>
+            <option value="streak">⚡ Commit Streak Flame Tracker</option>
+            <option value="3d">🏆 GitHub Trophy Showcase</option>
             <option value="snake">🐍 Snake Eating Contribution Grid</option>
-            <option value="3d">🌌 3D Isometric Contribution Grid</option>
-            <option value="streak">⚡ Compact Streak & Stats Cards</option>
-            <option value="all">🔥 All Graphs Combined</option>
+            <option value="all">🚀 All-in-One Complete Telemetry</option>
           </select>
         </div>
       </section>
 
-      <!-- 5. Status & Bio Matrix -->
+      <!-- 7. Focus & Bio Matrix -->
       <section class="control-section">
         <div class="section-title">
-          <span>🌱 Current Focus & Status</span>
+          <div class="title-left">
+            <span class="title-icon">⚡</span>
+            <span>Bio & Focus Matrix</span>
+          </div>
         </div>
         <div class="form-group">
           <label for="statusWorking">🔭 Currently Working On</label>
           <input type="text" id="statusWorking" class="form-control" value="Next-generation cloud orchestrators & microservices">
         </div>
         <div class="form-group">
-          <label for="statusLearning">🌱 Currently Learning</label>
+          <label for="statusLearning">🌱 Currently Learning & Exploring</label>
           <input type="text" id="statusLearning" class="form-control" value="Rust kernel programming & WebGPU shaders">
         </div>
         <div class="form-group">
           <label for="statusAskMe">💬 Ask Me About</label>
-          <input type="text" id="statusAskMe" class="form-control" value="React, Next.js, Node.js, Distributed DBs & CI/CD">
+          <input type="text" id="statusAskMe" class="form-control" value="React, Next.js, Distributed DBs, Rust, Kafka & CI/CD">
         </div>
         <div class="form-group">
-          <label for="statusFunFact">⚡ Fun Fact</label>
-          <input type="text" id="statusFunFact" class="form-control" value="Powered by coffee, dark mode, and lo-fi beats">
+          <label for="statusFunFact">⚡ Fun Fact / Secret Fuel</label>
+          <input type="text" id="statusFunFact" class="form-control" value="Powered by dark roast espresso, mechanical keyboards & lo-fi">
         </div>
       </section>
 
-      <!-- 6. Animated Typing Banner Strings -->
+      <!-- 8. Section Visibility Toggles -->
       <section class="control-section">
         <div class="section-title">
-          <span>⚡ Dynamic Rotating Bios</span>
+          <div class="title-left">
+            <span class="title-icon">⚙️</span>
+            <span>Section Visibility</span>
+          </div>
         </div>
-        <div class="form-group">
-          <label for="typingLine1">Line 1</label>
-          <input type="text" id="typingLine1" class="form-control" value="Building Next-Gen Web Experiences ⚡">
-        </div>
-        <div class="form-group">
-          <label for="typingLine2">Line 2</label>
-          <input type="text" id="typingLine2" class="form-control" value="Full-Stack TypeScript & Rust Engineer 🚀">
-        </div>
-        <div class="form-group">
-          <label for="typingLine3">Line 3</label>
-          <input type="text" id="typingLine3" class="form-control" value="Optimizing Bytes & Neurons 🧠">
-        </div>
-      </section>
-
-      <!-- 7. Tech Stack Arsenal -->
-      <section class="control-section">
-        <div class="section-title">
-          <span>🛠️ Skill Matrix & Tools</span>
-          <span class="badge" id="skillCount">0 selected</span>
-        </div>
-        <div class="tech-search">
-          <input type="text" id="techSearchInput" class="form-control" placeholder="Search 100+ technologies (e.g. React, Rust)...">
-        </div>
-        <div class="tech-categories" id="techCategories">
-          <button class="category-tab active" data-cat="all">All</button>
-          <button class="category-tab" data-cat="languages">Languages</button>
-          <button class="category-tab" data-cat="frontend">Frontend</button>
-          <button class="category-tab" data-cat="backend">Backend</button>
-          <button class="category-tab" data-cat="database">Database</button>
-          <button class="category-tab" data-cat="devops">DevOps & Cloud</button>
-          <button class="category-tab" data-cat="tools">Tools & Mobile</button>
-        </div>
-        <div class="tech-grid" id="techGrid">
-          <!-- Populated by JS -->
-        </div>
-      </section>
-
-      <!-- 8. Dynamic Widgets Toggles -->
-      <section class="control-section">
-        <div class="section-title">
-          <span>📊 Telemetry & Live Cards</span>
-          <span class="badge">Toggles</span>
-        </div>
-        <div class="toggle-group">
+        <div class="toggle-grid">
           <div class="toggle-row">
-            <span class="toggle-label">Header Banner & Waves</span>
+            <span class="toggle-label">Header Banner</span>
             <label class="switch">
               <input type="checkbox" id="toggleHeader" checked>
               <span class="slider"></span>
             </label>
           </div>
           <div class="toggle-row">
-            <span class="toggle-label">Typing SVG Animation</span>
+            <span class="toggle-label">Typing Animation</span>
             <label class="switch">
               <input type="checkbox" id="toggleTyping" checked>
               <span class="slider"></span>
             </label>
           </div>
           <div class="toggle-row">
-            <span class="toggle-label">Featured Projects Section</span>
+            <span class="toggle-label">Projects Section</span>
             <label class="switch">
               <input type="checkbox" id="toggleProjects" checked>
               <span class="slider"></span>
@@ -220,37 +252,30 @@
             </label>
           </div>
           <div class="toggle-row">
-            <span class="toggle-label">Synced Contribution Graphs</span>
+            <span class="toggle-label">Contribution Graph</span>
             <label class="switch">
               <input type="checkbox" id="toggleGraphs" checked>
               <span class="slider"></span>
             </label>
           </div>
           <div class="toggle-row">
-            <span class="toggle-label">GitHub Stats & Streak Cards</span>
+            <span class="toggle-label">GitHub Stats & Streak</span>
             <label class="switch">
               <input type="checkbox" id="toggleStats" checked>
               <span class="slider"></span>
             </label>
           </div>
           <div class="toggle-row">
-            <span class="toggle-label">Top Languages Breakdown</span>
+            <span class="toggle-label">Top Languages Card</span>
             <label class="switch">
               <input type="checkbox" id="toggleLanguages" checked>
               <span class="slider"></span>
             </label>
           </div>
           <div class="toggle-row">
-            <span class="toggle-label">GitHub Trophy Showcase</span>
+            <span class="toggle-label">Trophy Showcase</span>
             <label class="switch">
               <input type="checkbox" id="toggleTrophies" checked>
-              <span class="slider"></span>
-            </label>
-          </div>
-          <div class="toggle-row">
-            <span class="toggle-label">Daily Dev Quote</span>
-            <label class="switch">
-              <input type="checkbox" id="toggleQuote" checked>
               <span class="slider"></span>
             </label>
           </div>
@@ -274,7 +299,10 @@
       <!-- 9. Social & Contact Links -->
       <section class="control-section">
         <div class="section-title">
-          <span>🌐 Social Network Hub</span>
+          <div class="title-left">
+            <span class="title-icon">🌐</span>
+            <span>Social Network Hub</span>
+          </div>
         </div>
         <div class="form-group">
           <label for="socialLinkedin">LinkedIn Username</label>
@@ -301,7 +329,10 @@
       <!-- 10. Support & Sponsor Links -->
       <section class="control-section">
         <div class="section-title">
-          <span>💖 Sponsorship & Support</span>
+          <div class="title-left">
+            <span class="title-icon">💖</span>
+            <span>Sponsorship & Support</span>
+          </div>
         </div>
         <div class="form-group">
           <label for="sponsorBuyMeCoffee">Buy Me A Coffee Username</label>
@@ -322,19 +353,19 @@
       <div class="preview-header">
         <div class="view-tabs">
           <button id="tabLivePreview" class="view-tab active">
-            <span>👁️ Studio Preview</span>
+            <span>👁️</span> Studio Preview
           </button>
           <button id="tabMarkdownCode" class="view-tab">
-            <span>💻 Raw Markdown</span>
+            <span>💻</span> Raw Markdown
           </button>
         </div>
 
         <div class="preview-actions">
           <button id="btnCopyMarkdown" class="btn btn-secondary">
-            📋 Copy Markdown
+            <span>📋</span> Copy Markdown
           </button>
           <button id="btnDownloadReadme" class="btn btn-primary">
-            💾 Download README.md
+            <span>💾</span> Download README.md
           </button>
         </div>
       </div>
@@ -351,9 +382,11 @@
               <div class="dot dot-green"></div>
             </div>
             <div class="mockup-window-title" id="mockupAddressBar">
-              <span>📄 github.com/alexdev/README.md</span>
+              <span>🔒 github.com/alexdev/README.md</span>
             </div>
-            <div style="width: 40px;"></div>
+            <div class="mockup-window-meta">
+              <span class="mockup-badge">PUBLIC</span>
+            </div>
           </div>
           <div id="livePreviewContainer" class="mockup-window-body">
             <!-- Dynamic Content Rendered Here -->
@@ -375,11 +408,14 @@
   <div id="componentModal" class="modal-overlay">
     <div class="modal-card">
       <div class="modal-header">
-        <h2>🧩 Component Catalog Explorer</h2>
-        <button id="modalCloseBtn" class="modal-close">✕</button>
+        <div class="modal-header-left">
+          <span class="modal-header-icon">🧩</span>
+          <h2>Component Catalog Explorer</h2>
+        </div>
+        <button id="modalCloseBtn" class="modal-close" title="Close modal">✕</button>
       </div>
       <div class="modal-body" id="modalComponentList">
-        <!-- Populated by JS -->
+        <!-- Populated dynamically by JS -->
       </div>
     </div>
   </div>
