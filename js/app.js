@@ -1,4 +1,4 @@
-/**
+﻿/**
  * ===================================================================
  * GITHUB PROFILE STUDIO - CORE ENGINE & THEME GENERATOR
  * Ultra-Rich, Deeply Distinct Archetypes & Full Customization System
@@ -484,9 +484,7 @@ function buildGraphMarkdown(u, arch, mode) {
   return out;
 }
 
-// -------------------------------------------------------------
-// 8 DEEP UNIQUE THEME GENERATORS
-// -------------------------------------------------------------
+// -----------------------------------// NEW_GENERATOR_SECTION_START
 function generateMarkdown() {
   const u = state.username || "alexdev";
   const name = state.name || "Alex Vance";
@@ -496,408 +494,596 @@ function generateMarkdown() {
   const pStyle = state.projectStyle;
   const gStyle = state.graphStyle;
 
+  function buildSocialBadges(style) {
+    const b = [];
+    if (state.socials.linkedin)  b.push(`<a href="https://linkedin.com/in/${state.socials.linkedin}"><img src="https://img.shields.io/badge/LinkedIn-%230077B5.svg?style=${style}&logo=linkedin&logoColor=white"/></a>`);
+    if (state.socials.twitter)   b.push(`<a href="https://x.com/${state.socials.twitter}"><img src="https://img.shields.io/badge/X-black.svg?style=${style}&logo=X&logoColor=white"/></a>`);
+    if (state.socials.discord)   b.push(`<a href="https://discord.gg"><img src="https://img.shields.io/badge/Discord-%235865F2.svg?style=${style}&logo=discord&logoColor=white"/></a>`);
+    if (state.socials.portfolio) b.push(`<a href="${state.socials.portfolio}"><img src="https://img.shields.io/badge/Portfolio-000000?style=${style}&logo=vercel&logoColor=white"/></a>`);
+    if (state.socials.email)     b.push(`<a href="mailto:${state.socials.email}"><img src="https://img.shields.io/badge/Email-D14836?style=${style}&logo=gmail&logoColor=white"/></a>`);
+    return b;
+  }
+
   switch (state.currentArchetype) {
 
-    // =========================================================
-    // 1. 💻 TERMINAL SYSADMIN (UNIX / FASTFETCH / DOCKER)
-    // =========================================================
     case "neofetch": {
       let md = "";
       if (state.toggles.views) {
-        md += `<div align="center">\n  <img src="https://komarev.com/ghpvc/?username=${u}&label=HOST_UPTIME_TELEMETRY&color=00ff66&style=flat-square" />\n</div>\n\n`;
+        md += `<div align="center">\n  <img src="https://komarev.com/ghpvc/?username=${u}&label=PROFILE+SESSIONS&color=00ff66&style=flat-square" alt="Profile Views"/>\n</div>\n\n`;
       }
-
-      md += "```bash\n";
+      md += "```ansi\n";
       md += `   /\\_/\\        ${u}@archlinux-zen [x86_64]\n`;
-      md += `  ( o.o )       -----------------------------------------\n`;
-      md += `   > ^ <        OS       : Arch Linux Rolling Release\n`;
+      md += `  ( o.o )       ─────────────────────────────────────────\n`;
+      md += `   > ^ <        OS       : Arch Linux 6.10 Rolling\n`;
       md += `                Host     : ${name}\n`;
       md += `                Role     : ${headline}\n`;
-      md += `                Kernel   : 6.10.4-zen // High-Performance\n`;
-      md += `                Shell    : zsh 5.9 (x86_64-pc-linux-gnu)\n`;
-      md += `                Memory   : 64GB DDR5 // 82% Heap Allocated\n`;
-      md += `                Uptime   : 99.99% // Continuous Integration\n`;
-      md += `                Fuel     : 100% Dark Roast Espresso\n`;
+      md += `                Kernel   : zen-6.10.4 // Performance\n`;
+      md += `                Shell    : zsh 5.9 + oh-my-zsh\n`;
+      md += `                Memory   : 64GB DDR5 @6400MHz\n`;
+      md += `                Uptime   : 99.99% Continuous Delivery\n`;
+      md += `                Fuel     : Cold Brew Concentrate ☕\n`;
       md += "```\n\n";
 
       if (state.toggles.typing && state.typingLines.length > 0) {
-        const linesParam = state.typingLines.map(l => encodeURIComponent(l)).join(";");
-        md += `<div align="center">\n  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=18&pause=1000&color=00FF66&center=true&vCenter=true&width=750&lines=${linesParam}" alt="Terminal Prompt" />\n</div>\n\n`;
+        const lp = state.typingLines.map(l => encodeURIComponent(l)).join(";");
+        md += `<div align="center">\n  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=18&duration=3000&pause=1000&color=00FF66&center=true&vCenter=true&multiline=false&width=750&height=45&lines=${lp}" alt="Typing SVG"/>\n</div>\n\n`;
       }
 
+      const sb = buildSocialBadges("flat-square");
+      if (sb.length > 0) {
+        md += `<div align="center">\n  ${sb.join(" &nbsp; ")}\n</div>\n\n`;
+      }
+      md += `---\n\n`;
+
       if (state.toggles.statusBio) {
-        md += "```bash\n┌──(root㉿dev)-[~/focus-matrix]\n└─$ cat status.json\n```\n";
+        md += "```bash\n";
+        md += `┌──(root㉿dev)-[~/focus-matrix]\n└─$ cat current_session.json\n`;
+        md += "```\n";
         md += "```json\n{\n";
-        md += `  "working_on": "${state.statusBio.working}",\n`;
-        md += `  "learning"  : "${state.statusBio.learning}",\n`;
-        md += `  "ask_me"    : "${state.statusBio.askMe}",\n`;
-        md += `  "fun_fact"  : "${state.statusBio.funFact}"\n`;
-        md += "}\n```\n\n";
+        md += `  "status"      : "🟢 Active & Shipping",\n`;
+        md += `  "working_on"  : "${state.statusBio.working}",\n`;
+        md += `  "learning"    : "${state.statusBio.learning}",\n`;
+        md += `  "ask_me_about": "${state.statusBio.askMe}",\n`;
+        md += `  "fun_fact"    : "${state.statusBio.funFact}"\n`;
+        md += `}\n\`\`\`\n\n`;
+        md += `---\n\n`;
       }
 
       if (state.selectedSkills.length > 0) {
-        md += "```bash\n┌──(root㉿dev)-[~/arsenal]\n└─$ cargo --list-installed-binaries\n```\n";
-        md += `<div align="center">\n  <a href="https://skillicons.dev"><img src="https://skillicons.dev/icons?i=${skillsStr}&perline=8" /></a>\n</div>\n\n`;
+        md += "```bash\n";
+        md += `┌──(root㉿dev)-[~/arsenal]\n└─$ pkg query --installed --verbose\n`;
+        md += "```\n\n";
+        md += `<div align="center">\n  <a href="https://skillicons.dev">\n    <img src="https://skillicons.dev/icons?i=${skillsStr}&perline=10" />\n  </a>\n</div>\n\n`;
+        md += `---\n\n`;
       }
 
       if (state.toggles.projects && state.projects.length > 0) {
-        md += "```bash\n┌──(root㉿dev)-[~/containers]\n└─$ docker ps --format \"table {{.Names}}\\t{{.Status}}\\t{{.Ports}}\"\n```\n\n";
+        md += "```bash\n";
+        md += `┌──(root㉿dev)-[~/containers]\n└─$ docker ps --all --format "table {{.Names}}\\t{{.Image}}\\t{{.Status}}"\n`;
+        md += "```\n\n";
         md += buildProjectsMarkdown(u, arch, pStyle);
+        md += `\n---\n\n`;
+      }
+
+      if (state.toggles.graphs) {
+        md += "```bash\n";
+        md += `┌──(root㉿dev)-[~/telemetry]\n└─$ btop --stream --git-activity\n`;
+        md += "```\n\n";
+        md += buildGraphMarkdown(u, arch, gStyle);
         md += `\n`;
       }
 
-      if (state.toggles.graphs) {
-        md += "```bash\n┌──(root㉿dev)-[~/telemetry]\n└─$ btop --stream --sync\n```\n";
-        md += buildGraphMarkdown(u, arch, gStyle);
-      }
-
       if (state.toggles.stats) {
-        md += `<div align="center">\n  <img src="https://github-readme-stats.vercel.app/api?username=${u}&show_icons=true&theme=matrix&hide_border=true&bg_color=0a0e0b&title_color=00ff66&icon_color=00ff66&text_color=00cc55" height="165" />\n  <img src="https://github-readme-streak-stats.herokuapp.com/?user=${u}&theme=matrix&hide_border=true&background=0a0e0b&ring=00ff66&fire=00ff66&currStreakLabel=00ff66" height="165" />\n</div>\n\n`;
+        md += `<div align="center">\n`;
+        md += `  <img src="https://github-readme-stats.vercel.app/api?username=${u}&show_icons=true&theme=merko&hide_border=true&bg_color=0a0e0b&title_color=00ff66&icon_color=00cc55&text_color=22c55e&rank_icon=github" height="160" />\n`;
+        md += `  &nbsp;\n`;
+        md += `  <img src="https://github-readme-streak-stats.herokuapp.com/?user=${u}&theme=merko&hide_border=true&background=0a0e0b&ring=00ff66&fire=00dd55&currStreakLabel=00ff66&sideLabels=00cc55" height="160" />\n`;
+        md += `</div>\n\n`;
+        md += `<div align="center">\n  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=${u}&layout=compact&theme=merko&hide_border=true&bg_color=0a0e0b&title_color=00ff66&text_color=22c55e&langs_count=8" height="140" />\n</div>\n\n`;
       }
 
       if (state.toggles.viralBadge) {
-        md += `<div align="center">\n  <code>[SYS_OK] Generated by <a href="https://github.com/${u}/Github-overview-components">GitHub Profile Studio</a></code>\n</div>\n`;
+        md += `<div align="center">\n  <code>[ SYS_OK ] &nbsp; Crafted with <a href="https://github.com/Ratul-NotFound/Github-Overview-Maker">GitHub Profile Studio</a> &nbsp; [ EOF ]</code>\n</div>\n`;
       }
       return md;
     }
 
-    // =========================================================
-    // 2. 🍱 MODERN BENTO GRID (APPLE / VERCEL UI)
-    // =========================================================
     case "bento": {
       let md = "";
       if (state.toggles.header) {
-        md += `<div align="center">\n  <img src="https://capsule-render.vercel.app/api?type=slice&color=gradient&customColorList=10,20,30&height=190&section=header&text=${encodeURIComponent(name)}&fontSize=36&fontColor=ffffff&fontAlignY=42&desc=${encodeURIComponent(headline.slice(0, 45))}&descAlignY=65&descSize=14&descColor=38bdf8" width="100%"/>\n</div>\n\n`;
+        md += `<div align="center">\n  <img src="https://capsule-render.vercel.app/api?type=slice&color=gradient&customColorList=10,20,30&height=180&section=header&text=${encodeURIComponent(name)}&fontSize=38&fontColor=ffffff&fontAlignY=45&desc=${encodeURIComponent(headline.slice(0,50))}&descAlignY=68&descSize=15&descColor=38bdf8&animation=fadeIn" width="100%"/>\n</div>\n\n`;
+      }
+
+      if (state.toggles.views) {
+        md += `<div align="center">\n  <img src="https://komarev.com/ghpvc/?username=${u}&label=Profile+Views&color=38bdf8&style=flat-square" />\n  &nbsp;&nbsp;\n  <img src="https://img.shields.io/badge/Status-Open%20to%20Work-22c55e?style=flat-square&logo=checkmarx&logoColor=white" />\n  &nbsp;&nbsp;\n  <img src="https://img.shields.io/badge/Based%20in-Remote%20%F0%9F%8C%8D-6366f1?style=flat-square" />\n</div>\n\n`;
       }
 
       if (state.toggles.typing && state.typingLines.length > 0) {
-        const linesParam = state.typingLines.map(l => encodeURIComponent(l)).join(";");
-        md += `<div align="center">\n  <img src="https://readme-typing-svg.demolab.com?font=Space+Grotesk&size=19&pause=1000&color=38BDF8&center=true&vCenter=true&width=750&lines=${linesParam}" alt="Typing SVG" />\n</div>\n\n`;
+        const lp = state.typingLines.map(l => encodeURIComponent(l)).join(";");
+        md += `<div align="center">\n  <img src="https://readme-typing-svg.demolab.com?font=Inter&weight=600&size=20&duration=3500&pause=800&color=38BDF8&center=true&vCenter=true&width=750&height=48&lines=${lp}" alt="Typing SVG"/>\n</div>\n\n`;
       }
 
-      md += `| 🚀 **Executive Summary** | 🛠️ **Production Toolchain** |\n|:---|:---|\n`;
-      md += `| **Title:** ${headline}<br/>**Status:** 🟢 Available for Strategic Roles<br/>**Focus:** \`${state.statusBio.working}\` | <a href="https://skillicons.dev"><img src="https://skillicons.dev/icons?i=${skillsStr}&perline=4" /></a> |\n\n`;
+      const sbBento = buildSocialBadges("for-the-badge");
+      if (sbBento.length > 0) {
+        md += `<div align="center">\n  ${sbBento.join(" &nbsp; ")}\n</div>\n\n`;
+      }
+      md += `---\n\n`;
+
+      if (state.toggles.statusBio) {
+        md += `## 🚀 About Me\n\n`;
+        md += `| &nbsp; | &nbsp; |\n|:---|:---|\n`;
+        md += `| 🎯 **Currently Building** | ${state.statusBio.working} |\n`;
+        md += `| 📚 **Deep Diving Into** | ${state.statusBio.learning} |\n`;
+        md += `| 💬 **Ask Me About** | ${state.statusBio.askMe} |\n`;
+        md += `| ⚡ **Fun Fact** | ${state.statusBio.funFact} |\n`;
+        md += `| 🟢 **Availability** | Open to strategic collaborations |\n\n`;
+        md += `---\n\n`;
+      }
+
+      if (state.selectedSkills.length > 0) {
+        md += `## 🛠️ Tech Stack & Toolchain\n\n`;
+        md += `<div align="center">\n  <a href="https://skillicons.dev">\n    <img src="https://skillicons.dev/icons?i=${skillsStr}&perline=10" />\n  </a>\n</div>\n\n`;
+        md += `---\n\n`;
+      }
 
       if (state.toggles.projects && state.projects.length > 0) {
-        md += `### 🍱 Featured Production Systems\n\n`;
+        md += `## 📦 Featured Projects\n\n`;
         md += buildProjectsMarkdown(u, arch, pStyle);
         md += `\n---\n\n`;
       }
 
       if (state.toggles.graphs) {
-        md += `### 📈 Activity & Contribution Wave\n\n`;
+        md += `## 📈 Contribution Activity\n\n`;
         md += buildGraphMarkdown(u, arch, gStyle);
+        md += `\n`;
       }
 
       if (state.toggles.stats) {
-        md += `| 📊 **Real-time Velocity** | ⚡ **Commit Streaks** |\n|:---|:---|\n`;
-        md += `| <img src="https://github-readme-stats.vercel.app/api?username=${u}&show_icons=true&theme=radical&hide_border=true&bg_color=0f172a&title_color=38bdf8&icon_color=818cf8&text_color=cbd5e1" width="100%" /> | <img src="https://github-readme-streak-stats.herokuapp.com/?user=${u}&theme=radical&hide_border=true&background=0f172a&ring=38bdf8&fire=818cf8&currStreakLabel=38bdf8" width="100%" /> |\n\n`;
+        md += `## 📊 GitHub Statistics\n\n`;
+        md += `<div align="center">\n`;
+        md += `  <img src="https://github-readme-stats.vercel.app/api?username=${u}&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0f172a&title_color=38bdf8&icon_color=818cf8&text_color=cbd5e1&rank_icon=github&include_all_commits=true" height="165" />\n`;
+        md += `  &nbsp;\n`;
+        md += `  <img src="https://github-readme-streak-stats.herokuapp.com/?user=${u}&theme=tokyonight&hide_border=true&background=0f172a&ring=38bdf8&fire=818cf8&currStreakLabel=38bdf8&sideLabels=cbd5e1" height="165" />\n`;
+        md += `</div>\n\n`;
+        md += `<div align="center">\n  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=${u}&layout=compact&theme=tokyonight&hide_border=true&bg_color=0f172a&title_color=38bdf8&text_color=cbd5e1&langs_count=8" height="140" />\n</div>\n\n`;
+        md += `---\n\n`;
       }
 
       if (state.toggles.viralBadge) {
-        md += `<div align="center">\n  <sub>🍱 Engineered with <a href="https://github.com/${u}/Github-overview-components">GitHub Profile Studio</a></sub>\n</div>\n`;
+        md += `<div align="center">\n  <sub>🍱 Engineered with <a href="https://github.com/Ratul-NotFound/Github-Overview-Maker">GitHub Profile Studio</a></sub>\n</div>\n`;
       }
       return md;
     }
 
-    // =========================================================
-    // 3. ⚔️ RPG QUEST MASTER (FANTASY GUILD / CHARACTER SHEET)
-    // =========================================================
     case "rpg": {
       let md = "";
-      md += `<div align="center">\n  <img src="https://capsule-render.vercel.app/api?type=soft&color=gradient&customColorList=2,6,12&height=200&section=header&text=⚜️%20${encodeURIComponent(name.toUpperCase())}%20⚜️&fontSize=32&fontColor=f59e0b&fontAlignY=42&desc=LEVEL%2099%20ARCHMAGE%20%7C%20${encodeURIComponent(headline.slice(0, 35))}&descAlignY=65&descSize=14&descColor=ec4899" width="100%"/>\n</div>\n\n`;
+      md += `<div align="center">\n  <img src="https://capsule-render.vercel.app/api?type=soft&color=gradient&customColorList=2,6,12&height=200&section=header&text=%E2%9A%9C%EF%B8%8F+${encodeURIComponent(name.toUpperCase())}+%E2%9A%9C%EF%B8%8F&fontSize=32&fontColor=fbbf24&fontAlignY=42&desc=LEVEL+99+ARCHMAGE+%7C+${encodeURIComponent(headline.slice(0,35))}&descAlignY=65&descSize=14&descColor=ec4899&animation=fadeIn" width="100%"/>\n</div>\n\n`;
+
+      if (state.toggles.typing && state.typingLines.length > 0) {
+        const lp = state.typingLines.map(l => encodeURIComponent(l)).join(";");
+        md += `<div align="center">\n  <img src="https://readme-typing-svg.demolab.com?font=Cinzel&size=18&duration=3000&pause=1200&color=FBBF24&center=true&vCenter=true&width=750&height=48&lines=${lp}" alt="RPG Typing"/>\n</div>\n\n`;
+      }
+
+      const sbRpg = buildSocialBadges("for-the-badge");
+      if (sbRpg.length > 0) {
+        md += `<div align="center">\n  ${sbRpg.join(" &nbsp; ")}\n</div>\n\n`;
+      }
+      md += `---\n\n`;
 
       md += "```yaml\n";
-      md += `⚜️ ADVENTURER'S GUILD // CHARACTER SHEET ⚜️\n`;
-      md += `  Player: ${name} (@${u})\n`;
-      md += `  Class : Senior Code Sorcerer & Systems Conjurer\n`;
-      md += `  HP    : [████████████████████] 9999/9999 (Mental Fortitude)\n`;
-      md += `  Mana  : [████████████████░░░░] 8500/9999 (Dark Roast Reserves)\n`;
-      md += `  EXP   : 94.8% -> Next Ascendant Architect Tier\n`;
-      md += `  Passives: [Clean Architecture +50%] [Sub-ms Latency +40%]\n`;
+      md += `╔══════════════════════════════════════════════════╗\n`;
+      md += `║       ⚜️  ADVENTURER'S GUILD REGISTRY  ⚜️        ║\n`;
+      md += `╠══════════════════════════════════════════════════╣\n`;
+      md += `║  PLAYER   : ${name.padEnd(36)} ║\n`;
+      md += `║  USERNAME : @${u.padEnd(35)} ║\n`;
+      md += `║  CLASS    : Senior Code Sorcerer & Infra Wizard  ║\n`;
+      md += `║  GUILD    : Open Source Brotherhood              ║\n`;
+      md += `╠══════════════════════════════════════════════════╣\n`;
+      md += `║  HP    ████████████████████ 9999/9999  [ MAX ]   ║\n`;
+      md += `║  MANA  ████████████████░░░░ 8500/9999  [ HI  ]   ║\n`;
+      md += `║  EXP   ████████████████████ SENIOR [ S-RANK ]    ║\n`;
+      md += `╠══════════════════════════════════════════════════╣\n`;
+      md += `║  PASSIVE I   : Clean Architecture Mastery  +50% ║\n`;
+      md += `║  PASSIVE II  : Sub-ms Latency Aura         +40% ║\n`;
+      md += `║  PASSIVE III : Infinite Coffee Endurance   +999  ║\n`;
+      md += `╚══════════════════════════════════════════════════╝\n`;
       md += "```\n\n";
+      md += `---\n\n`;
 
       if (state.toggles.statusBio) {
-        md += `### 📜 Guild Directives & Quests\n\n`;
-        md += `- ⚔️ **Main Mission:** ${state.statusBio.working}\n`;
-        md += `- 📖 **Ancient Tomes:** ${state.statusBio.learning}\n`;
-        md += `- 💬 **Sage Council:** ${state.statusBio.askMe}\n\n---\n\n`;
+        md += `## 📜 Active Guild Directives\n\n`;
+        md += `| Quest Type | Mission |\n|:---:|:---|\n`;
+        md += `| ⚔️ **Main Quest** | ${state.statusBio.working} |\n`;
+        md += `| 📖 **Ancient Tome Study** | ${state.statusBio.learning} |\n`;
+        md += `| 💬 **Sage's Council** | ${state.statusBio.askMe} |\n`;
+        md += `| ⚡ **Secret Scroll** | ${state.statusBio.funFact} |\n\n`;
+        md += `---\n\n`;
       }
 
       if (state.selectedSkills.length > 0) {
-        md += `### 🧙‍♂️ Spellbook & Relic Inventory\n\n<div align="center">\n  <a href="https://skillicons.dev"><img src="https://skillicons.dev/icons?i=${skillsStr}&perline=8" /></a>\n</div>\n\n---\n\n`;
+        md += `## 🧙‍♂️ Spellbook & Relic Inventory\n\n`;
+        md += `<div align="center">\n  <a href="https://skillicons.dev">\n    <img src="https://skillicons.dev/icons?i=${skillsStr}&perline=10" />\n  </a>\n</div>\n\n`;
+        md += `---\n\n`;
       }
 
       if (state.toggles.projects && state.projects.length > 0) {
-        md += `### ⚔️ Active Quest Log (Shipped Projects)\n\n`;
+        md += `## ⚔️ Completed Quest Log\n\n`;
         md += buildProjectsMarkdown(u, arch, pStyle);
         md += `\n---\n\n`;
       }
 
       if (state.toggles.graphs) {
-        md += `### 🌌 Astral Leyline Resonance\n\n`;
+        md += `## 🌌 Astral Leyline Resonance\n\n`;
         md += buildGraphMarkdown(u, arch, gStyle);
+        md += `\n`;
       }
 
       if (state.toggles.stats) {
-        md += `### 🏆 Guild Trophies & Battle Records\n\n<div align="center">\n  <img src="https://github-readme-stats.vercel.app/api?username=${u}&show_icons=true&theme=synthwave&hide_border=true&bg_color=100c1a&title_color=f59e0b&icon_color=ec4899&text_color=e2e8f0" height="165" />\n  <img src="https://github-readme-streak-stats.herokuapp.com/?user=${u}&theme=synthwave&hide_border=true&background=100c1a&ring=f59e0b&fire=ec4899&currStreakLabel=f59e0b" height="165" />\n</div>\n\n`;
+        md += `## 🏆 Guild Trophies & Battle Records\n\n`;
+        md += `<div align="center">\n  <img src="https://github-profile-trophy.vercel.app/?username=${u}&theme=onedark&no-frame=true&no-bg=true&margin-w=8&column=7" width="100%" />\n</div>\n\n`;
+        md += `<div align="center">\n`;
+        md += `  <img src="https://github-readme-stats.vercel.app/api?username=${u}&show_icons=true&theme=synthwave&hide_border=true&bg_color=100c1a&title_color=fbbf24&icon_color=ec4899&text_color=e2e8f0&rank_icon=github" height="160" />\n`;
+        md += `  &nbsp;\n`;
+        md += `  <img src="https://github-readme-streak-stats.herokuapp.com/?user=${u}&theme=synthwave&hide_border=true&background=100c1a&ring=fbbf24&fire=ec4899&currStreakLabel=fbbf24&sideLabels=e2e8f0" height="160" />\n`;
+        md += `</div>\n\n`;
+        md += `<div align="center">\n  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=${u}&layout=compact&theme=synthwave&hide_border=true&bg_color=100c1a&title_color=fbbf24&text_color=e2e8f0&langs_count=8" height="140" />\n</div>\n\n`;
       }
 
+      md += `<div align="center">\n  <img src="https://capsule-render.vercel.app/api?type=soft&color=gradient&customColorList=2,6,12&height=80&section=footer" width="100%"/>\n</div>\n\n`;
       if (state.toggles.viralBadge) {
-        md += `<div align="center">\n  <sub>⚜️ Forged at the Guild with <a href="https://github.com/${u}/Github-overview-components">GitHub Profile Studio</a></sub>\n</div>\n`;
+        md += `<div align="center">\n  <sub>⚜️ Forged at the Guild with <a href="https://github.com/Ratul-NotFound/Github-Overview-Maker">GitHub Profile Studio</a></sub>\n</div>\n`;
       }
       return md;
     }
 
-    // =========================================================
-    // 4. 👾 RETRO 8-BIT ARCADE (PIXEL ART / CABINET)
-    // =========================================================
     case "arcade8bit": {
       let md = "";
-      md += `<div align="center">\n  <img src="https://capsule-render.vercel.app/api?type=rect&color=gradient&customColorList=2,5,9&height=160&section=header&text=🕹️%20${encodeURIComponent(name.toUpperCase())}%20🕹️&fontSize=30&fontColor=facc15&fontAlignY=50" width="100%"/>\n</div>\n\n`;
+      md += `<div align="center">\n  <img src="https://capsule-render.vercel.app/api?type=rect&color=gradient&customColorList=2,5,9&height=160&section=header&text=%F0%9F%95%B9%EF%B8%8F+${encodeURIComponent(name.toUpperCase())}+%F0%9F%95%B9%EF%B8%8F&fontSize=30&fontColor=facc15&fontAlignY=50" width="100%"/>\n</div>\n\n`;
 
       if (state.toggles.typing && state.typingLines.length > 0) {
-        const linesParam = state.typingLines.map(l => encodeURIComponent(l)).join(";");
-        md += `<div align="center">\n  <img src="https://readme-typing-svg.demolab.com?font=Press+Start+2P&size=13&pause=1000&color=FACC15&center=true&vCenter=true&width=750&lines=INSERT+COIN+TO+CONTINUE;STAGE%3A+SENIOR+ARCHITECT;${linesParam}" alt="8bit typing" />\n</div>\n\n`;
+        const lp = state.typingLines.map(l => encodeURIComponent(l)).join(";");
+        md += `<div align="center">\n  <img src="https://readme-typing-svg.demolab.com?font=Press+Start+2P&size=13&duration=3000&pause=1200&color=FACC15&center=true&vCenter=true&width=750&height=55&lines=INSERT+COIN+TO+CONTINUE...;${lp}" alt="8bit typing"/>\n</div>\n\n`;
       }
 
+      const sbArcade = buildSocialBadges("flat-square");
+      if (sbArcade.length > 0) {
+        md += `<div align="center">\n  ${sbArcade.join(" &nbsp; ")}\n</div>\n\n`;
+      }
+      md += `---\n\n`;
+
       md += "```\n";
-      md += " +---------------------------------------------------------+\n";
-      md += " |               ARCADE HIGH SCORE LEADERBOARD             |\n";
-      md += " +---------------------------------------------------------+\n";
-      md += ` | [RANK 1] ${name.toUpperCase().padEnd(16)} SCORE: 999,990  [SENIOR_STAGE] |\n`;
-      md += " | [RANK 2] GITHUB_BOT      SCORE: 850,000  [AUTO_RUNNER]  |\n";
-      md += " | [RANK 3] LINUS_T         SCORE: 740,000  [KERNEL_MASTER]|\n";
-      md += " +---------------------------------------------------------+\n";
+      md += `┌─────────────────────────────────────────────────────────────┐\n`;
+      md += `│                🕹️  ARCADE HIGH SCORE BOARD  🕹️               │\n`;
+      md += `│─────────────────────────────────────────────────────────────│\n`;
+      md += `│  RANK  │  PLAYER                     │  SCORE    │  TIER    │\n`;
+      md += `│─────────────────────────────────────────────────────────────│\n`;
+      md += `│  #1    │  ${name.toUpperCase().slice(0,25).padEnd(25)}  │  999,999  │  ★ LEGEND │\n`;
+      md += `│  #2    │  GITHUB_COPILOT              │  850,000  │  ★ PRO   │\n`;
+      md += `│  #3    │  LINUS_TORVALDS              │  740,000  │  ★ MSTR  │\n`;
+      md += `│─────────────────────────────────────────────────────────────│\n`;
+      md += `│            ► PRESS START TO JOIN THE LEADERBOARD ◄          │\n`;
+      md += `└─────────────────────────────────────────────────────────────┘\n`;
       md += "```\n\n";
+      md += `---\n\n`;
+
+      if (state.toggles.statusBio) {
+        md += `## 🎮 Player Status\n\n`;
+        md += "```\n";
+        md += `  ┌──────────────────────────────────────────────┐\n`;
+        md += `  │  CURRENT MISSION  : ${state.statusBio.working.slice(0,24).padEnd(24)}  │\n`;
+        md += `  │  SKILL TRAINING   : ${state.statusBio.learning.slice(0,24).padEnd(24)}  │\n`;
+        md += `  │  PLAYER HOTLINE   : ${state.statusBio.askMe.slice(0,24).padEnd(24)}  │\n`;
+        md += `  │  CHEAT CODE       : ${state.statusBio.funFact.slice(0,24).padEnd(24)}  │\n`;
+        md += `  └──────────────────────────────────────────────┘\n`;
+        md += "```\n\n";
+        md += `---\n\n`;
+      }
 
       if (state.selectedSkills.length > 0) {
-        md += `### 👾 8-Bit Power-Ups & Inventory\n\n<div align="center">\n  <a href="https://skillicons.dev"><img src="https://skillicons.dev/icons?i=${skillsStr}&perline=8" /></a>\n</div>\n\n`;
+        md += `## 👾 Power-Ups & Equipped Items\n\n`;
+        md += `<div align="center">\n  <a href="https://skillicons.dev">\n    <img src="https://skillicons.dev/icons?i=${skillsStr}&perline=10" />\n  </a>\n</div>\n\n`;
+        md += `---\n\n`;
       }
 
       if (state.toggles.projects && state.projects.length > 0) {
-        md += `### 🕹️ Cleared Arcade Stages (Projects)\n\n`;
+        md += `## 🕹️ Cleared Stages (Shipped Projects)\n\n`;
         md += buildProjectsMarkdown(u, arch, pStyle);
         md += `\n---\n\n`;
       }
 
       if (state.toggles.graphs) {
+        md += `## 📊 Pixel Activity Stream\n\n`;
         md += buildGraphMarkdown(u, arch, gStyle);
+        md += `\n`;
       }
 
       if (state.toggles.stats) {
-        md += `<div align="center">\n  <img src="https://github-readme-stats.vercel.app/api?username=${u}&show_icons=true&theme=synthwave&hide_border=true&bg_color=0d0820&title_color=facc15&icon_color=ff007f&text_color=e2e8f0" height="165" />\n  <img src="https://github-readme-streak-stats.herokuapp.com/?user=${u}&theme=synthwave&hide_border=true&background=0d0820&ring=facc15&fire=ff007f&currStreakLabel=facc15" height="165" />\n</div>\n\n`;
+        md += `<div align="center">\n  <img src="https://github-profile-trophy.vercel.app/?username=${u}&theme=radical&no-frame=true&no-bg=true&margin-w=8&column=7" width="100%" />\n</div>\n\n`;
+        md += `<div align="center">\n`;
+        md += `  <img src="https://github-readme-stats.vercel.app/api?username=${u}&show_icons=true&theme=radical&hide_border=true&bg_color=0d0820&title_color=facc15&icon_color=ff007f&text_color=e2e8f0&rank_icon=github" height="160" />\n`;
+        md += `  &nbsp;\n`;
+        md += `  <img src="https://github-readme-streak-stats.herokuapp.com/?user=${u}&theme=radical&hide_border=true&background=0d0820&ring=facc15&fire=ff007f&currStreakLabel=facc15&sideLabels=e2e8f0" height="160" />\n`;
+        md += `</div>\n\n`;
+        md += `<div align="center">\n  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=${u}&layout=compact&theme=radical&hide_border=true&bg_color=0d0820&title_color=facc15&text_color=e2e8f0&langs_count=8" height="140" />\n</div>\n\n`;
       }
 
       if (state.toggles.viralBadge) {
-        md += `<div align="center">\n  <sub>👾 INSERT COIN • Made with <a href="https://github.com/${u}/Github-overview-components">GitHub Profile Studio</a></sub>\n</div>\n`;
+        md += `<div align="center">\n  <sub>👾 INSERT COIN • Made with <a href="https://github.com/Ratul-NotFound/Github-Overview-Maker">GitHub Profile Studio</a></sub>\n</div>\n`;
       }
       return md;
     }
 
-    // =========================================================
-    // 5. 🌸 KAWAII PASTEL SAKURA (COZY ANIME LOFT)
-    // =========================================================
     case "kawaii": {
       let md = "";
-      md += `<div align="center">\n  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=34,36,44&height=200&section=header&text=🌸%20${encodeURIComponent(name)}%20🌸&fontSize=34&fontColor=ffffff&fontAlignY=40&desc=(%E3%81%A5%EF%BD%A1%E2%97%94%E2%80%BF%E2%80%BF%E2%97%94%EF%BD%A1)%E3%81%A5%20%E2%9C%A7%20${encodeURIComponent(headline.slice(0, 35))}&descAlignY=65&descSize=14&descColor=f472b6" width="100%"/>\n</div>\n\n`;
-
-      md += `<div align="center">\n  <p>☆━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━☆</p>\n  <p><em>🌸 Welcome to my cozy digital loft! Sip some matcha and explore my builds (◕‿◕✿)</em></p>\n  <p>☆━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━☆</p>\n</div>\n\n`;
+      md += `<div align="center">\n  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=34,36,44&height=200&section=header&text=%F0%9F%8C%B8+${encodeURIComponent(name)}+%F0%9F%8C%B8&fontSize=34&fontColor=ffffff&fontAlignY=40&desc=(%E3%81%A5%EF%BD%A1%E2%97%94%E2%80%BF%E2%80%BF%E2%97%94%EF%BD%A1)%E3%81%A5+%E2%9C%A7+${encodeURIComponent(headline.slice(0,30))}&descAlignY=65&descSize=14&descColor=f9a8d4&animation=twinkling" width="100%"/>\n</div>\n\n`;
+      md += `<div align="center">\n\n✿ ─── ─── ─── ─── ─── ─── ─── ─── ─── ✿\n\n*🌸 Welcome to my cozy digital garden! I build with heart ♡*\n\n✿ ─── ─── ─── ─── ─── ─── ─── ─── ─── ✿\n\n</div>\n\n`;
 
       if (state.toggles.typing && state.typingLines.length > 0) {
-        const linesParam = state.typingLines.map(l => encodeURIComponent(l)).join(";");
-        md += `<div align="center">\n  <img src="https://readme-typing-svg.demolab.com?font=Quicksand&size=19&pause=1000&color=F472B6&center=true&vCenter=true&width=750&lines=Welcome+to+my+cozy+corner+%E2%9C%A8;${linesParam}" alt="Kawaii Typing" />\n</div>\n\n`;
+        const lp = state.typingLines.map(l => encodeURIComponent(l)).join(";");
+        md += `<div align="center">\n  <img src="https://readme-typing-svg.demolab.com?font=Quicksand&weight=600&size=20&duration=3000&pause=1000&color=F472B6&center=true&vCenter=true&width=750&height=48&lines=Welcome+to+my+cozy+corner+%E2%9C%A8;${lp}" alt="Kawaii Typing"/>\n</div>\n\n`;
       }
 
+      const sbKawaii = buildSocialBadges("for-the-badge");
+      if (sbKawaii.length > 0) {
+        md += `<div align="center">\n  ${sbKawaii.join(" &nbsp; ")}\n</div>\n\n`;
+      }
+      md += `---\n\n`;
+
       if (state.toggles.statusBio) {
-        md += `### 🍵 Cozy Routine & Tea Station\n\n`;
-        md += `- 🌸 **Brewing:** ${state.statusBio.working}\n`;
-        md += `- ✨ **Curiosity:** ${state.statusBio.learning}\n`;
-        md += `- 🎀 **Say Hi:** ${state.statusBio.askMe}\n\n---\n\n`;
+        md += `## 🍵 Cozy Corner\n\n`;
+        md += `> *${state.statusBio.funFact}* ✨\n\n`;
+        md += `| ✿ | |\n|:---:|:---|\n`;
+        md += `| 🌸 **Brewing** | ${state.statusBio.working} |\n`;
+        md += `| 📖 **Reading** | ${state.statusBio.learning} |\n`;
+        md += `| 💌 **Say Hi!** | ${state.statusBio.askMe} |\n\n`;
+        md += `---\n\n`;
       }
 
       if (state.selectedSkills.length > 0) {
-        md += `### 🧁 Cozy Toolkit & Soft Arsenal\n\n<div align="center">\n  <a href="https://skillicons.dev"><img src="https://skillicons.dev/icons?i=${skillsStr}&perline=8" /></a>\n</div>\n\n---\n\n`;
+        md += `## 🧁 Cozy Toolkit\n\n`;
+        md += `<div align="center">\n  <a href="https://skillicons.dev">\n    <img src="https://skillicons.dev/icons?i=${skillsStr}&perline=10" />\n  </a>\n</div>\n\n`;
+        md += `---\n\n`;
       }
 
       if (state.toggles.projects && state.projects.length > 0) {
-        md += `### 🌷 Sakura Garden Projects\n\n`;
+        md += `## 🌷 Sakura Garden Projects\n\n`;
         md += buildProjectsMarkdown(u, arch, pStyle);
         md += `\n---\n\n`;
       }
 
       if (state.toggles.graphs) {
+        md += `## 🌸 Contribution Blossoms\n\n`;
         md += buildGraphMarkdown(u, arch, gStyle);
+        md += `\n`;
       }
 
       if (state.toggles.stats) {
-        md += `### 🎀 Sweet Statistics & Heartbeats\n\n<div align="center">\n  <img src="https://github-readme-stats.vercel.app/api?username=${u}&show_icons=true&theme=dracula&hide_border=true&bg_color=160e20&title_color=f472b6&icon_color=c084fc&text_color=fbcfe8" height="165" />\n  <img src="https://github-readme-streak-stats.herokuapp.com/?user=${u}&theme=dracula&hide_border=true&background=160e20&ring=f472b6&fire=c084fc&currStreakLabel=f472b6" height="165" />\n</div>\n\n`;
+        md += `## 🎀 Sweet Statistics\n\n`;
+        md += `<div align="center">\n`;
+        md += `  <img src="https://github-readme-stats.vercel.app/api?username=${u}&show_icons=true&theme=dracula&hide_border=true&bg_color=160e20&title_color=f472b6&icon_color=c084fc&text_color=fbcfe8&rank_icon=github" height="160" />\n`;
+        md += `  &nbsp;\n`;
+        md += `  <img src="https://github-readme-streak-stats.herokuapp.com/?user=${u}&theme=dracula&hide_border=true&background=160e20&ring=f472b6&fire=c084fc&currStreakLabel=f472b6&sideLabels=fbcfe8" height="160" />\n`;
+        md += `</div>\n\n`;
+        md += `<div align="center">\n  <img src="https://github-profile-trophy.vercel.app/?username=${u}&theme=dracula&no-frame=true&no-bg=true&margin-w=8&column=7" width="100%" />\n</div>\n\n`;
+        md += `<div align="center">\n  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=${u}&layout=compact&theme=dracula&hide_border=true&bg_color=160e20&title_color=f472b6&text_color=fbcfe8&langs_count=8" height="140" />\n</div>\n\n`;
       }
 
       md += `<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=34,36,44&height=80&section=footer" width="100%"/>\n\n`;
       if (state.toggles.viralBadge) {
-        md += `<div align="center">\n  <sub>💖 Crafted with love on <a href="https://github.com/${u}/Github-overview-components">GitHub Profile Studio</a></sub>\n</div>\n`;
+        md += `<div align="center">\n  <sub>💖 Crafted with love using <a href="https://github.com/Ratul-NotFound/Github-Overview-Maker">GitHub Profile Studio</a></sub>\n</div>\n`;
       }
       return md;
     }
 
-    // =========================================================
-    // 6. 🌌 COSMIC DEEP SPACE (ASTRAL NEBULA ODYSSEY)
-    // =========================================================
     case "aurora": {
       let md = "";
-      md += `<div align="center">\n  <img src="https://capsule-render.vercel.app/api?type=soft&color=gradient&customColorList=20,24,26,28&height=200&section=header&text=✦%20${encodeURIComponent(name.toUpperCase())}%20✦&fontSize=34&fontColor=e0e7ff&fontAlignY=38&desc=INTERSTELLAR%20COMMANDER%20%7C%20${encodeURIComponent(headline.slice(0, 35))}&descAlignY=62&descSize=14&descColor=38bdf8" width="100%"/>\n</div>\n\n`;
+      md += `<div align="center">\n  <img src="https://capsule-render.vercel.app/api?type=soft&color=gradient&customColorList=20,24,26,28&height=200&section=header&text=%E2%9C%A6+${encodeURIComponent(name.toUpperCase())}+%E2%9C%A6&fontSize=36&fontColor=e0e7ff&fontAlignY=40&desc=INTERSTELLAR+COMMANDER+%7C+${encodeURIComponent(headline.slice(0,35))}&descAlignY=64&descSize=14&descColor=818cf8&animation=fadeIn" width="100%"/>\n</div>\n\n`;
 
-      if (state.toggles.typing && state.typingLines.length > 0) {
-        const linesParam = state.typingLines.map(l => encodeURIComponent(l)).join(";");
-        md += `<div align="center">\n  <img src="https://readme-typing-svg.demolab.com?font=Space+Grotesk&size=19&pause=1000&color=A855F7&center=true&vCenter=true&width=750&lines=${linesParam}" alt="Typing SVG" />\n</div>\n\n`;
+      if (state.toggles.views) {
+        md += `<div align="center">\n  <img src="https://komarev.com/ghpvc/?username=${u}&label=STARSHIP+VISITS&color=818cf8&style=flat-square" />\n  &nbsp;&nbsp;\n  <img src="https://img.shields.io/badge/Status-Exploring%20the%20Cosmos-4f46e5?style=flat-square" />\n</div>\n\n`;
       }
 
+      if (state.toggles.typing && state.typingLines.length > 0) {
+        const lp = state.typingLines.map(l => encodeURIComponent(l)).join(";");
+        md += `<div align="center">\n  <img src="https://readme-typing-svg.demolab.com?font=Space+Grotesk&weight=600&size=20&duration=3500&pause=1000&color=818CF8&center=true&vCenter=true&width=750&height=48&lines=${lp}" alt="Cosmic Typing"/>\n</div>\n\n`;
+      }
+
+      const sbAurora = buildSocialBadges("for-the-badge");
+      if (sbAurora.length > 0) {
+        md += `<div align="center">\n  ${sbAurora.join(" &nbsp; ")}\n</div>\n\n`;
+      }
+      md += `---\n\n`;
+
       if (state.toggles.statusBio) {
-        md += `### 🪐 Starship Coordinates & Focus\n\n`;
-        md += `- 🚀 **Current Warp Sector:** ${state.statusBio.working}\n`;
-        md += `- ⭐ **Astral Research:** ${state.statusBio.learning}\n`;
-        md += `- 📡 **Comm Frequencies:** ${state.statusBio.askMe}\n\n---\n\n`;
+        md += `## 🪐 Starship Mission Log\n\n`;
+        md += "```\n";
+        md += `  ╔══════════════════════════════════════════════════╗\n`;
+        md += `  ║  STARDATE: ${new Date().toISOString().split('T')[0]}         SECTOR: ACTIVE ║\n`;
+        md += `  ╠══════════════════════════════════════════════════╣\n`;
+        md += `  ║  WARP SECTOR  : ${state.statusBio.working.slice(0,31).padEnd(31)}  ║\n`;
+        md += `  ║  ASTRAL STUDY : ${state.statusBio.learning.slice(0,31).padEnd(31)}  ║\n`;
+        md += `  ║  COMM CHANNEL : ${state.statusBio.askMe.slice(0,31).padEnd(31)}  ║\n`;
+        md += `  ║  SHIP FUEL    : ${state.statusBio.funFact.slice(0,31).padEnd(31)}  ║\n`;
+        md += `  ╚══════════════════════════════════════════════════╝\n`;
+        md += "```\n\n";
+        md += `---\n\n`;
       }
 
       if (state.selectedSkills.length > 0) {
-        md += `### 🌌 Constellation Tech Matrix\n\n<div align="center">\n  <a href="https://skillicons.dev"><img src="https://skillicons.dev/icons?i=${skillsStr}&perline=8" /></a>\n</div>\n\n---\n\n`;
+        md += `## 🌌 Constellation Tech Matrix\n\n`;
+        md += `<div align="center">\n  <a href="https://skillicons.dev">\n    <img src="https://skillicons.dev/icons?i=${skillsStr}&perline=10" />\n  </a>\n</div>\n\n`;
+        md += `---\n\n`;
       }
 
       if (state.toggles.projects && state.projects.length > 0) {
-        md += `### 🛰️ Orbital Satellites & Probes (Projects)\n\n`;
+        md += `## 🛰️ Orbital Missions & Satellites\n\n`;
         md += buildProjectsMarkdown(u, arch, pStyle);
         md += `\n---\n\n`;
       }
 
       if (state.toggles.graphs) {
-        md += `### 🛰️ Pulsar Telemetry Wave\n\n`;
+        md += `## 🌠 Pulsar Activity Wave\n\n`;
         md += buildGraphMarkdown(u, arch, gStyle);
+        md += `\n`;
       }
 
       if (state.toggles.stats) {
-        md += `<div align="center">\n  <img src="https://github-readme-stats.vercel.app/api?username=${u}&show_icons=true&theme=tokyonight&hide_border=true&bg_color=04020f&title_color=a855f7&icon_color=38bdf8&text_color=e0e7ff" height="165" />\n  <img src="https://github-readme-streak-stats.herokuapp.com/?user=${u}&theme=tokyonight&hide_border=true&background=04020f&ring=a855f7&fire=38bdf8&currStreakLabel=a855f7" height="165" />\n</div>\n\n`;
+        md += `## 🔭 Deep Space Telemetry\n\n`;
+        md += `<div align="center">\n  <img src="https://github-profile-trophy.vercel.app/?username=${u}&theme=onedark&no-frame=true&no-bg=true&margin-w=8&column=7" width="100%" />\n</div>\n\n`;
+        md += `<div align="center">\n`;
+        md += `  <img src="https://github-readme-stats.vercel.app/api?username=${u}&show_icons=true&theme=tokyonight&hide_border=true&bg_color=04020f&title_color=818cf8&icon_color=38bdf8&text_color=e0e7ff&rank_icon=github" height="160" />\n`;
+        md += `  &nbsp;\n`;
+        md += `  <img src="https://github-readme-streak-stats.herokuapp.com/?user=${u}&theme=tokyonight&hide_border=true&background=04020f&ring=818cf8&fire=38bdf8&currStreakLabel=818cf8&sideLabels=e0e7ff" height="160" />\n`;
+        md += `</div>\n\n`;
+        md += `<div align="center">\n  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=${u}&layout=compact&theme=tokyonight&hide_border=true&bg_color=04020f&title_color=818cf8&text_color=e0e7ff&langs_count=8" height="140" />\n</div>\n\n`;
       }
 
       md += `<img src="https://capsule-render.vercel.app/api?type=soft&color=gradient&customColorList=20,24,26,28&height=80&section=footer" width="100%"/>\n\n`;
       if (state.toggles.viralBadge) {
-        md += `<div align="center">\n  <sub>✦ Starlit with <a href="https://github.com/${u}/Github-overview-components">GitHub Profile Studio</a></sub>\n</div>\n`;
+        md += `<div align="center">\n  <sub>✦ Launched into orbit with <a href="https://github.com/Ratul-NotFound/Github-Overview-Maker">GitHub Profile Studio</a></sub>\n</div>\n`;
       }
       return md;
     }
 
-    // =========================================================
-    // 7. 🖤 SWISS BAUHAUS MINIMAL (ARCHITECTURAL MONOCHROME)
-    // =========================================================
     case "minimal": {
       let md = "";
       md += `<h1 align="center">${name.toUpperCase()}</h1>\n`;
-      md += `<p align="center"><strong>01 / IDENTITY</strong> — <em>${headline}</em></p>\n\n`;
+      md += `<p align="center"><strong>${headline}</strong></p>\n\n`;
 
-      const socialPills = [];
-      if (state.socials.linkedin) socialPills.push(`[LinkedIn](https://linkedin.com/in/${state.socials.linkedin})`);
-      if (state.socials.twitter) socialPills.push(`[Twitter/X](https://x.com/${state.socials.twitter})`);
-      if (state.socials.portfolio) socialPills.push(`[Website](${state.socials.portfolio})`);
-      if (state.socials.email) socialPills.push(`[Email](mailto:${state.socials.email})`);
-      if (socialPills.length > 0) {
-        md += `<p align="center">${socialPills.join(" • ")}</p>\n\n<hr style="border: 0; height: 1px; background: #333;" />\n\n`;
-      }
-
-      if (state.toggles.statusBio) {
-        md += `### 02 / DIRECTIVES\n\n`;
-        md += `* **Focus:** ${state.statusBio.working}\n`;
-        md += `* **Research:** ${state.statusBio.learning}\n`;
-        md += `* **Inquiries:** ${state.statusBio.askMe}\n\n`;
-      }
-
-      if (state.selectedSkills.length > 0) {
-        md += `### 03 / ARSENAL\n\n`;
-        const pills = state.selectedSkills.map(s => `<img src="https://img.shields.io/badge/${s.toUpperCase()}-000000?style=flat-square&logo=${s}&logoColor=white" />`).join(" ");
-        md += `<div align="center">\n  ${pills}\n</div>\n\n<br/>\n\n`;
-      }
-
-      if (state.toggles.projects && state.projects.length > 0) {
-        md += `### 04 / SELECTED WORKS\n\n`;
-        md += buildProjectsMarkdown(u, arch, pStyle);
-        md += `\n<hr style="border: 0; height: 1px; background: #222;" />\n\n`;
-      }
-
-      if (state.toggles.graphs) {
-        md += `### 05 / ACTIVITY DYNAMICS\n\n`;
-        md += buildGraphMarkdown(u, arch, gStyle);
-      }
-
-      if (state.toggles.stats) {
-        md += `### 06 / METRICS\n\n`;
-        md += `<div align="center">\n  <img src="https://github-readme-stats.vercel.app/api?username=${u}&show_icons=true&theme=dark&hide_border=true&bg_color=000000&title_color=ffffff&icon_color=ffffff&text_color=888888" height="150" />\n  <img src="https://github-readme-streak-stats.herokuapp.com/?user=${u}&theme=dark&hide_border=true&background=000000&ring=ffffff&fire=ffffff&currStreakLabel=ffffff" height="150" />\n</div>\n\n`;
-      }
-
-      if (state.toggles.viralBadge) {
-        md += `<div align="center">\n  <sub>Built with <a href="https://github.com/${u}/Github-overview-components">GitHub Profile Studio</a></sub>\n</div>\n`;
-      }
-      return md;
-    }
-
-    // =========================================================
-    // 8. ⚡ CYBERPUNK HUD (DEFAULT NETRUNNER TELEMETRY)
-    // =========================================================
-    default: {
-      let md = "";
       if (state.toggles.views) {
-        md += `<div align="center">\n  <img src="https://komarev.com/ghpvc/?username=${u}&label=CYBER_ACCESS_PORTAL&color=00f0ff&style=for-the-badge" />\n</div>\n\n`;
-      }
-
-      if (state.toggles.header) {
-        md += `<div align="center">\n  <img src="https://capsule-render.vercel.app/api?type=waving&color=auto&customColorList=1,13,24&height=200&section=header&text=${encodeURIComponent(name.toUpperCase())}&fontSize=34&fontColor=ffffff&fontAlignY=38&desc=NEURAL%20ARCHITECT%20%7C%20${encodeURIComponent(headline.slice(0, 40))}&descAlignY=62&descSize=14&descColor=00f0ff" width="100%"/>\n</div>\n\n`;
+        md += `<p align="center">\n  <img src="https://komarev.com/ghpvc/?username=${u}&label=Profile+Views&color=000000&style=flat-square" />\n  &nbsp;\n  <img src="https://img.shields.io/badge/Status-Open%20to%20Work-000000?style=flat-square" />\n</p>\n\n`;
       }
 
       if (state.toggles.typing && state.typingLines.length > 0) {
-        const linesParam = state.typingLines.map(l => encodeURIComponent(l)).join(";");
-        md += `<div align="center">\n  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=19&pause=1000&color=00F0FF&center=true&vCenter=true&width=750&lines=${linesParam}" alt="Typing SVG" />\n</div>\n\n`;
+        const lp = state.typingLines.map(l => encodeURIComponent(l)).join(";");
+        md += `<p align="center">\n  <img src="https://readme-typing-svg.demolab.com?font=IBM+Plex+Mono&size=16&duration=3000&pause=1000&color=000000&center=true&vCenter=true&width=750&height=40&lines=${lp}" alt="Minimal Typing"/>\n</p>\n\n`;
       }
 
-      const socialBadges = [];
-      if (state.socials.linkedin) socialBadges.push(`<a href="https://linkedin.com/in/${state.socials.linkedin}" target="_blank"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" /></a>`);
-      if (state.socials.twitter) socialBadges.push(`<a href="https://x.com/${state.socials.twitter}" target="_blank"><img src="https://img.shields.io/badge/Twitter/X-000000?style=for-the-badge&logo=x&logoColor=white" /></a>`);
-      if (state.socials.discord) socialBadges.push(`<a href="https://discord.com" target="_blank"><img src="https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white" /></a>`);
-      if (socialBadges.length > 0) md += `<p align="center">\n  ${socialBadges.join("\n  ")}\n</p>\n\n---\n\n`;
+      const pillsMinimal = [];
+      if (state.socials.linkedin)  pillsMinimal.push(`[LinkedIn](https://linkedin.com/in/${state.socials.linkedin})`);
+      if (state.socials.twitter)   pillsMinimal.push(`[X / Twitter](https://x.com/${state.socials.twitter})`);
+      if (state.socials.portfolio) pillsMinimal.push(`[Website](${state.socials.portfolio})`);
+      if (state.socials.email)     pillsMinimal.push(`[Email](mailto:${state.socials.email})`);
+      if (pillsMinimal.length > 0) {
+        md += `<p align="center">${pillsMinimal.join(" &nbsp;·&nbsp; ")}</p>\n\n`;
+      }
+      md += `---\n\n`;
 
       if (state.toggles.statusBio) {
-        md += `### ⚡ Neural Telemetry & Directives\n\n`;
-        md += `- 🛰️ **Active Neural Core:** ${state.statusBio.working}\n`;
-        md += `- 🧠 **Matrix Integration:** ${state.statusBio.learning}\n`;
-        md += `- ⚡ **Subroutine Queries:** ${state.statusBio.askMe}\n\n---\n\n`;
+        md += `### 01 / FOCUS\n\n`;
+        md += `- **Currently:** ${state.statusBio.working}\n`;
+        md += `- **Researching:** ${state.statusBio.learning}\n`;
+        md += `- **Inquiries:** ${state.statusBio.askMe}\n`;
+        md += `- **Note:** ${state.statusBio.funFact}\n\n`;
+        md += `---\n\n`;
       }
 
       if (state.selectedSkills.length > 0) {
-        md += `### ⚡ Cyberware Specs & Neural Protocols\n\n<div align="center">\n  <a href="https://skillicons.dev"><img src="https://skillicons.dev/icons?i=${skillsStr}&perline=8" /></a>\n</div>\n\n---\n\n`;
+        md += `### 02 / TOOLSET\n\n`;
+        md += `<div align="center">\n  <a href="https://skillicons.dev">\n    <img src="https://skillicons.dev/icons?i=${skillsStr}&perline=10" />\n  </a>\n</div>\n\n`;
+        md += `---\n\n`;
       }
 
       if (state.toggles.projects && state.projects.length > 0) {
-        md += `### 🚀 Active Netrunner Operations\n\n`;
+        md += `### 03 / SELECTED WORKS\n\n`;
         md += buildProjectsMarkdown(u, arch, pStyle);
         md += `\n---\n\n`;
       }
 
       if (state.toggles.graphs) {
-        md += `### 📊 Real-time Cybernet Telemetry\n\n`;
+        md += `### 04 / ACTIVITY\n\n`;
         md += buildGraphMarkdown(u, arch, gStyle);
+        md += `\n`;
       }
 
       if (state.toggles.stats) {
-        md += `<div align="center">\n  <img src="https://github-readme-stats.vercel.app/api?username=${u}&show_icons=true&theme=tokyonight&hide_border=true&bg_color=050811&title_color=00f0ff&icon_color=ff0055&text_color=94a3b8" height="165" />\n  <img src="https://github-readme-streak-stats.herokuapp.com/?user=${u}&theme=tokyonight&hide_border=true&background=050811&ring=00f0ff&fire=ff0055&currStreakLabel=00f0ff" height="165" />\n</div>\n\n`;
+        md += `### 05 / METRICS\n\n`;
+        md += `<div align="center">\n`;
+        md += `  <img src="https://github-readme-stats.vercel.app/api?username=${u}&show_icons=true&theme=default&hide_border=true&bg_color=ffffff&title_color=000000&icon_color=000000&text_color=555555&rank_icon=github" height="155" />\n`;
+        md += `  &nbsp;\n`;
+        md += `  <img src="https://github-readme-streak-stats.herokuapp.com/?user=${u}&theme=default&hide_border=true&background=ffffff&ring=000000&fire=333333&currStreakLabel=000000&sideLabels=555555" height="155" />\n`;
+        md += `</div>\n\n`;
+        md += `<div align="center">\n  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=${u}&layout=compact&theme=default&hide_border=true&bg_color=ffffff&title_color=000000&text_color=555555&langs_count=8" height="140" />\n</div>\n\n`;
+        md += `---\n\n`;
+      }
+
+      if (state.toggles.viralBadge) {
+        md += `<p align="center"><sub>Built with <a href="https://github.com/Ratul-NotFound/Github-Overview-Maker">GitHub Profile Studio</a></sub></p>\n`;
+      }
+      return md;
+    }
+
+    default: {
+      let md = "";
+      if (state.toggles.views) {
+        md += `<div align="center">\n  <img src="https://komarev.com/ghpvc/?username=${u}&label=CYBER+ACCESS+PORTAL&color=00f0ff&style=for-the-badge" alt="Profile Views" />\n</div>\n\n`;
+      }
+
+      if (state.toggles.header) {
+        md += `<div align="center">\n  <img src="https://capsule-render.vercel.app/api?type=waving&color=auto&customColorList=1,13,24&height=220&section=header&text=${encodeURIComponent(name.toUpperCase())}&fontSize=36&fontColor=ffffff&fontAlignY=38&desc=NEURAL+ARCHITECT+%7C+${encodeURIComponent(headline.slice(0,40))}&descAlignY=62&descSize=15&descColor=00f0ff&animation=fadeIn" width="100%"/>\n</div>\n\n`;
+      }
+
+      if (state.toggles.typing && state.typingLines.length > 0) {
+        const lp = state.typingLines.map(l => encodeURIComponent(l)).join(";");
+        md += `<div align="center">\n  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=20&duration=3000&pause=1000&color=00F0FF&center=true&vCenter=true&width=750&height=48&lines=${lp}" alt="Typing SVG"/>\n</div>\n\n`;
+      }
+
+      const sbCyber = buildSocialBadges("for-the-badge");
+      if (sbCyber.length > 0) {
+        md += `<div align="center">\n  ${sbCyber.join(" &nbsp; ")}\n</div>\n\n`;
+      }
+      md += `---\n\n`;
+
+      if (state.toggles.statusBio) {
+        md += `## ⚡ Neural Telemetry & Directives\n\n`;
+        md += `| Signal | Feed |\n|:---:|:---|\n`;
+        md += `| 🛰️ **Active Neural Core** | ${state.statusBio.working} |\n`;
+        md += `| 🧠 **Matrix Integration** | ${state.statusBio.learning} |\n`;
+        md += `| ⚡ **Subroutine Queries** | ${state.statusBio.askMe} |\n`;
+        md += `| 🔮 **System Override** | ${state.statusBio.funFact} |\n\n`;
+        md += `---\n\n`;
+      }
+
+      if (state.selectedSkills.length > 0) {
+        md += `## ⚡ Cyberware Specs & Neural Protocols\n\n`;
+        md += `<div align="center">\n  <a href="https://skillicons.dev">\n    <img src="https://skillicons.dev/icons?i=${skillsStr}&perline=10" />\n  </a>\n</div>\n\n`;
+        md += `---\n\n`;
+      }
+
+      if (state.toggles.projects && state.projects.length > 0) {
+        md += `## 🚀 Active Netrunner Operations\n\n`;
+        md += buildProjectsMarkdown(u, arch, pStyle);
+        md += `\n---\n\n`;
+      }
+
+      if (state.toggles.graphs) {
+        md += `## 📊 Real-time Cybernet Telemetry\n\n`;
+        md += buildGraphMarkdown(u, arch, gStyle);
+        md += `\n`;
+      }
+
+      if (state.toggles.stats) {
+        md += `## 🖥️ System Performance Metrics\n\n`;
+        md += `<div align="center">\n  <img src="https://github-profile-trophy.vercel.app/?username=${u}&theme=radical&no-frame=true&no-bg=true&margin-w=8&column=7" width="100%" />\n</div>\n\n`;
+        md += `<div align="center">\n`;
+        md += `  <img src="https://github-readme-stats.vercel.app/api?username=${u}&show_icons=true&theme=tokyonight&hide_border=true&bg_color=050811&title_color=00f0ff&icon_color=ff0055&text_color=94a3b8&rank_icon=github&include_all_commits=true" height="165" />\n`;
+        md += `  &nbsp;\n`;
+        md += `  <img src="https://github-readme-streak-stats.herokuapp.com/?user=${u}&theme=tokyonight&hide_border=true&background=050811&ring=00f0ff&fire=ff0055&currStreakLabel=00f0ff&sideLabels=94a3b8" height="165" />\n`;
+        md += `</div>\n\n`;
+        md += `<div align="center">\n  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=${u}&layout=compact&theme=tokyonight&hide_border=true&bg_color=050811&title_color=00f0ff&text_color=94a3b8&langs_count=8" height="140" />\n</div>\n\n`;
+        md += `---\n\n`;
       }
 
       md += `<img src="https://capsule-render.vercel.app/api?type=waving&color=auto&customColorList=1,13,24&height=80&section=footer" width="100%"/>\n\n`;
       if (state.toggles.viralBadge) {
-        md += `<div align="center">\n  <sub>⚡ Decorated with <a href="https://github.com/${u}/Github-overview-components">GitHub Profile Studio</a></sub>\n</div>\n`;
+        md += `<div align="center">\n  <sub>⚡ Neural interface powered by <a href="https://github.com/Ratul-NotFound/Github-Overview-Maker">GitHub Profile Studio</a></sub>\n</div>\n`;
       }
       return md;
     }
   }
 }
+// NEW_GENERATOR_SECTION_END
 
-// -------------------------------------------------------------
 // MARKDOWN TO HTML RENDERER ENGINE
 // -------------------------------------------------------------
 function renderMarkdownToHtml(md, arch) {
