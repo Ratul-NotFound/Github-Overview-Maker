@@ -30,14 +30,14 @@
       </a>
 
       <div class="header-divider-dot">/</div>
-      <span class="header-tagline">Profile Architecture Studio</span>
+      <span class="header-tagline">GitHub Profile README Builder</span>
     </div>
 
     <!-- Right: Clean Utility & Environment Actions -->
     <div class="header-actions">
       
       <div class="header-btn-group">
-        <button id="btnExploreComponents" class="action-btn" title="Browse Component Snippets">
+        <button id="btnExploreComponents" class="action-btn" title="Browse README Snippets">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
           <span>Snippets</span>
         </button>
@@ -86,24 +86,24 @@
       <!-- Sidebar Control Bar -->
       <div class="sidebar-top-bar">
         <div class="sidebar-title-box">
-          <span class="sidebar-heading">Studio Customizer</span>
-          <span class="sidebar-subheading">9 Modules • Real-Time Engine</span>
+          <span class="sidebar-heading">Profile Settings</span>
+          <span class="sidebar-subheading">Customize your README sections</span>
         </div>
         <div class="accordion-quick-controls">
-          <button id="btnExpandAll" class="quick-toggle-btn" title="Expand All Modules">Expand All</button>
-          <button id="btnCollapseAll" class="quick-toggle-btn" title="Collapse All Modules">Collapse</button>
+          <button id="btnExpandAll" class="quick-toggle-btn" title="Expand All Sections">Expand All</button>
+          <button id="btnCollapseAll" class="quick-toggle-btn" title="Collapse All Sections">Collapse</button>
         </div>
       </div>
 
       <!-- Quick Module Navigator Pills -->
       <div class="sidebar-module-pills">
         <button class="module-filter-pill active" data-filter="all">All</button>
-        <button class="module-filter-pill" data-filter="acc-identity">Identity</button>
+        <button class="module-filter-pill" data-filter="acc-identity">Profile</button>
         <button class="module-filter-pill" data-filter="acc-archetypes">Themes</button>
         <button class="module-filter-pill" data-filter="acc-skills">Skills</button>
         <button class="module-filter-pill" data-filter="acc-projects">Projects</button>
-        <button class="module-filter-pill" data-filter="acc-bio">Bio</button>
-        <button class="module-filter-pill" data-filter="acc-telemetry">Telemetry</button>
+        <button class="module-filter-pill" data-filter="acc-bio">About</button>
+        <button class="module-filter-pill" data-filter="acc-telemetry">Graphs</button>
         <button class="module-filter-pill" data-filter="acc-socials">Socials</button>
         <button class="module-filter-pill" data-filter="acc-visibility">Toggles</button>
       </div>
@@ -111,12 +111,12 @@
       <!-- Accordion Sections List -->
       <div class="sidebar-accordion-list">
         
-        <!-- 1. Profile Identity -->
+        <!-- 1. Profile Info -->
         <div class="accordion-card open" id="acc-identity">
           <div class="accordion-header">
             <div class="accordion-header-left">
               <span class="acc-icon">👤</span>
-              <span class="acc-title">Profile Identity</span>
+              <span class="acc-title">Profile Info</span>
             </div>
             <div class="accordion-header-right">
               <span class="acc-summary-badge" id="summaryIdentity">alexdev</span>
@@ -128,16 +128,16 @@
               <label for="inputUsername">GitHub Username</label>
               <div class="input-prefix-wrapper">
                 <span class="input-prefix">github.com/</span>
-                <input type="text" id="inputUsername" class="studio-input with-prefix" placeholder="username" value="alexdev">
+                <input type="text" id="inputUsername" class="studio-input with-prefix" value="alexdev" placeholder="your-github-username">
               </div>
             </div>
             <div class="form-field">
-              <label for="inputName">Display Name</label>
-              <input type="text" id="inputName" class="studio-input" placeholder="e.g. Alex Vance" value="Alex Vance">
+              <label for="inputDisplayName">Full Name</label>
+              <input type="text" id="inputDisplayName" class="studio-input" value="Alex Vance" placeholder="Your Name">
             </div>
             <div class="form-field">
-              <label for="inputHeadline">Headline & Specialization</label>
-              <input type="text" id="inputHeadline" class="studio-input" placeholder="e.g. Full-Stack Architect // Cloud & Distributed Systems" value="Full-Stack Cyber Architect // Cloud & Systems">
+              <label for="inputHeadline">Headline / Role</label>
+              <input type="text" id="inputHeadline" class="studio-input" value="Full-Stack Developer • Open Source Builder" placeholder="e.g. Full-Stack Developer • Open Source Builder">
             </div>
           </div>
         </div>
@@ -269,52 +269,52 @@
               <input type="text" id="statusWorking" class="studio-input" value="Next-generation cloud orchestrators & microservices">
             </div>
             <div class="form-field">
-              <label for="statusLearning">🌱 Currently Learning & Researching</label>
-              <input type="text" id="statusLearning" class="studio-input" value="Rust kernel programming & WebGPU shaders">
+              <label for="statusLearning">🌱 Currently Learning</label>
+              <input type="text" id="statusLearning" class="studio-input" value="Rust, TypeScript internals & cloud architecture">
             </div>
             <div class="form-field">
               <label for="statusAskMe">💬 Ask Me About</label>
-              <input type="text" id="statusAskMe" class="studio-input" value="React, Next.js, Distributed DBs, Rust, Kafka & CI/CD">
+              <input type="text" id="statusAskMe" class="studio-input" value="React, Next.js, Node.js, API design & system architecture">
             </div>
             <div class="form-field">
-              <label for="statusFunFact">⚡ Fun Fact / Secret Fuel</label>
-              <input type="text" id="statusFunFact" class="studio-input" value="Powered by dark roast espresso, mechanical keyboards & lo-fi">
+              <label for="statusFunFact">⚡ Fun Fact</label>
+              <input type="text" id="statusFunFact" class="studio-input" value="I code best with good coffee and lo-fi music ☕">
             </div>
           </div>
         </div>
 
-        <!-- 7. Metrics & Telemetry -->
+        <!-- 7. Activity & Graphs -->
         <div class="accordion-card" id="acc-telemetry">
           <div class="accordion-header">
             <div class="accordion-header-left">
               <span class="acc-icon">📊</span>
-              <span class="acc-title">Contribution Telemetry</span>
+              <span class="acc-title">Activity & Graphs</span>
             </div>
             <div class="accordion-header-right">
-              <span class="acc-summary-badge badge-amber">Synced</span>
+              <span class="acc-summary-badge badge-amber">Active</span>
               <span class="acc-chevron">▾</span>
             </div>
           </div>
           <div class="accordion-content">
             <div class="form-field">
-              <label for="selectGraphStyle">Telemetry / Graph Style</label>
+              <label for="selectGraphStyle">Graph Type</label>
               <select id="selectGraphStyle" class="studio-select">
-                <option value="activity">🌊 Real-time Activity Wave Graph</option>
-                <option value="streak">⚡ Commit Streak Flame Tracker</option>
-                <option value="3d">🏆 GitHub Trophy Showcase</option>
-                <option value="snake">🐍 Snake Eating Contribution Grid</option>
-                <option value="all">🚀 All-in-One Complete Telemetry</option>
+                <option value="activity">🌊 Activity Wave Graph</option>
+                <option value="streak">🔥 Commit Streak Tracker</option>
+                <option value="3d">🏆 GitHub Trophies</option>
+                <option value="snake">🐍 Snake Animation Grid</option>
+                <option value="all">📊 Activity Graph + Streak</option>
               </select>
             </div>
           </div>
         </div>
 
-        <!-- 8. Social Networks & Links -->
+        <!-- 8. Social Links & Contact -->
         <div class="accordion-card" id="acc-socials">
           <div class="accordion-header">
             <div class="accordion-header-left">
               <span class="acc-icon">🌐</span>
-              <span class="acc-title">Social Networks & Links</span>
+              <span class="acc-title">Social Links & Contact</span>
             </div>
             <div class="accordion-header-right">
               <span class="acc-summary-badge">Connected</span>
@@ -331,7 +331,7 @@
               <input type="text" id="socialTwitter" class="studio-input" placeholder="handle" value="alexvance_dev">
             </div>
             <div class="form-field">
-              <label for="socialDiscord">Discord Server / ID</label>
+              <label for="socialDiscord">Discord Username / Server</label>
               <input type="text" id="socialDiscord" class="studio-input" placeholder="ID or Invite" value="alexvance">
             </div>
             <div class="form-field">
@@ -349,12 +349,12 @@
           </div>
         </div>
 
-        <!-- 9. Section Visibility Toggles -->
+        <!-- 9. Section Toggles -->
         <div class="accordion-card" id="acc-visibility">
           <div class="accordion-header">
             <div class="accordion-header-left">
               <span class="acc-icon">⚙️</span>
-              <span class="acc-title">Section Visibility Toggles</span>
+              <span class="acc-title">Section Toggles</span>
             </div>
             <div class="accordion-header-right">
               <span class="acc-summary-badge">Toggles</span>
@@ -364,15 +364,15 @@
           <div class="accordion-content">
             <div class="toggles-grid">
               <div class="toggle-card">
-                <span>Header Banner</span>
+                <span>Banner Header</span>
                 <label class="switch-toggle"><input type="checkbox" id="toggleHeader" checked><span class="switch-knob"></span></label>
               </div>
               <div class="toggle-card">
-                <span>Typing Animation</span>
+                <span>Typing Intro</span>
                 <label class="switch-toggle"><input type="checkbox" id="toggleTyping" checked><span class="switch-knob"></span></label>
               </div>
               <div class="toggle-card">
-                <span>Featured Projects</span>
+                <span>Projects</span>
                 <label class="switch-toggle"><input type="checkbox" id="toggleProjects" checked><span class="switch-knob"></span></label>
               </div>
               <div class="toggle-card">

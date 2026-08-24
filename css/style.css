@@ -2096,9 +2096,6 @@ input:checked + .switch-knob:before, input:checked + .slider:before {
 
 /* Ultra-Wide Displays (> 1600px) */
 @media (min-width: 1600px) {
-  .studio-workstation {
-    grid-template-columns: 520px 1fr;
-  }
   .github-mockup-frame, .mockup-window {
     max-width: 1080px;
   }
@@ -2107,18 +2104,8 @@ input:checked + .switch-knob:before, input:checked + .slider:before {
   }
 }
 
-/* Standard Laptops & Desktops (1200px - 1599px) */
-@media (max-width: 1440px) {
-  .studio-workstation {
-    grid-template-columns: 460px 1fr;
-  }
-}
-
 /* Small Laptops (992px - 1199px) */
 @media (max-width: 1199px) {
-  .studio-workstation {
-    grid-template-columns: 420px 1fr;
-  }
   .app-header {
     padding: 0 1rem;
     gap: 1rem;
@@ -2324,3 +2311,407 @@ input:checked + .switch-knob:before, input:checked + .slider:before {
     max-height: 94vh;
   }
 }
+
+/* =============================================================
+   ARCHETYPE DEEP STYLING (PERFECT LIGHT & DARK MODE SUPPORT)
+   ============================================================= */
+
+/* Universal Mockup Content Base in Light Mode */
+[data-theme="light"] .mockup-content-body {
+  color: #1f2328 !important;
+  background: #ffffff !important;
+}
+[data-theme="light"] .mockup-content-body pre {
+  background: #f6f8fa !important;
+  border: 1px solid #d0d7de !important;
+  color: #1f2328 !important;
+}
+[data-theme="light"] .mockup-content-body code {
+  color: #0969da;
+}
+[data-theme="light"] .mockup-content-body table {
+  background: #ffffff !important;
+  border: 1px solid #d0d7de !important;
+  color: #1f2328 !important;
+}
+[data-theme="light"] .mockup-content-body th {
+  background: #f6f8fa !important;
+  color: #0f172a !important;
+  border-bottom: 1px solid #d0d7de !important;
+}
+[data-theme="light"] .mockup-content-body td {
+  border-bottom: 1px solid #e2e8f0 !important;
+  color: #1f2328 !important;
+}
+[data-theme="light"] .mockup-content-body hr {
+  border-color: #d0d7de !important;
+}
+[data-theme="light"] .raw-markdown-frame {
+  background: #ffffff !important;
+  border-color: #d0d7de !important;
+  color: #1f2328 !important;
+}
+[data-theme="light"] .raw-markdown-frame pre code {
+  color: #1f2328 !important;
+}
+
+/* 1. CYBERPUNK NETRUNNER */
+[data-theme="dark"] .github-mockup-frame[data-archetype="cyberpunk"] {
+  border-color: #00f0ff !important;
+  box-shadow: 0 0 25px rgba(0, 240, 255, 0.25), 0 20px 40px rgba(0, 0, 0, 0.8) !important;
+}
+[data-theme="dark"] .github-mockup-frame[data-archetype="cyberpunk"] .mockup-titlebar {
+  background: #090f1d !important;
+  border-bottom: 1px solid #00f0ff !important;
+}
+[data-theme="light"] .github-mockup-frame[data-archetype="cyberpunk"] {
+  border-color: #0284c7 !important;
+  box-shadow: 0 4px 16px rgba(2, 132, 199, 0.12) !important;
+}
+.github-mockup-frame[data-archetype="cyberpunk"] .mockup-content-body h2 {
+  color: var(--accent-cyan) !important;
+  border-bottom: 1px dashed var(--accent-cyan) !important;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* 2. TERMINAL SYSADMIN (NEOFETCH) */
+[data-theme="dark"] .github-mockup-frame[data-archetype="neofetch"] {
+  border-color: #00ff66 !important;
+  background: #0a0e0b !important;
+  box-shadow: 0 0 20px rgba(0, 255, 102, 0.2) !important;
+}
+[data-theme="dark"] .github-mockup-frame[data-archetype="neofetch"] .mockup-titlebar {
+  background: #051408 !important;
+  border-bottom: 1px solid #00ff66 !important;
+}
+[data-theme="dark"] .github-mockup-frame[data-archetype="neofetch"] .mockup-content-body {
+  color: #a7f3d0 !important;
+}
+[data-theme="dark"] .github-mockup-frame[data-archetype="neofetch"] pre {
+  background: #040905 !important;
+  border: 1px solid #00ff66 !important;
+  color: #00ff66 !important;
+}
+[data-theme="light"] .github-mockup-frame[data-archetype="neofetch"] {
+  border-color: #059669 !important;
+  box-shadow: 0 4px 16px rgba(5, 150, 105, 0.12) !important;
+}
+[data-theme="light"] .github-mockup-frame[data-archetype="neofetch"] pre {
+  background: #f0fdf4 !important;
+  border: 1px solid #86efac !important;
+  color: #166534 !important;
+}
+.github-mockup-frame[data-archetype="neofetch"] .mockup-content-body h2 {
+  color: #059669 !important;
+  border-bottom: 1px solid #059669 !important;
+  font-family: 'Fira Code', monospace;
+}
+[data-theme="dark"] .github-mockup-frame[data-archetype="neofetch"] .mockup-content-body h2 {
+  color: #00ff66 !important;
+  border-bottom-color: #00ff66 !important;
+}
+
+/* 3. MODERN BENTO GRID */
+.github-mockup-frame[data-archetype="bento"] {
+  border-radius: 18px !important;
+}
+.github-mockup-frame[data-archetype="bento"] .mockup-titlebar {
+  border-radius: 18px 18px 0 0 !important;
+}
+[data-theme="dark"] .github-mockup-frame[data-archetype="bento"] {
+  border-color: rgba(56, 189, 248, 0.4) !important;
+  box-shadow: 0 10px 40px rgba(56, 189, 248, 0.15) !important;
+}
+[data-theme="dark"] .github-mockup-frame[data-archetype="bento"] .mockup-titlebar {
+  background: rgba(15, 23, 42, 0.95) !important;
+}
+[data-theme="light"] .github-mockup-frame[data-archetype="bento"] {
+  border-color: #38bdf8 !important;
+  box-shadow: 0 8px 24px rgba(56, 189, 248, 0.15) !important;
+}
+
+/* 4. RPG QUEST MASTER */
+[data-theme="dark"] .github-mockup-frame[data-archetype="rpg"] {
+  border-color: #f59e0b !important;
+  box-shadow: 0 0 25px rgba(245, 158, 11, 0.25) !important;
+}
+[data-theme="dark"] .github-mockup-frame[data-archetype="rpg"] .mockup-titlebar {
+  background: #1a1204 !important;
+  border-bottom: 1px solid #f59e0b !important;
+}
+[data-theme="light"] .github-mockup-frame[data-archetype="rpg"] {
+  border-color: #d97706 !important;
+  box-shadow: 0 4px 16px rgba(217, 119, 6, 0.15) !important;
+}
+.github-mockup-frame[data-archetype="rpg"] .mockup-content-body h2 {
+  color: #d97706 !important;
+  border-bottom: 1px solid #d97706 !important;
+}
+[data-theme="dark"] .github-mockup-frame[data-archetype="rpg"] .mockup-content-body h2 {
+  color: #f59e0b !important;
+  border-bottom-color: #f59e0b !important;
+}
+
+/* 5. RETRO 8-BIT ARCADE */
+.github-mockup-frame[data-archetype="arcade8bit"] {
+  border-radius: 0 !important;
+}
+.github-mockup-frame[data-archetype="arcade8bit"] .mockup-titlebar {
+  border-radius: 0 !important;
+}
+[data-theme="dark"] .github-mockup-frame[data-archetype="arcade8bit"] {
+  border: 3px solid #facc15 !important;
+  box-shadow: 0 0 20px rgba(250, 204, 21, 0.3) !important;
+}
+[data-theme="dark"] .github-mockup-frame[data-archetype="arcade8bit"] .mockup-titlebar {
+  background: #180e35 !important;
+  border-bottom: 2px solid #facc15 !important;
+}
+[data-theme="light"] .github-mockup-frame[data-archetype="arcade8bit"] {
+  border: 3px solid #ca8a04 !important;
+  box-shadow: 0 4px 14px rgba(202, 138, 4, 0.2) !important;
+}
+.github-mockup-frame[data-archetype="arcade8bit"] .mockup-content-body {
+  font-family: 'Press Start 2P', monospace !important;
+  font-size: 0.72rem !important;
+  line-height: 1.8 !important;
+}
+.github-mockup-frame[data-archetype="arcade8bit"] .mockup-content-body h2 {
+  color: #ca8a04 !important;
+  font-size: 0.85rem !important;
+}
+[data-theme="dark"] .github-mockup-frame[data-archetype="arcade8bit"] .mockup-content-body h2 {
+  color: #facc15 !important;
+  text-shadow: 2px 2px #ff007f;
+}
+
+/* 6. KAWAII PASTEL SAKURA */
+.github-mockup-frame[data-archetype="kawaii"] {
+  border-radius: 20px !important;
+}
+.github-mockup-frame[data-archetype="kawaii"] .mockup-titlebar {
+  border-radius: 20px 20px 0 0 !important;
+}
+[data-theme="dark"] .github-mockup-frame[data-archetype="kawaii"] {
+  border-color: #f472b6 !important;
+  box-shadow: 0 10px 30px rgba(244, 114, 182, 0.25) !important;
+}
+[data-theme="dark"] .github-mockup-frame[data-archetype="kawaii"] .mockup-titlebar {
+  background: #251228 !important;
+  border-bottom: 1px solid #f472b6 !important;
+}
+[data-theme="light"] .github-mockup-frame[data-archetype="kawaii"] {
+  border-color: #ec4899 !important;
+  box-shadow: 0 6px 20px rgba(236, 72, 153, 0.15) !important;
+}
+.github-mockup-frame[data-archetype="kawaii"] .mockup-content-body h2 {
+  color: #db2777 !important;
+  border-bottom: 2px dashed #f472b6 !important;
+}
+[data-theme="dark"] .github-mockup-frame[data-archetype="kawaii"] .mockup-content-body h2 {
+  color: #f472b6 !important;
+}
+
+/* 7. COSMIC DEEP SPACE */
+[data-theme="dark"] .github-mockup-frame[data-archetype="aurora"] {
+  border-color: #a855f7 !important;
+  box-shadow: 0 0 30px rgba(168, 85, 247, 0.3) !important;
+}
+[data-theme="dark"] .github-mockup-frame[data-archetype="aurora"] .mockup-titlebar {
+  background: #0f0624 !important;
+  border-bottom: 1px solid #a855f7 !important;
+}
+[data-theme="light"] .github-mockup-frame[data-archetype="aurora"] {
+  border-color: #7c3aed !important;
+  box-shadow: 0 4px 16px rgba(124, 58, 237, 0.15) !important;
+}
+.github-mockup-frame[data-archetype="aurora"] .mockup-content-body h2 {
+  color: #7c3aed !important;
+}
+[data-theme="dark"] .github-mockup-frame[data-archetype="aurora"] .mockup-content-body h2 {
+  color: #c084fc !important;
+}
+
+/* 8. SWISS BAUHAUS (MINIMAL) */
+.github-mockup-frame[data-archetype="minimal"] {
+  border-radius: 0 !important;
+}
+.github-mockup-frame[data-archetype="minimal"] .mockup-titlebar {
+  border-radius: 0 !important;
+}
+[data-theme="dark"] .github-mockup-frame[data-archetype="minimal"] {
+  border: 2px solid #52525b !important;
+  box-shadow: 8px 8px 0px rgba(255, 255, 255, 0.15) !important;
+}
+[data-theme="light"] .github-mockup-frame[data-archetype="minimal"] {
+  border: 2px solid #000000 !important;
+  box-shadow: 6px 6px 0px rgba(0, 0, 0, 1) !important;
+}
+.github-mockup-frame[data-archetype="minimal"] .mockup-content-body {
+  font-family: 'Plus Jakarta Sans', sans-serif !important;
+}
+.github-mockup-frame[data-archetype="minimal"] .mockup-content-body h2,
+.github-mockup-frame[data-archetype="minimal"] .mockup-content-body h3 {
+  border-bottom: 2px solid currentColor !important;
+  font-weight: 900 !important;
+  letter-spacing: -0.03em !important;
+}
+
+/* 9. SYNTHWAVE SUNSET */
+[data-theme="dark"] .github-mockup-frame[data-archetype="synthwave"] {
+  border-color: #ff2a85 !important;
+  box-shadow: 0 0 30px rgba(255, 42, 133, 0.35) !important;
+}
+[data-theme="dark"] .github-mockup-frame[data-archetype="synthwave"] .mockup-titlebar {
+  background: #200b3b !important;
+  border-bottom: 1px solid #ff2a85 !important;
+}
+[data-theme="light"] .github-mockup-frame[data-archetype="synthwave"] {
+  border-color: #e11d48 !important;
+  box-shadow: 0 4px 16px rgba(225, 29, 72, 0.15) !important;
+}
+.github-mockup-frame[data-archetype="synthwave"] .mockup-content-body h2 {
+  color: #e11d48 !important;
+  border-bottom: 1px solid #f59e0b !important;
+}
+[data-theme="dark"] .github-mockup-frame[data-archetype="synthwave"] .mockup-content-body h2 {
+  color: #ff2a85 !important;
+  border-bottom-color: #ff9e00 !important;
+  text-shadow: 0 0 10px rgba(255, 42, 133, 0.5);
+}
+
+/* 10. NORDIC FROST */
+[data-theme="dark"] .github-mockup-frame[data-archetype="nordic"] {
+  border-color: #88c0d0 !important;
+  box-shadow: 0 0 25px rgba(136, 192, 208, 0.2) !important;
+}
+[data-theme="dark"] .github-mockup-frame[data-archetype="nordic"] .mockup-titlebar {
+  background: #1e2430 !important;
+  border-bottom: 1px solid #88c0d0 !important;
+}
+[data-theme="light"] .github-mockup-frame[data-archetype="nordic"] {
+  border-color: #0284c7 !important;
+  box-shadow: 0 4px 16px rgba(2, 132, 199, 0.15) !important;
+}
+.github-mockup-frame[data-archetype="nordic"] .mockup-content-body h2 {
+  color: #0284c7 !important;
+  border-bottom: 1px solid #94a3b8 !important;
+}
+[data-theme="dark"] .github-mockup-frame[data-archetype="nordic"] .mockup-content-body h2 {
+  color: #88c0d0 !important;
+  border-bottom-color: #81a1c1 !important;
+}
+
+/* 11. DRACULA PRO */
+[data-theme="dark"] .github-mockup-frame[data-archetype="dracula"] {
+  border-color: #ff79c6 !important;
+  background: #181a20 !important;
+  box-shadow: 0 0 25px rgba(255, 121, 198, 0.25) !important;
+}
+[data-theme="dark"] .github-mockup-frame[data-archetype="dracula"] .mockup-titlebar {
+  background: #282a36 !important;
+  border-bottom: 1px solid #ff79c6 !important;
+}
+[data-theme="light"] .github-mockup-frame[data-archetype="dracula"] {
+  border-color: #db2777 !important;
+  box-shadow: 0 4px 16px rgba(219, 39, 119, 0.15) !important;
+}
+.github-mockup-frame[data-archetype="dracula"] .mockup-content-body h2 {
+  color: #db2777 !important;
+  border-bottom: 1px solid #059669 !important;
+}
+[data-theme="dark"] .github-mockup-frame[data-archetype="dracula"] .mockup-content-body h2 {
+  color: #ff79c6 !important;
+  border-bottom-color: #50fa7b !important;
+}
+
+/* 12. MATRIX CODE RAIN */
+[data-theme="dark"] .github-mockup-frame[data-archetype="matrix"] {
+  border: 1px solid #00ff66 !important;
+  background: #030a04 !important;
+  box-shadow: 0 0 30px rgba(0, 255, 102, 0.3) !important;
+}
+[data-theme="dark"] .github-mockup-frame[data-archetype="matrix"] .mockup-titlebar {
+  background: #021203 !important;
+  border-bottom: 1px solid #00ff66 !important;
+}
+[data-theme="dark"] .github-mockup-frame[data-archetype="matrix"] pre {
+  background: #010602 !important;
+  border: 1px solid #00ff66 !important;
+  color: #00ff66 !important;
+}
+[data-theme="light"] .github-mockup-frame[data-archetype="matrix"] {
+  border-color: #059669 !important;
+  box-shadow: 0 4px 16px rgba(5, 150, 105, 0.15) !important;
+}
+[data-theme="light"] .github-mockup-frame[data-archetype="matrix"] pre {
+  background: #f0fdf4 !important;
+  border: 1px solid #86efac !important;
+  color: #166534 !important;
+}
+.github-mockup-frame[data-archetype="matrix"] .mockup-content-body h2 {
+  color: #059669 !important;
+  border-bottom: 1px dashed #059669 !important;
+}
+[data-theme="dark"] .github-mockup-frame[data-archetype="matrix"] .mockup-content-body h2 {
+  color: #00ff66 !important;
+  border-bottom-color: #00ff66 !important;
+}
+
+/* 13. SOLARPUNK BIO-TECH */
+[data-theme="dark"] .github-mockup-frame[data-archetype="solarpunk"] {
+  border-color: #10b981 !important;
+  box-shadow: 0 0 25px rgba(16, 185, 129, 0.25) !important;
+}
+[data-theme="dark"] .github-mockup-frame[data-archetype="solarpunk"] .mockup-titlebar {
+  background: #0c2018 !important;
+  border-bottom: 1px solid #10b981 !important;
+}
+[data-theme="light"] .github-mockup-frame[data-archetype="solarpunk"] {
+  border-color: #059669 !important;
+  box-shadow: 0 4px 16px rgba(5, 150, 105, 0.15) !important;
+}
+.github-mockup-frame[data-archetype="solarpunk"] .mockup-content-body h2 {
+  color: #059669 !important;
+  border-bottom: 1px solid #d97706 !important;
+}
+[data-theme="dark"] .github-mockup-frame[data-archetype="solarpunk"] .mockup-content-body h2 {
+  color: #10b981 !important;
+  border-bottom-color: #f59e0b !important;
+}
+
+/* 14. GRUVBOX RETRO */
+[data-theme="dark"] .github-mockup-frame[data-archetype="gruvbox"] {
+  border-color: #fe8019 !important;
+  background: #1d2021 !important;
+  box-shadow: 0 0 25px rgba(254, 128, 25, 0.25) !important;
+}
+[data-theme="dark"] .github-mockup-frame[data-archetype="gruvbox"] .mockup-titlebar {
+  background: #282828 !important;
+  border-bottom: 1px solid #fe8019 !important;
+}
+[data-theme="dark"] .github-mockup-frame[data-archetype="gruvbox"] pre {
+  background: #282828 !important;
+  border: 1px solid #fe8019 !important;
+  color: #fabd2f !important;
+}
+[data-theme="light"] .github-mockup-frame[data-archetype="gruvbox"] {
+  border-color: #d97706 !important;
+  box-shadow: 0 4px 16px rgba(217, 119, 6, 0.15) !important;
+}
+[data-theme="light"] .github-mockup-frame[data-archetype="gruvbox"] pre {
+  background: #fefce8 !important;
+  border: 1px solid #fde047 !important;
+  color: #854d0e !important;
+}
+.github-mockup-frame[data-archetype="gruvbox"] .mockup-content-body h2 {
+  color: #d97706 !important;
+  border-bottom: 1px solid #ca8a04 !important;
+}
+[data-theme="dark"] .github-mockup-frame[data-archetype="gruvbox"] .mockup-content-body h2 {
+  color: #fe8019 !important;
+  border-bottom-color: #fabd2f !important;
+}
+
+

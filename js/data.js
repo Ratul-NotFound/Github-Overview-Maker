@@ -9,8 +9,8 @@ const APP_DATA = {
 
     cyberpunk: {
       id: "cyberpunk",
-      name: "⚡ Cyberpunk Netrunner",
-      tag: "Neon / Neural HUD",
+      name: "⚡ Cyberpunk Glow",
+      tag: "Neon Cyan & Dark HUD",
       font: "'Fira Code', monospace",
       bg: "#050811",
       accent: "#00f0ff",
@@ -21,8 +21,8 @@ const APP_DATA = {
 
     neofetch: {
       id: "neofetch",
-      name: "💻 Terminal SysAdmin",
-      tag: "Unix / Fastfetch",
+      name: "💻 Terminal CLI",
+      tag: "Fastfetch & Unix Shell",
       font: "'Fira Code', monospace",
       bg: "#0a0e0b",
       accent: "#00ff66",
@@ -33,8 +33,8 @@ const APP_DATA = {
 
     bento: {
       id: "bento",
-      name: "🍱 Modern Bento Grid",
-      tag: "Apple / Vercel",
+      name: "🍱 Modern Bento",
+      tag: "Clean Grid & Cards",
       font: "'Plus Jakarta Sans', sans-serif",
       bg: "#000000",
       accent: "#38bdf8",
@@ -45,8 +45,8 @@ const APP_DATA = {
 
     rpg: {
       id: "rpg",
-      name: "⚔️ RPG Quest Master",
-      tag: "Fantasy / Guild",
+      name: "⚔️ RPG Quest",
+      tag: "Character Sheet & Stats",
       font: "'Plus Jakarta Sans', sans-serif",
       bg: "#100c1a",
       accent: "#f59e0b",
@@ -57,8 +57,8 @@ const APP_DATA = {
 
     arcade8bit: {
       id: "arcade8bit",
-      name: "👾 Retro 8-Bit Arcade",
-      tag: "Pixel / Cabinet",
+      name: "👾 8-Bit Arcade",
+      tag: "Retro Pixel & High Score",
       font: "'Press Start 2P', monospace",
       bg: "#0d0820",
       accent: "#facc15",
@@ -69,8 +69,8 @@ const APP_DATA = {
 
     kawaii: {
       id: "kawaii",
-      name: "🌸 Kawaii Pastel Sakura",
-      tag: "Cozy / Anime Loft",
+      name: "🌸 Kawaii Sakura",
+      tag: "Cozy Pastel & Cute Diary",
       font: "'Plus Jakarta Sans', sans-serif",
       bg: "#160e20",
       accent: "#f472b6",
@@ -81,8 +81,8 @@ const APP_DATA = {
 
     aurora: {
       id: "aurora",
-      name: "🌌 Cosmic Deep Space",
-      tag: "Nebula / Astral",
+      name: "🌌 Deep Space",
+      tag: "Cosmic Nebula & Blue Sky",
       font: "'Space Grotesk', sans-serif",
       bg: "#04020f",
       accent: "#a855f7",
@@ -93,45 +93,126 @@ const APP_DATA = {
 
     minimal: {
       id: "minimal",
-      name: "🖤 Swiss Bauhaus",
-      tag: "Architect / Mono",
+      name: "🖤 Minimal Mono",
+      tag: "Clean Typography & B&W",
       font: "'Plus Jakarta Sans', sans-serif",
       bg: "#000000",
       accent: "#ffffff",
       accent2: "#52525b",
       gradientPreview: "linear-gradient(135deg, #000000 0%, #111111 50%, #000000 100%)",
       borderGlow: "rgba(255,255,255,0.4)"
+    },
+
+    synthwave: {
+      id: "synthwave",
+      name: "🌴 Synthwave 80s",
+      tag: "Outrun Sunset & Neon",
+      font: "'Space Grotesk', sans-serif",
+      bg: "#0e0720",
+      accent: "#ff2a85",
+      accent2: "#ff9e00",
+      gradientPreview: "linear-gradient(135deg, #0e0720 0%, #200b3b 50%, #0e0720 100%)",
+      borderGlow: "rgba(255,42,133,0.5)"
+    },
+
+    nordic: {
+      id: "nordic",
+      name: "❄️ Nordic Calm",
+      tag: "Arctic Blue & Minimal",
+      font: "'Plus Jakarta Sans', sans-serif",
+      bg: "#1a1e28",
+      accent: "#88c0d0",
+      accent2: "#81a1c1",
+      gradientPreview: "linear-gradient(135deg, #1a1e28 0%, #242b38 50%, #1a1e28 100%)",
+      borderGlow: "rgba(136,192,208,0.5)"
+    },
+
+    dracula: {
+      id: "dracula",
+      name: "🧛 Dracula Dark",
+      tag: "High-Contrast Palette",
+      font: "'Fira Code', monospace",
+      bg: "#181a20",
+      accent: "#ff79c6",
+      accent2: "#50fa7b",
+      gradientPreview: "linear-gradient(135deg, #181a20 0%, #282a36 50%, #181a20 100%)",
+      borderGlow: "rgba(255,121,198,0.5)"
+    },
+
+    matrix: {
+      id: "matrix",
+      name: "🟢 Matrix Code",
+      tag: "Green CRT & Hacker Terminal",
+      font: "'Fira Code', monospace",
+      bg: "#030a04",
+      accent: "#00ff66",
+      accent2: "#10b981",
+      gradientPreview: "linear-gradient(135deg, #030a04 0%, #051a08 50%, #030a04 100%)",
+      borderGlow: "rgba(0,255,102,0.5)"
+    },
+
+    solarpunk: {
+      id: "solarpunk",
+      name: "🌱 Eco Botanical",
+      tag: "Fresh Green & Solar Gold",
+      font: "'Plus Jakarta Sans', sans-serif",
+      bg: "#081611",
+      accent: "#10b981",
+      accent2: "#f59e0b",
+      gradientPreview: "linear-gradient(135deg, #081611 0%, #0f291e 50%, #081611 100%)",
+      borderGlow: "rgba(16,185,129,0.5)"
+    },
+
+    gruvbox: {
+      id: "gruvbox",
+      name: "🪵 Gruvbox Retro",
+      tag: "Warm Earth & Vim Theme",
+      font: "'Fira Code', monospace",
+      bg: "#1d2021",
+      accent: "#fe8019",
+      accent2: "#fabd2f",
+      gradientPreview: "linear-gradient(135deg, #1d2021 0%, #282828 50%, #1d2021 100%)",
+      borderGlow: "rgba(254,128,25,0.5)"
     }
 
   },
 
   defaultProjects: [
     {
-      name: "QuantumFlow Engine",
-      repo: "quantumflow-engine",
-      desc: "Distributed event streaming & real-time analytics in Rust with sub-millisecond latency.",
-      tags: "Rust, Kafka, Docker, gRPC, Redis",
+      name: "DevPulse",
+      repo: "devpulse",
+      desc: "Real-time GitHub statistics, commit streak analytics, and developer productivity dashboard.",
+      tags: "TypeScript, React, Next.js, TailwindCSS",
       stars: "1.4k",
       status: "Active",
-      demoUrl: "https://quantumflow.io"
+      demoUrl: "https://devpulse.io"
     },
     {
-      name: "NeuralCanvas Studio",
-      repo: "neuralcanvas-studio",
-      desc: "Generative AI canvas editor for vector design powered by WebGPU and Diffusion models.",
-      tags: "TypeScript, React, Next.js, Python, WebGPU",
+      name: "QuickAPI",
+      repo: "quick-api",
+      desc: "Production-ready backend API starter kit with authentication, rate limiting, and caching.",
+      tags: "Node.js, Express, PostgreSQL, Redis, Docker",
       stars: "850",
       status: "Shipped",
-      demoUrl: "https://neuralcanvas.dev"
+      demoUrl: "https://quickapi.dev"
     },
     {
-      name: "HyperDB Cloud",
-      repo: "hyperdb-cloud",
-      desc: "Serverless vector search & embedded document store with instant edge synchronization.",
-      tags: "Go, PostgreSQL, Redis, Kubernetes, AWS",
+      name: "TaskFlow",
+      repo: "taskflow",
+      desc: "Minimalist Kanban project manager with drag-and-drop workflow and offline support.",
+      tags: "React, Zustand, Web APIs, Vite",
       stars: "620",
-      status: "Beta",
-      demoUrl: "https://hyperdb.cloud"
+      status: "Active",
+      demoUrl: "https://taskflow.app"
+    },
+    {
+      name: "CLI Finder",
+      repo: "cli-finder",
+      desc: "Fast terminal search tool and file navigator with fuzzy matching built in Go.",
+      tags: "Go, Cobra, Unix, Terminal",
+      stars: "490",
+      status: "Shipped",
+      demoUrl: "https://github.com/alexdev/cli-finder"
     }
   ],
 
