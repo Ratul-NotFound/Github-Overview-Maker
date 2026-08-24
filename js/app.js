@@ -54,7 +54,8 @@ const state = {
     koFi: ""
   },
   activeTab: "preview",
-  activeCategory: "all"
+  activeCategory: "all",
+  themeMode: localStorage.getItem("studio_theme") || "dark"
 };
 
 // DOM References
@@ -111,6 +112,9 @@ const DOM = {
   rawMarkdownOutput: document.getElementById("rawMarkdownOutput"),
   tabLivePreview: document.getElementById("tabLivePreview"),
   tabMarkdownCode: document.getElementById("tabMarkdownCode"),
+  btnThemeToggle: document.getElementById("btnThemeToggle"),
+  themeToggleIcon: document.getElementById("themeToggleIcon"),
+  themeToggleLabel: document.getElementById("themeToggleLabel"),
   btnCopyMarkdown: document.getElementById("btnCopyMarkdown"),
   btnDownloadReadme: document.getElementById("btnDownloadReadme"),
   btnRandomize: document.getElementById("btnRandomize"),
@@ -124,9 +128,34 @@ const DOM = {
 };
 
 // -------------------------------------------------------------
+// THEME SWITCHER (LIGHT / DARK)
+// -------------------------------------------------------------
+function applyThemeMode(mode) {
+  state.themeMode = mode;
+  document.documentElement.setAttribute("data-theme", mode);
+  localStorage.setItem("studio_theme", mode);
+  if (DOM.themeToggleIcon && DOM.themeToggleLabel) {
+    if (mode === "light") {
+      DOM.themeToggleIcon.textContent = "🌙";
+      DOM.themeToggleLabel.textContent = "Dark";
+    } else {
+      DOM.themeToggleIcon.textContent = "☀️";
+      DOM.themeToggleLabel.textContent = "Light";
+    }
+  }
+}
+
+function toggleThemeMode() {
+  const nextMode = state.themeMode === "light" ? "dark" : "light";
+  applyThemeMode(nextMode);
+  showToast(nextMode === "light" ? "☀️ Switched to Light Theme" : "🌙 Switched to Dark Theme");
+}
+
+// -------------------------------------------------------------
 // APP INITIALIZATION
 // -------------------------------------------------------------
 function initApp() {
+  applyThemeMode(state.themeMode);
   renderArchetypeSelectors();
   renderProjectsList();
   renderTechGrid();
@@ -382,6 +411,25 @@ function attachEventListeners() {
     });
   });
 
+  // Sidebar Module Filter Pills (Jump / Filter)
+  document.querySelectorAll(".module-filter-pill").forEach(pill => {
+    pill.addEventListener("click", () => {
+      document.querySelectorAll(".module-filter-pill").forEach(p => p.classList.remove("active"));
+      pill.classList.add("active");
+      const targetId = pill.dataset.filter;
+      if (targetId === "all") {
+        document.querySelectorAll(".accordion-card").forEach(c => c.style.display = "");
+      } else {
+        document.querySelectorAll(".accordion-card").forEach(c => c.style.display = "");
+        const targetCard = document.getElementById(targetId);
+        if (targetCard) {
+          targetCard.classList.add("open");
+          targetCard.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+      }
+    });
+  });
+
   // Sidebar Accordion Expand/Collapse Listeners
   document.querySelectorAll(".accordion-header").forEach(header => {
     header.addEventListener("click", () => {
@@ -395,7 +443,10 @@ function attachEventListeners() {
   const btnCollapseAll = document.getElementById("btnCollapseAll");
   if (btnExpandAll) {
     btnExpandAll.addEventListener("click", () => {
-      document.querySelectorAll(".accordion-card").forEach(c => c.classList.add("open"));
+      document.querySelectorAll(".accordion-card").forEach(c => {
+        c.style.display = "";
+        c.classList.add("open");
+      });
       showToast("📂 Expanded all customizer modules");
     });
   }
@@ -403,6 +454,24 @@ function attachEventListeners() {
     btnCollapseAll.addEventListener("click", () => {
       document.querySelectorAll(".accordion-card").forEach(c => c.classList.remove("open"));
       showToast("📁 Collapsed all modules");
+    });
+  }
+
+  // Mobile Tab View Switcher (< 992px)
+  const mobileTabEditor = document.getElementById("mobileTabEditor");
+  const mobileTabPreview = document.getElementById("mobileTabPreview");
+  const studioWorkstation = document.getElementById("studioWorkstation");
+
+  if (mobileTabEditor && mobileTabPreview && studioWorkstation) {
+    mobileTabEditor.addEventListener("click", () => {
+      mobileTabEditor.classList.add("active");
+      mobileTabPreview.classList.remove("active");
+      studioWorkstation.classList.remove("show-preview");
+    });
+    mobileTabPreview.addEventListener("click", () => {
+      mobileTabPreview.classList.add("active");
+      mobileTabEditor.classList.remove("active");
+      studioWorkstation.classList.add("show-preview");
     });
   }
 
@@ -425,6 +494,9 @@ function attachEventListeners() {
       state.activeTab = "code";
     });
   }
+
+  // Theme Toggle Button
+  if (DOM.btnThemeToggle) DOM.btnThemeToggle.addEventListener("click", toggleThemeMode);
 
   // Export Buttons
   if (DOM.btnCopyMarkdown) DOM.btnCopyMarkdown.addEventListener("click", copyMarkdownAction);

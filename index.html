@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>GitHub Overview Studio — World-Class Profile README Builder</title>
   <meta name="description" content="The ultimate developer studio to design and generate world-class GitHub profile READMEs with 8 professional design archetypes, dynamic widgets, and contribution telemetry.">
   <link rel="stylesheet" href="css/style.css">
@@ -39,6 +39,10 @@
     </div>
 
     <div class="header-actions">
+      <button id="btnThemeToggle" class="action-btn theme-toggle-btn" title="Toggle Light / Dark Mode">
+        <span id="themeToggleIcon">☀️</span>
+        <span id="themeToggleLabel">Light</span>
+      </button>
       <button id="btnExploreComponents" class="action-btn" title="Browse Component Snippets">
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
         <span>Snippets</span>
@@ -58,22 +62,45 @@
     </div>
   </header>
 
+  <!-- Mobile View Switcher (< 900px) -->
+  <nav class="mobile-view-switcher" id="mobileViewSwitcher">
+    <button class="mobile-tab-btn active" id="mobileTabEditor" data-view="editor">
+      <span>⚙️</span> Customizer
+    </button>
+    <button class="mobile-tab-btn" id="mobileTabPreview" data-view="preview">
+      <span>👁️</span> Live Preview
+    </button>
+  </nav>
+
   <!-- Main Workstation Layout -->
-  <div class="studio-workstation">
+  <div class="studio-workstation" id="studioWorkstation">
     
-    <!-- Left Panel: Customizer Sidebar with Accordion Organization -->
-    <aside class="sidebar-panel">
+    <!-- Left Panel: Customizer Sidebar -->
+    <aside class="sidebar-panel" id="sidebarPanel">
       
       <!-- Sidebar Control Bar -->
       <div class="sidebar-top-bar">
         <div class="sidebar-title-box">
           <span class="sidebar-heading">Studio Customizer</span>
-          <span class="sidebar-subheading">9 Modules Available</span>
+          <span class="sidebar-subheading">9 Modules • Real-Time Engine</span>
         </div>
         <div class="accordion-quick-controls">
-          <button id="btnExpandAll" class="quick-toggle-btn" title="Expand All Sections">Expand All</button>
-          <button id="btnCollapseAll" class="quick-toggle-btn" title="Collapse All Sections">Collapse</button>
+          <button id="btnExpandAll" class="quick-toggle-btn" title="Expand All Modules">Expand All</button>
+          <button id="btnCollapseAll" class="quick-toggle-btn" title="Collapse All Modules">Collapse</button>
         </div>
+      </div>
+
+      <!-- Quick Module Navigator Pills -->
+      <div class="sidebar-module-pills">
+        <button class="module-filter-pill active" data-filter="all">All</button>
+        <button class="module-filter-pill" data-filter="acc-identity">Identity</button>
+        <button class="module-filter-pill" data-filter="acc-archetypes">Themes</button>
+        <button class="module-filter-pill" data-filter="acc-skills">Skills</button>
+        <button class="module-filter-pill" data-filter="acc-projects">Projects</button>
+        <button class="module-filter-pill" data-filter="acc-bio">Bio</button>
+        <button class="module-filter-pill" data-filter="acc-telemetry">Telemetry</button>
+        <button class="module-filter-pill" data-filter="acc-socials">Socials</button>
+        <button class="module-filter-pill" data-filter="acc-visibility">Toggles</button>
       </div>
 
       <!-- Accordion Sections List -->
@@ -380,7 +407,7 @@
     </aside>
 
     <!-- Right Panel: Canvas & Live Preview -->
-    <main class="canvas-panel">
+    <main class="canvas-panel" id="canvasPanel">
       
       <!-- Canvas Controls Header -->
       <div class="canvas-header">
