@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GitHub Profile Studio | Professional Profile Decorator & Generator</title>
+  <meta name="description" content="Design and generate viral, aesthetic GitHub Profile READMEs with 8 professional design archetypes, project showcase styles, synced contribution graphs, widgets, and themes.">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>">
+</head>
+<body>
+
+  <!-- Top Navbar -->
+  <header class="navbar">
+    <a href="#" class="brand">
+      <div class="brand-icon-box">⚡</div>
+      <div class="brand-text">
+        <h1>GitHub Profile Studio</h1>
+        <p>Professional Developer Overview Design System</p>
+      </div>
+    </a>
+
+    <div class="nav-actions">
+      <button id="btnExploreComponents" class="btn btn-secondary">
+        🧩 Component Library
+      </button>
+      <button id="btnRandomize" class="btn btn-secondary">
+        🎲 Randomize
+      </button>
+      <button id="btnReset" class="btn btn-secondary">
+        🔄 Reset
+      </button>
+      <a href="https://github.com" target="_blank" id="starRepoBtn" class="btn btn-star">
+        ⭐ Star on GitHub
+      </a>
+    </div>
+  </header>
+
+  <!-- Instant Preset Archetypes Bar -->
+  <div class="template-bar" id="templateBar">
+    <!-- Populated by JS -->
+  </div>
+
+  <!-- Main Container -->
+  <main class="app-container">
+    
+    <!-- Left Sidebar: Customizer & Controls -->
+    <aside class="editor-sidebar">
+      
+      <!-- 1. Profile Info -->
+      <section class="control-section">
+        <div class="section-title">
+          <span>👤 Profile Identity</span>
+          <span class="badge">Core</span>
+        </div>
+        <div class="form-group">
+          <label for="inputUsername">GitHub Username</label>
+          <input type="text" id="inputUsername" class="form-control" placeholder="e.g. torvalds" value="alexdev">
+        </div>
+        <div class="form-group">
+          <label for="inputName">Display Name</label>
+          <input type="text" id="inputName" class="form-control" placeholder="e.g. Alex Developer" value="Alex Vance">
+        </div>
+        <div class="form-group">
+          <label for="inputHeadline">Headline & Specialization</label>
+          <input type="text" id="inputHeadline" class="form-control" placeholder="e.g. Full-Stack Architect & Open-Source Creator" value="Full-Stack Cyber Architect // Cloud & Systems">
+        </div>
+      </section>
+
+      <!-- 2. Radical Design Archetypes -->
+      <section class="control-section">
+        <div class="section-title">
+          <span>🎨 Design Archetype</span>
+          <span class="badge">8 Modes</span>
+        </div>
+        <div class="archetype-grid" id="archetypeGrid">
+          <!-- Populated by JS -->
+        </div>
+      </section>
+
+      <!-- 3. Projects Showcase Studio (Multiple Projects & Styles) -->
+      <section class="control-section">
+        <div class="section-title">
+          <span>🚀 Featured Projects Studio</span>
+          <span class="badge" id="projectCount">3 projects</span>
+        </div>
+        <div class="form-group">
+          <label for="selectProjectStyle">Showcase Layout Style</label>
+          <select id="selectProjectStyle" class="form-control">
+            <option value="bento">🍱 Modern Bento Card Matrix</option>
+            <option value="pinned">📌 GitHub Pinned Repos Style</option>
+            <option value="table">📊 Structured Developer Table</option>
+            <option value="minimal">🖤 Minimalist Status List</option>
+          </select>
+        </div>
+
+        <div id="projectsListContainer">
+          <!-- Dynamic Project Cards Rendered by JS -->
+        </div>
+
+        <button id="btnAddProject" class="btn-add-item">+ Add Another Project</button>
+      </section>
+
+      <!-- 4. Synced GitHub Contribution Graphs -->
+      <section class="control-section">
+        <div class="section-title">
+          <span>📈 Synced Contribution Graphs</span>
+          <span class="badge">Live Sync</span>
+        </div>
+        <div class="form-group">
+          <label for="selectGraphStyle">Contribution Graph Mode</label>
+          <select id="selectGraphStyle" class="form-control">
+            <option value="activity">📊 Synced GitHub Activity Graph</option>
+            <option value="snake">🐍 Snake Eating Contribution Grid</option>
+            <option value="3d">🌌 3D Isometric Contribution Grid</option>
+            <option value="streak">⚡ Compact Streak & Stats Cards</option>
+            <option value="all">🔥 All Graphs Combined</option>
+          </select>
+        </div>
+      </section>
+
+      <!-- 5. Status & Bio Matrix -->
+      <section class="control-section">
+        <div class="section-title">
+          <span>🌱 Current Focus & Status</span>
+        </div>
+        <div class="form-group">
+          <label for="statusWorking">🔭 Currently Working On</label>
+          <input type="text" id="statusWorking" class="form-control" value="Next-generation cloud orchestrators & microservices">
+        </div>
+        <div class="form-group">
+          <label for="statusLearning">🌱 Currently Learning</label>
+          <input type="text" id="statusLearning" class="form-control" value="Rust kernel programming & WebGPU shaders">
+        </div>
+        <div class="form-group">
+          <label for="statusAskMe">💬 Ask Me About</label>
+          <input type="text" id="statusAskMe" class="form-control" value="React, Next.js, Node.js, Distributed DBs & CI/CD">
+        </div>
+        <div class="form-group">
+          <label for="statusFunFact">⚡ Fun Fact</label>
+          <input type="text" id="statusFunFact" class="form-control" value="Powered by coffee, dark mode, and lo-fi beats">
+        </div>
+      </section>
+
+      <!-- 6. Animated Typing Banner Strings -->
+      <section class="control-section">
+        <div class="section-title">
+          <span>⚡ Dynamic Rotating Bios</span>
+        </div>
+        <div class="form-group">
+          <label for="typingLine1">Line 1</label>
+          <input type="text" id="typingLine1" class="form-control" value="Building Next-Gen Web Experiences ⚡">
+        </div>
+        <div class="form-group">
+          <label for="typingLine2">Line 2</label>
+          <input type="text" id="typingLine2" class="form-control" value="Full-Stack TypeScript & Rust Engineer 🚀">
+        </div>
+        <div class="form-group">
+          <label for="typingLine3">Line 3</label>
+          <input type="text" id="typingLine3" class="form-control" value="Optimizing Bytes & Neurons 🧠">
+        </div>
+      </section>
+
+      <!-- 7. Tech Stack Arsenal -->
+      <section class="control-section">
+        <div class="section-title">
+          <span>🛠️ Skill Matrix & Tools</span>
+          <span class="badge" id="skillCount">0 selected</span>
+        </div>
+        <div class="tech-search">
+          <input type="text" id="techSearchInput" class="form-control" placeholder="Search 100+ technologies (e.g. React, Rust)...">
+        </div>
+        <div class="tech-categories" id="techCategories">
+          <button class="category-tab active" data-cat="all">All</button>
+          <button class="category-tab" data-cat="languages">Languages</button>
+          <button class="category-tab" data-cat="frontend">Frontend</button>
+          <button class="category-tab" data-cat="backend">Backend</button>
+          <button class="category-tab" data-cat="database">Database</button>
+          <button class="category-tab" data-cat="devops">DevOps & Cloud</button>
+          <button class="category-tab" data-cat="tools">Tools & Mobile</button>
+        </div>
+        <div class="tech-grid" id="techGrid">
+          <!-- Populated by JS -->
+        </div>
+      </section>
+
+      <!-- 8. Dynamic Widgets Toggles -->
+      <section class="control-section">
+        <div class="section-title">
+          <span>📊 Telemetry & Live Cards</span>
+          <span class="badge">Toggles</span>
+        </div>
+        <div class="toggle-group">
+          <div class="toggle-row">
+            <span class="toggle-label">Header Banner & Waves</span>
+            <label class="switch">
+              <input type="checkbox" id="toggleHeader" checked>
+              <span class="slider"></span>
+            </label>
+          </div>
+          <div class="toggle-row">
+            <span class="toggle-label">Typing SVG Animation</span>
+            <label class="switch">
+              <input type="checkbox" id="toggleTyping" checked>
+              <span class="slider"></span>
+            </label>
+          </div>
+          <div class="toggle-row">
+            <span class="toggle-label">Featured Projects Section</span>
+            <label class="switch">
+              <input type="checkbox" id="toggleProjects" checked>
+              <span class="slider"></span>
+            </label>
+          </div>
+          <div class="toggle-row">
+            <span class="toggle-label">Status & Bio Matrix</span>
+            <label class="switch">
+              <input type="checkbox" id="toggleStatusBio" checked>
+              <span class="slider"></span>
+            </label>
+          </div>
+          <div class="toggle-row">
+            <span class="toggle-label">Synced Contribution Graphs</span>
+            <label class="switch">
+              <input type="checkbox" id="toggleGraphs" checked>
+              <span class="slider"></span>
+            </label>
+          </div>
+          <div class="toggle-row">
+            <span class="toggle-label">GitHub Stats & Streak Cards</span>
+            <label class="switch">
+              <input type="checkbox" id="toggleStats" checked>
+              <span class="slider"></span>
+            </label>
+          </div>
+          <div class="toggle-row">
+            <span class="toggle-label">Top Languages Breakdown</span>
+            <label class="switch">
+              <input type="checkbox" id="toggleLanguages" checked>
+              <span class="slider"></span>
+            </label>
+          </div>
+          <div class="toggle-row">
+            <span class="toggle-label">GitHub Trophy Showcase</span>
+            <label class="switch">
+              <input type="checkbox" id="toggleTrophies" checked>
+              <span class="slider"></span>
+            </label>
+          </div>
+          <div class="toggle-row">
+            <span class="toggle-label">Daily Dev Quote</span>
+            <label class="switch">
+              <input type="checkbox" id="toggleQuote" checked>
+              <span class="slider"></span>
+            </label>
+          </div>
+          <div class="toggle-row">
+            <span class="toggle-label">Profile Views Counter</span>
+            <label class="switch">
+              <input type="checkbox" id="toggleViews" checked>
+              <span class="slider"></span>
+            </label>
+          </div>
+          <div class="toggle-row">
+            <span class="toggle-label">Studio Backlink Badge</span>
+            <label class="switch">
+              <input type="checkbox" id="toggleViralBadge" checked>
+              <span class="slider"></span>
+            </label>
+          </div>
+        </div>
+      </section>
+
+      <!-- 9. Social & Contact Links -->
+      <section class="control-section">
+        <div class="section-title">
+          <span>🌐 Social Network Hub</span>
+        </div>
+        <div class="form-group">
+          <label for="socialLinkedin">LinkedIn Username</label>
+          <input type="text" id="socialLinkedin" class="form-control" placeholder="your-linkedin-id" value="alex-vance">
+        </div>
+        <div class="form-group">
+          <label for="socialTwitter">Twitter / X Handle</label>
+          <input type="text" id="socialTwitter" class="form-control" placeholder="your_twitter" value="alexvance_dev">
+        </div>
+        <div class="form-group">
+          <label for="socialDiscord">Discord Server / ID</label>
+          <input type="text" id="socialDiscord" class="form-control" placeholder="Invite or user ID" value="alexvance">
+        </div>
+        <div class="form-group">
+          <label for="socialPortfolio">Portfolio Website URL</label>
+          <input type="text" id="socialPortfolio" class="form-control" placeholder="https://..." value="https://alexvance.io">
+        </div>
+        <div class="form-group">
+          <label for="socialEmail">Contact Email</label>
+          <input type="email" id="socialEmail" class="form-control" placeholder="you@domain.com" value="alex@vance.dev">
+        </div>
+      </section>
+
+      <!-- 10. Support & Sponsor Links -->
+      <section class="control-section">
+        <div class="section-title">
+          <span>💖 Sponsorship & Support</span>
+        </div>
+        <div class="form-group">
+          <label for="sponsorBuyMeCoffee">Buy Me A Coffee Username</label>
+          <input type="text" id="sponsorBuyMeCoffee" class="form-control" placeholder="username" value="alexvance">
+        </div>
+        <div class="form-group">
+          <label for="sponsorKoFi">Ko-fi Username</label>
+          <input type="text" id="sponsorKoFi" class="form-control" placeholder="username">
+        </div>
+      </section>
+
+    </aside>
+
+    <!-- Right Area: Studio Preview & Code -->
+    <section class="preview-container">
+      
+      <!-- Studio Header Bar -->
+      <div class="preview-header">
+        <div class="view-tabs">
+          <button id="tabLivePreview" class="view-tab active">
+            <span>👁️ Studio Preview</span>
+          </button>
+          <button id="tabMarkdownCode" class="view-tab">
+            <span>💻 Raw Markdown</span>
+          </button>
+        </div>
+
+        <div class="preview-actions">
+          <button id="btnCopyMarkdown" class="btn btn-secondary">
+            📋 Copy Markdown
+          </button>
+          <button id="btnDownloadReadme" class="btn btn-primary">
+            💾 Download README.md
+          </button>
+        </div>
+      </div>
+
+      <!-- Studio Preview Body -->
+      <div class="preview-body">
+        
+        <!-- Tab 1: Studio Window Frame Mockup -->
+        <div class="mockup-window" id="mockupWindow">
+          <div class="mockup-window-header">
+            <div class="mockup-window-dots">
+              <div class="dot dot-red"></div>
+              <div class="dot dot-yellow"></div>
+              <div class="dot dot-green"></div>
+            </div>
+            <div class="mockup-window-title" id="mockupAddressBar">
+              <span>📄 github.com/alexdev/README.md</span>
+            </div>
+            <div style="width: 40px;"></div>
+          </div>
+          <div id="livePreviewContainer" class="mockup-window-body">
+            <!-- Dynamic Content Rendered Here -->
+          </div>
+        </div>
+
+        <!-- Tab 2: Raw Code Container -->
+        <div id="markdownCodeContainer" class="markdown-code-container">
+          <pre><code id="rawMarkdownOutput"></code></pre>
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- Component Library Explorer Modal -->
+  <div id="componentModal" class="modal-overlay">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h2>🧩 Component Catalog Explorer</h2>
+        <button id="modalCloseBtn" class="modal-close">✕</button>
+      </div>
+      <div class="modal-body" id="modalComponentList">
+        <!-- Populated by JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Alert -->
+  <div id="toast" class="toast">
+    <span id="toastMsg">Markdown copied to clipboard! ✨</span>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
