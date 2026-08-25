@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="https://komarev.com/ghpvc/?username=YOUR_USERNAME&label=TERMINAL+SESSIONS&color=00ff66&style=flat-square" alt="Profile Views"/>
+  <img src="https://komarev.com/ghpvc/?username=YOUR_USERNAME&label=PROFILE+VIEWS&color=00ff66&style=flat-square" alt="Profile Views"/>
 </div>
 
 ```ansi
@@ -11,7 +11,7 @@
                 Shell    : zsh 5.9 (x86_64-pc-linux-gnu)
                 Editor   : Neovim v0.10.0 + Lua
                 Uptime   : 99.99% Continuous Delivery
-                Fuel     : Fresh Dark Roast Espresso ☕
+                Fuel     : Fresh Coffee ☕
 ```
 
 <div align="center">
@@ -24,32 +24,25 @@
 
 ---
 
-### 💻 Terminal Session & Focus
-
 ```bash
-┌──(root㉿dev)-[~/workspace]
+┌──(user㉿dev)-[~/workspace]
 └─$ cat current_focus.json
 ```
 ```json
 {
-  "status"        : "🟢 Active & Shipping",
-  "building"      : "Open-source developer tools and scalable web applications",
-  "learning"      : "Rust, TypeScript internals & cloud-native architecture",
-  "ask_me_about"  : "React, Next.js, Node.js, API design & web performance",
-  "fun_fact"      : "I code best with good coffee and lo-fi music ☕"
+  "working_on"  : "Open-source developer tools and scalable web applications",
+  "learning"    : "Rust, TypeScript internals & cloud-native architecture",
+  "ask_me_about": "React, Next.js, Node.js, API design & web performance",
+  "fun_fact"    : "I code best with good coffee and lo-fi music ☕"
 }
 ```
 
----
-
-### 🛠️ Installed Packages & Toolchain
-
 ```bash
-┌──(root㉿dev)-[~/toolchain]
-└─$ pacman -Q --categorized
+┌──(user㉿dev)-[~/toolchain]
+└─$ pacman -Qe --skills
 ```
 
-| Domain | Technologies & Toolchain |
+| Category | Technologies |
 |:---|:---|
 | **💻 Languages** | <a href="https://skillicons.dev"><img src="https://skillicons.dev/icons?i=ts,js,rust,go,python&theme=dark" /></a> |
 | **🎨 Frontend & UI** | <a href="https://skillicons.dev"><img src="https://skillicons.dev/icons?i=react,nextjs,tailwind&theme=dark" /></a> |
@@ -57,29 +50,23 @@
 | **☁️ Cloud & DevOps** | <a href="https://skillicons.dev"><img src="https://skillicons.dev/icons?i=docker,aws&theme=dark" /></a> |
 | **🛠️ Tools & Platforms** | <a href="https://skillicons.dev"><img src="https://skillicons.dev/icons?i=git&theme=dark" /></a> |
 
----
-
-### 📦 Running Containers & Shipped Projects
 
 ```bash
-┌──(root㉿dev)-[~/services]
-└─$ docker ps --format "table {{.Names}}\t{{.Status}}\t{{.Ports}}"
+┌──(user㉿dev)-[~/projects]
+└─$ docker ps --format "table {{.Names}}\t{{.Image}}\t{{.Status}}"
 ```
 
-| 🚀 Project / Showcase | ⚡ Stack & Architecture | 🌐 Deployments & Source |
+| 📦 Project Name | ⚡ Tech Stack | 🌐 Live Demo & Source |
 |:---|:---|:---|
-| **[DevPulse](https://github.com/YOUR_USERNAME/devpulse)**<br/><sub>Real-time GitHub statistics, commit streak analytics, and developer productivity dashboard.</sub> | `TypeScript, React, Next.js, TailwindCSS` | <a href="https://devpulse.io"><img src="https://img.shields.io/badge/Live_App-0070f3?style=flat-square&logo=vercel&logoColor=white" /></a> <a href="https://github.com/YOUR_USERNAME/devpulse"><img src="https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white" /></a> <img src="https://img.shields.io/badge/Stars-⭐_1.4k-yellow?style=flat-square" /> |
-| **[QuickAPI](https://github.com/YOUR_USERNAME/quick-api)**<br/><sub>Production-ready backend API starter kit with authentication, rate limiting, and caching.</sub> | `Node.js, Express, PostgreSQL, Redis, Docker` | <a href="https://quickapi.dev"><img src="https://img.shields.io/badge/Live_App-0070f3?style=flat-square&logo=vercel&logoColor=white" /></a> <a href="https://github.com/YOUR_USERNAME/quick-api"><img src="https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white" /></a> <img src="https://img.shields.io/badge/Stars-⭐_850-yellow?style=flat-square" /> |
-| **[TaskFlow](https://github.com/YOUR_USERNAME/taskflow)**<br/><sub>Minimalist Kanban project manager with drag-and-drop workflow and offline support.</sub> | `React, Zustand, Web APIs, Vite` | <a href="https://taskflow.app"><img src="https://img.shields.io/badge/Live_App-0070f3?style=flat-square&logo=vercel&logoColor=white" /></a> <a href="https://github.com/YOUR_USERNAME/taskflow"><img src="https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white" /></a> <img src="https://img.shields.io/badge/Stars-⭐_620-yellow?style=flat-square" /> |
-
+| **`devpulse`**<br/><sub>Real-time GitHub statistics, commit streak analytics, and developer productivity dashboard.</sub> | `TypeScript, React, Next.js, TailwindCSS` | <a href="https://devpulse.io"><img src="https://img.shields.io/badge/Live_Demo-0070f3?style=flat-square&logo=vercel&logoColor=white" /></a> <a href="https://github.com/YOUR_USERNAME/devpulse"><img src="https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white" /></a> |
+| **`quickapi`**<br/><sub>Production-ready backend API starter kit with authentication, rate limiting, and caching.</sub> | `Node.js, Express, PostgreSQL, Redis, Docker` | <a href="https://quickapi.dev"><img src="https://img.shields.io/badge/Live_Demo-0070f3?style=flat-square&logo=vercel&logoColor=white" /></a> <a href="https://github.com/YOUR_USERNAME/quick-api"><img src="https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white" /></a> |
+| **`taskflow`**<br/><sub>Minimalist Kanban project manager with drag-and-drop workflow and offline support.</sub> | `React, Zustand, Web APIs, Vite` | <a href="https://taskflow.app"><img src="https://img.shields.io/badge/Live_Demo-0070f3?style=flat-square&logo=vercel&logoColor=white" /></a> <a href="https://github.com/YOUR_USERNAME/taskflow"><img src="https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white" /></a> |
 
 ---
 
-### 📈 Activity Monitor
-
 ```bash
-┌──(root㉿dev)-[~/telemetry]
-└─$ btop --live --git-commits
+┌──(user㉿dev)-[~/activity]
+└─$ btop --live --git-activity
 ```
 
 <div align="center">
@@ -97,6 +84,17 @@
   <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=YOUR_USERNAME&layout=compact&theme=merko&hide_border=true&bg_color=0a0e0b&title_color=00ff66&text_color=22c55e&langs_count=8" height="140" />
 </div>
 
+<details>
+<summary><b>📂 View Terminal Aliases & Config</b></summary>
+
+```bash
+alias build="pnpm build && git status"
+alias deploy="docker compose up -d --build"
+alias test="cargo test && vitest run"
+export EDITOR="nvim"
+```
+</details>
+
 <div align="center">
-  <code>[ 0x00_SYS_OK ] &nbsp; Built with <a href="https://github.com/Ratul-NotFound/Github-Overview-Maker">Git View Pro</a> &nbsp; [ EOF ]</code>
+  <code>[ 0x00_OK ] &nbsp; Built with <a href="https://github.com/Ratul-NotFound/Github-Overview-Maker">Git View Pro</a> &nbsp; [ EOF ]</code>
 </div>

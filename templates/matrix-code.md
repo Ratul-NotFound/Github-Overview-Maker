@@ -1,12 +1,12 @@
 <div align="center">
-  <img src="https://komarev.com/ghpvc/?username=YOUR_USERNAME&label=MAINFRAME+ACCESS&color=00ff66&style=flat-square" alt="Profile Views" />
+  <img src="https://komarev.com/ghpvc/?username=YOUR_USERNAME&label=PROFILE+ACCESS&color=00ff66&style=flat-square" alt="Profile Views" />
 </div>
 
 ```bash
 /* ─────────────────────────────────────────────────────────────
-   OPERATOR: YOUR_NAME // CIPHER: YOUR_USERNAME
-   ROLE: FULL-STACK DEVELOPER • OPEN SOURCE BUILDER
-   SECURITY CLEARANCE: LEVEL 0 // PROTOCOL: MATRIX_OVERRIDE
+   DEVELOPER: YOUR_NAME // HANDLE: @YOUR_USERNAME
+   ROLE     : FULL-STACK DEVELOPER • OPEN SOURCE BUILDER
+   STATUS   : ACTIVE & READY TO COLLABORATE
 ───────────────────────────────────────────────────────────── */
 ```
 
@@ -20,19 +20,19 @@
 
 ---
 
-### 🟢 Mainframe SysDump
+### 🟢 About Me & Current Focus
 
-```yaml
-[SYSTEM_FEED]:
-  CURRENT_THREAD: "Open-source developer tools and scalable web applications"
-  ACTIVE_STUDY: "Rust, TypeScript internals & cloud-native architecture"
-  QUERY_ROUTER: "React, Next.js, Node.js, API design & web performance"
-  SYSTEM_NOTE: "I code best with good coffee and lo-fi music ☕"
+```text
+[PROFILE DETAILS]
+  CURRENT PROJECT: Open-source developer tools and scalable web applications
+  LEARNING       : Rust, TypeScript internals & cloud-native architecture
+  ASK ME ABOUT   : React, Next.js, Node.js, API design & web performance
+  FUN FACT       : I code best with good coffee and lo-fi music ☕
 ```
 
-### ⚡ Injected Binaries & Modules
+### ⚡ Skills & Technologies
 
-| Domain | Technologies & Toolchain |
+| Category | Technologies |
 |:---|:---|
 | **💻 Languages** | <a href="https://skillicons.dev"><img src="https://skillicons.dev/icons?i=ts,js,rust,go,python&theme=dark" /></a> |
 | **🎨 Frontend & UI** | <a href="https://skillicons.dev"><img src="https://skillicons.dev/icons?i=react,nextjs,tailwind&theme=dark" /></a> |
@@ -42,25 +42,25 @@
 
 ---
 
-### 🛰️ Deployed Payloads
+### 🛰️ Featured Projects
 
-| 🚀 Project / Showcase | ⚡ Stack & Architecture | 🌐 Deployments & Source |
-|:---|:---|:---|
-| **[DevPulse](https://github.com/YOUR_USERNAME/devpulse)**<br/><sub>Real-time GitHub statistics, commit streak analytics, and developer productivity dashboard.</sub> | `TypeScript, React, Next.js, TailwindCSS` | <a href="https://devpulse.io"><img src="https://img.shields.io/badge/Live_App-0070f3?style=flat-square&logo=vercel&logoColor=white" /></a> <a href="https://github.com/YOUR_USERNAME/devpulse"><img src="https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white" /></a> <img src="https://img.shields.io/badge/Stars-⭐_1.4k-yellow?style=flat-square" /> |
-| **[QuickAPI](https://github.com/YOUR_USERNAME/quick-api)**<br/><sub>Production-ready backend API starter kit with authentication, rate limiting, and caching.</sub> | `Node.js, Express, PostgreSQL, Redis, Docker` | <a href="https://quickapi.dev"><img src="https://img.shields.io/badge/Live_App-0070f3?style=flat-square&logo=vercel&logoColor=white" /></a> <a href="https://github.com/YOUR_USERNAME/quick-api"><img src="https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white" /></a> <img src="https://img.shields.io/badge/Stars-⭐_850-yellow?style=flat-square" /> |
-| **[TaskFlow](https://github.com/YOUR_USERNAME/taskflow)**<br/><sub>Minimalist Kanban project manager with drag-and-drop workflow and offline support.</sub> | `React, Zustand, Web APIs, Vite` | <a href="https://taskflow.app"><img src="https://img.shields.io/badge/Live_App-0070f3?style=flat-square&logo=vercel&logoColor=white" /></a> <a href="https://github.com/YOUR_USERNAME/taskflow"><img src="https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white" /></a> <img src="https://img.shields.io/badge/Stars-⭐_620-yellow?style=flat-square" /> |
+* **[DevPulse](https://github.com/YOUR_USERNAME/devpulse)** — Real-time GitHub statistics, commit streak analytics, and developer productivity dashboard. *(`TypeScript, React, Next.js, TailwindCSS`)*<br/>
+  ➔ <a href="https://devpulse.io"><img src="https://img.shields.io/badge/Live_Demo-00ff66?style=flat-square&logo=vercel&logoColor=black" /></a> <a href="https://github.com/YOUR_USERNAME/devpulse"><img src="https://img.shields.io/badge/Source-051a08?style=flat-square&logo=github&logoColor=00ff66" /></a>
 
+* **[QuickAPI](https://github.com/YOUR_USERNAME/quick-api)** — Production-ready backend API starter kit with authentication, rate limiting, and caching. *(`Node.js, Express, PostgreSQL, Redis, Docker`)*<br/>
+  ➔ <a href="https://quickapi.dev"><img src="https://img.shields.io/badge/Live_Demo-00ff66?style=flat-square&logo=vercel&logoColor=black" /></a> <a href="https://github.com/YOUR_USERNAME/quick-api"><img src="https://img.shields.io/badge/Source-051a08?style=flat-square&logo=github&logoColor=00ff66" /></a>
+
+* **[TaskFlow](https://github.com/YOUR_USERNAME/taskflow)** — Minimalist Kanban project manager with drag-and-drop workflow and offline support. *(`React, Zustand, Web APIs, Vite`)*<br/>
+  ➔ <a href="https://taskflow.app"><img src="https://img.shields.io/badge/Live_Demo-00ff66?style=flat-square&logo=vercel&logoColor=black" /></a> <a href="https://github.com/YOUR_USERNAME/taskflow"><img src="https://img.shields.io/badge/Source-051a08?style=flat-square&logo=github&logoColor=00ff66" /></a>
 
 ---
 
-### 📈 Stream Activity Telemetry
+### 📈 GitHub Activity
 
 <div align="center">
   <img src="https://github-readme-activity-graph.vercel.app/graph?username=YOUR_USERNAME&theme=github-dark&hide_border=true&area=true" width="100%" />
 </div>
 
-
-### 📊 Mainframe Metrics
 
 <div align="center">
   <img src="https://github-readme-stats.vercel.app/api?username=YOUR_USERNAME&show_icons=true&theme=merko&hide_border=true&bg_color=030a04&title_color=00ff66&icon_color=00dd55&text_color=86efac&rank_icon=github&include_all_commits=true" height="165" />
@@ -69,11 +69,5 @@
 </div>
 
 <div align="center">
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=YOUR_USERNAME&layout=compact&theme=merko&hide_border=true&bg_color=030a04&title_color=00ff66&text_color=86efac&langs_count=8" height="140" />
-</div>
-
----
-
-<div align="center">
-  <code>[ 0x7F ] Initialized via <a href="https://github.com/Ratul-NotFound/Github-Overview-Maker">Git View Pro</a> [ 0x00 ]</code>
+  <code>[ 0x00_OK ] Built with <a href="https://github.com/Ratul-NotFound/Github-Overview-Maker">Git View Pro</a> [ EOF ]</code>
 </div>

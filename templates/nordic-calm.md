@@ -3,9 +3,9 @@
 </div>
 
 <div align="center">
-  <img src="https://komarev.com/ghpvc/?username=YOUR_USERNAME&label=Nordic+Views&color=88c0d0&style=flat-square" />
+  <img src="https://komarev.com/ghpvc/?username=YOUR_USERNAME&label=Profile+Views&color=88c0d0&style=flat-square" />
   &nbsp;&nbsp;
-  <img src="https://img.shields.io/badge/Arctic-Open%20Source-81a1c1?style=flat-square&logo=github&logoColor=white" />
+  <img src="https://img.shields.io/badge/Status-Open%20to%20Work-81a1c1?style=flat-square&logo=github&logoColor=white" />
 </div>
 
 <div align="center">
@@ -18,20 +18,20 @@
 
 ---
 
-### ❄️ Nordic Dispatch
+### ❄️ About Me & Current Focus
 
-| Project Focus | Status Detail |
-|:---|:---|
-| 🏔️ **Active Build** | Open-source developer tools and scalable web applications |
-| ❄️ **Exploring Ice** | Rust, TypeScript internals & cloud-native architecture |
-| ☕ **Nordic Queries** | React, Next.js, Node.js, API design & web performance |
-| 🌲 **Fun Fact** | I code best with good coffee and lo-fi music ☕ |
+> *Building clean, resilient, and user-friendly software with modern web technologies.*
+
+- 🏔️ **Current Project:** Open-source developer tools and scalable web applications
+- ❄️ **Learning:** Rust, TypeScript internals & cloud-native architecture
+- ☕ **Ask Me About:** React, Next.js, Node.js, API design & web performance
+- 🌲 **Fun Fact:** I code best with good coffee and lo-fi music ☕
 
 ---
 
-### 🛠️ Stack & Technologies
+### 🛠️ Skills & Technologies
 
-| Domain | Technologies & Toolchain |
+| Category | Technologies |
 |:---|:---|
 | **💻 Languages** | <a href="https://skillicons.dev"><img src="https://skillicons.dev/icons?i=ts,js,rust,go,python&theme=dark" /></a> |
 | **🎨 Frontend & UI** | <a href="https://skillicons.dev"><img src="https://skillicons.dev/icons?i=react,nextjs,tailwind&theme=dark" /></a> |
@@ -41,25 +41,25 @@
 
 ---
 
-### 📦 Open Source Shipments
+### 📦 Featured Projects
 
-| 🚀 Project / Showcase | ⚡ Stack & Architecture | 🌐 Deployments & Source |
-|:---|:---|:---|
-| **[DevPulse](https://github.com/YOUR_USERNAME/devpulse)**<br/><sub>Real-time GitHub statistics, commit streak analytics, and developer productivity dashboard.</sub> | `TypeScript, React, Next.js, TailwindCSS` | <a href="https://devpulse.io"><img src="https://img.shields.io/badge/Live_App-0070f3?style=flat-square&logo=vercel&logoColor=white" /></a> <a href="https://github.com/YOUR_USERNAME/devpulse"><img src="https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white" /></a> <img src="https://img.shields.io/badge/Stars-⭐_1.4k-yellow?style=flat-square" /> |
-| **[QuickAPI](https://github.com/YOUR_USERNAME/quick-api)**<br/><sub>Production-ready backend API starter kit with authentication, rate limiting, and caching.</sub> | `Node.js, Express, PostgreSQL, Redis, Docker` | <a href="https://quickapi.dev"><img src="https://img.shields.io/badge/Live_App-0070f3?style=flat-square&logo=vercel&logoColor=white" /></a> <a href="https://github.com/YOUR_USERNAME/quick-api"><img src="https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white" /></a> <img src="https://img.shields.io/badge/Stars-⭐_850-yellow?style=flat-square" /> |
-| **[TaskFlow](https://github.com/YOUR_USERNAME/taskflow)**<br/><sub>Minimalist Kanban project manager with drag-and-drop workflow and offline support.</sub> | `React, Zustand, Web APIs, Vite` | <a href="https://taskflow.app"><img src="https://img.shields.io/badge/Live_App-0070f3?style=flat-square&logo=vercel&logoColor=white" /></a> <a href="https://github.com/YOUR_USERNAME/taskflow"><img src="https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white" /></a> <img src="https://img.shields.io/badge/Stars-⭐_620-yellow?style=flat-square" /> |
+* 🏔️ **[DevPulse](https://github.com/YOUR_USERNAME/devpulse)** — Real-time GitHub statistics, commit streak analytics, and developer productivity dashboard. *(`TypeScript, React, Next.js, TailwindCSS`)*<br/>
+  ➔ <a href="https://devpulse.io"><img src="https://img.shields.io/badge/Live_Demo-88c0d0?style=flat-square&logo=vercel&logoColor=white" /></a> <a href="https://github.com/YOUR_USERNAME/devpulse"><img src="https://img.shields.io/badge/Source-2e3440?style=flat-square&logo=github&logoColor=white" /></a>
 
+* 🏔️ **[QuickAPI](https://github.com/YOUR_USERNAME/quick-api)** — Production-ready backend API starter kit with authentication, rate limiting, and caching. *(`Node.js, Express, PostgreSQL, Redis, Docker`)*<br/>
+  ➔ <a href="https://quickapi.dev"><img src="https://img.shields.io/badge/Live_Demo-88c0d0?style=flat-square&logo=vercel&logoColor=white" /></a> <a href="https://github.com/YOUR_USERNAME/quick-api"><img src="https://img.shields.io/badge/Source-2e3440?style=flat-square&logo=github&logoColor=white" /></a>
+
+* 🏔️ **[TaskFlow](https://github.com/YOUR_USERNAME/taskflow)** — Minimalist Kanban project manager with drag-and-drop workflow and offline support. *(`React, Zustand, Web APIs, Vite`)*<br/>
+  ➔ <a href="https://taskflow.app"><img src="https://img.shields.io/badge/Live_Demo-88c0d0?style=flat-square&logo=vercel&logoColor=white" /></a> <a href="https://github.com/YOUR_USERNAME/taskflow"><img src="https://img.shields.io/badge/Source-2e3440?style=flat-square&logo=github&logoColor=white" /></a>
 
 ---
 
-### 📈 Glacier Activity
+### 📈 GitHub Activity
 
 <div align="center">
   <img src="https://github-readme-activity-graph.vercel.app/graph?username=YOUR_USERNAME&theme=nord&hide_border=true&area=true" width="100%" />
 </div>
 
-
-### 📊 Nord Metrics
 
 <div align="center">
   <img src="https://github-readme-stats.vercel.app/api?username=YOUR_USERNAME&show_icons=true&theme=nord&hide_border=true&bg_color=1a1e28&title_color=88c0d0&icon_color=81a1c1&text_color=d8dee9&rank_icon=github&include_all_commits=true" height="165" />
@@ -68,11 +68,5 @@
 </div>
 
 <div align="center">
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=YOUR_USERNAME&layout=compact&theme=nord&hide_border=true&bg_color=1a1e28&title_color=88c0d0&text_color=d8dee9&langs_count=8" height="140" />
-</div>
-
----
-
-<div align="center">
-  <sub>❄️ Architected in Arctic calm with <a href="https://github.com/Ratul-NotFound/Github-Overview-Maker">Git View Pro</a></sub>
+  <sub>❄️ Built with <a href="https://github.com/Ratul-NotFound/Github-Overview-Maker">Git View Pro</a></sub>
 </div>

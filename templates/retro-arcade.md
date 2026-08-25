@@ -18,32 +18,25 @@
 │─────────────────────────────────────────────────────────────│
 │  RANK  │  PLAYER                     │  SCORE    │  TIER    │
 │─────────────────────────────────────────────────────────────│
-│  #1    │  YOUR_NAME                  │  999,999  │  ★ LEGEND │
+│  #1    │  YOUR_NAME                  │  999,999  │  ★ MASTER │
 │  #2    │  GITHUB_COMMUNITY           │  850,000  │  ★ PRO   │
-│  #3    │  OPEN_SOURCE_BUILDER        │  740,000  │  ★ MASTER │
+│  #3    │  OPEN_SOURCE_BUILDER        │  740,000  │  ★ PRO   │
 │─────────────────────────────────────────────────────────────│
 │            ► PRESS START TO JOIN THE LEADERBOARD ◄          │
 └─────────────────────────────────────────────────────────────┘
 ```
 
----
-
-### 🎮 Player 1 Status
-
 ```
-  ┌──────────────────────────────────────────────┐
-  │  CURRENT STAGE    : Open-source developer to  │
-  │  SKILL UPGRADE    : Rust, TypeScript interna  │
-  │  CO-OP HOTLINE    : React, Next.js, Node.js,  │
-  │  CHEAT CODE       : I code best with good co  │
-  └──────────────────────────────────────────────┘
+  [ PLAYER 1 PROFILE ]
+  • CURRENT PROJECT: Open-source developer tools and scalable web applications
+  • LEARNING       : Rust, TypeScript internals & cloud-native architecture
+  • ASK ME ABOUT   : React, Next.js, Node.js, API design & web performance
+  • FUN FACT       : I code best with good coffee and lo-fi music ☕
 ```
 
----
+### 👾 Skills & Technologies
 
-### 👾 Power-Ups & Equipped Items
-
-| Domain | Technologies & Toolchain |
+| Category | Technologies |
 |:---|:---|
 | **💻 Languages** | <a href="https://skillicons.dev"><img src="https://skillicons.dev/icons?i=ts,js,rust,go,python&theme=dark" /></a> |
 | **🎨 Frontend & UI** | <a href="https://skillicons.dev"><img src="https://skillicons.dev/icons?i=react,nextjs,tailwind&theme=dark" /></a> |
@@ -53,27 +46,37 @@
 
 ---
 
-### 🕹️ Cleared Stages (Shipped Projects)
+### 🕹️ Featured Projects
 
-| 🚀 Project / Showcase | ⚡ Stack & Architecture | 🌐 Deployments & Source |
-|:---|:---|:---|
-| **[DevPulse](https://github.com/YOUR_USERNAME/devpulse)**<br/><sub>Real-time GitHub statistics, commit streak analytics, and developer productivity dashboard.</sub> | `TypeScript, React, Next.js, TailwindCSS` | <a href="https://devpulse.io"><img src="https://img.shields.io/badge/Live_App-0070f3?style=flat-square&logo=vercel&logoColor=white" /></a> <a href="https://github.com/YOUR_USERNAME/devpulse"><img src="https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white" /></a> <img src="https://img.shields.io/badge/Stars-⭐_1.4k-yellow?style=flat-square" /> |
-| **[QuickAPI](https://github.com/YOUR_USERNAME/quick-api)**<br/><sub>Production-ready backend API starter kit with authentication, rate limiting, and caching.</sub> | `Node.js, Express, PostgreSQL, Redis, Docker` | <a href="https://quickapi.dev"><img src="https://img.shields.io/badge/Live_App-0070f3?style=flat-square&logo=vercel&logoColor=white" /></a> <a href="https://github.com/YOUR_USERNAME/quick-api"><img src="https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white" /></a> <img src="https://img.shields.io/badge/Stars-⭐_850-yellow?style=flat-square" /> |
-| **[TaskFlow](https://github.com/YOUR_USERNAME/taskflow)**<br/><sub>Minimalist Kanban project manager with drag-and-drop workflow and offline support.</sub> | `React, Zustand, Web APIs, Vite` | <a href="https://taskflow.app"><img src="https://img.shields.io/badge/Live_App-0070f3?style=flat-square&logo=vercel&logoColor=white" /></a> <a href="https://github.com/YOUR_USERNAME/taskflow"><img src="https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white" /></a> <img src="https://img.shields.io/badge/Stars-⭐_620-yellow?style=flat-square" /> |
+```text
+[STAGE 1: DEVPULSE]
+Tech Stack: TypeScript, React, Next.js, TailwindCSS
+Summary: Real-time GitHub statistics, commit streak analytics, and developer productivity dashboard.
+```
+> ➔ [⚡ Live Demo](https://devpulse.io) &nbsp;•&nbsp; [💻 Source Code](https://github.com/YOUR_USERNAME/devpulse)
 
+```text
+[STAGE 2: QUICKAPI]
+Tech Stack: Node.js, Express, PostgreSQL, Redis, Docker
+Summary: Production-ready backend API starter kit with authentication, rate limiting, and caching.
+```
+> ➔ [⚡ Live Demo](https://quickapi.dev) &nbsp;•&nbsp; [💻 Source Code](https://github.com/YOUR_USERNAME/quick-api)
+
+```text
+[STAGE 3: TASKFLOW]
+Tech Stack: React, Zustand, Web APIs, Vite
+Summary: Minimalist Kanban project manager with drag-and-drop workflow and offline support.
+```
+> ➔ [⚡ Live Demo](https://taskflow.app) &nbsp;•&nbsp; [💻 Source Code](https://github.com/YOUR_USERNAME/taskflow)
 
 ---
 
-### 📊 Pixel Activity Stream
+### 📊 GitHub Activity
 
 <div align="center">
   <img src="https://github-readme-activity-graph.vercel.app/graph?username=YOUR_USERNAME&theme=react-dark&hide_border=true&area=true" width="100%" />
 </div>
 
-
-<div align="center">
-  <img src="https://github-profile-trophy.vercel.app/?username=YOUR_USERNAME&theme=radical&no-frame=true&no-bg=true&margin-w=8&column=7" width="100%" />
-</div>
 
 <div align="center">
   <img src="https://github-readme-stats.vercel.app/api?username=YOUR_USERNAME&show_icons=true&theme=radical&hide_border=true&bg_color=0d0820&title_color=facc15&icon_color=ff007f&text_color=e2e8f0&rank_icon=github" height="160" />
@@ -82,9 +85,5 @@
 </div>
 
 <div align="center">
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=YOUR_USERNAME&layout=compact&theme=radical&hide_border=true&bg_color=0d0820&title_color=facc15&text_color=e2e8f0&langs_count=8" height="140" />
-</div>
-
-<div align="center">
-  <sub>👾 INSERT COIN • Made with <a href="https://github.com/Ratul-NotFound/Github-Overview-Maker">Git View Pro</a></sub>
+  <sub>👾 INSERT COIN • Built with <a href="https://github.com/Ratul-NotFound/Github-Overview-Maker">Git View Pro</a></sub>
 </div>

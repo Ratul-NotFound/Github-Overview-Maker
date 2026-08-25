@@ -1,12 +1,18 @@
 <div align="center">
-  <img src="https://komarev.com/ghpvc/?username=YOUR_USERNAME&label=VIM+BUFFER+HITS&color=fe8019&style=flat-square" alt="Profile Views" />
+  <img src="https://komarev.com/ghpvc/?username=YOUR_USERNAME&label=PROFILE+VIEWS&color=fe8019&style=flat-square" alt="Profile Views" />
 </div>
 
-```vim
-" ====================================================
-" BUFFER: ~/.config/nvim/init.lua
-" DEVELOPER: YOUR_NAME [ Full-Stack Developer • Open Source Builder ]
-" ====================================================
+```lua
+-- ~/.config/nvim/lua/developer/profile.lua
+local profile = {
+  developer        = "YOUR_NAME",
+  role             = "Full-Stack Developer • Open Source Builder",
+  current_project  = "Open-source developer tools and scalable web applications",
+  learning         = "Rust, TypeScript internals & cloud-native architecture",
+  ask_me_about     = "React, Next.js, Node.js, API design & web performance",
+  fun_fact         = "I code best with good coffee and lo-fi music ☕"
+}
+return profile
 ```
 
 <div align="center">
@@ -19,20 +25,9 @@
 
 ---
 
-### 🪵 Gruvbox Registers & State
+### ⚙️ Skills & Technologies
 
-```lua
-return {
-  active_buffer = "Open-source developer tools and scalable web applications",
-  learning_doc  = "Rust, TypeScript internals & cloud-native architecture",
-  query_handler = "React, Next.js, Node.js, API design & web performance",
-  vim_trivia    = "I code best with good coffee and lo-fi music ☕"
-}
-```
-
-### ⚙️ Installed Plugins & Toolchains
-
-| Domain | Technologies & Toolchain |
+| Category | Technologies |
 |:---|:---|
 | **💻 Languages** | <a href="https://skillicons.dev"><img src="https://skillicons.dev/icons?i=ts,js,rust,go,python&theme=dark" /></a> |
 | **🎨 Frontend & UI** | <a href="https://skillicons.dev"><img src="https://skillicons.dev/icons?i=react,nextjs,tailwind&theme=dark" /></a> |
@@ -42,25 +37,25 @@ return {
 
 ---
 
-### 📦 Staged Repositories
+### 📦 Featured Projects
 
-| 🚀 Project / Showcase | ⚡ Stack & Architecture | 🌐 Deployments & Source |
-|:---|:---|:---|
-| **[DevPulse](https://github.com/YOUR_USERNAME/devpulse)**<br/><sub>Real-time GitHub statistics, commit streak analytics, and developer productivity dashboard.</sub> | `TypeScript, React, Next.js, TailwindCSS` | <a href="https://devpulse.io"><img src="https://img.shields.io/badge/Live_App-0070f3?style=flat-square&logo=vercel&logoColor=white" /></a> <a href="https://github.com/YOUR_USERNAME/devpulse"><img src="https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white" /></a> <img src="https://img.shields.io/badge/Stars-⭐_1.4k-yellow?style=flat-square" /> |
-| **[QuickAPI](https://github.com/YOUR_USERNAME/quick-api)**<br/><sub>Production-ready backend API starter kit with authentication, rate limiting, and caching.</sub> | `Node.js, Express, PostgreSQL, Redis, Docker` | <a href="https://quickapi.dev"><img src="https://img.shields.io/badge/Live_App-0070f3?style=flat-square&logo=vercel&logoColor=white" /></a> <a href="https://github.com/YOUR_USERNAME/quick-api"><img src="https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white" /></a> <img src="https://img.shields.io/badge/Stars-⭐_850-yellow?style=flat-square" /> |
-| **[TaskFlow](https://github.com/YOUR_USERNAME/taskflow)**<br/><sub>Minimalist Kanban project manager with drag-and-drop workflow and offline support.</sub> | `React, Zustand, Web APIs, Vite` | <a href="https://taskflow.app"><img src="https://img.shields.io/badge/Live_App-0070f3?style=flat-square&logo=vercel&logoColor=white" /></a> <a href="https://github.com/YOUR_USERNAME/taskflow"><img src="https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white" /></a> <img src="https://img.shields.io/badge/Stars-⭐_620-yellow?style=flat-square" /> |
+* **[DevPulse](https://github.com/YOUR_USERNAME/devpulse)** — Real-time GitHub statistics, commit streak analytics, and developer productivity dashboard. *(`TypeScript, React, Next.js, TailwindCSS`)*<br/>
+  ➔ [⚡ Live Demo](https://devpulse.io) &nbsp;•&nbsp; [💻 Source Code](https://github.com/YOUR_USERNAME/devpulse)
 
+* **[QuickAPI](https://github.com/YOUR_USERNAME/quick-api)** — Production-ready backend API starter kit with authentication, rate limiting, and caching. *(`Node.js, Express, PostgreSQL, Redis, Docker`)*<br/>
+  ➔ [⚡ Live Demo](https://quickapi.dev) &nbsp;•&nbsp; [💻 Source Code](https://github.com/YOUR_USERNAME/quick-api)
+
+* **[TaskFlow](https://github.com/YOUR_USERNAME/taskflow)** — Minimalist Kanban project manager with drag-and-drop workflow and offline support. *(`React, Zustand, Web APIs, Vite`)*<br/>
+  ➔ [⚡ Live Demo](https://taskflow.app) &nbsp;•&nbsp; [💻 Source Code](https://github.com/YOUR_USERNAME/taskflow)
 
 ---
 
-### 📈 Commit Trajectory
+### 📈 GitHub Activity
 
 <div align="center">
   <img src="https://github-readme-activity-graph.vercel.app/graph?username=YOUR_USERNAME&theme=gruvbox&hide_border=true&area=true" width="100%" />
 </div>
 
-
-### 📊 Terminal Analytics
 
 <div align="center">
   <img src="https://github-readme-stats.vercel.app/api?username=YOUR_USERNAME&show_icons=true&theme=gruvbox&hide_border=true&bg_color=1d2021&title_color=fe8019&icon_color=fabd2f&text_color=ebdbb2&rank_icon=github&include_all_commits=true" height="165" />
@@ -69,11 +64,5 @@ return {
 </div>
 
 <div align="center">
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=YOUR_USERNAME&layout=compact&theme=gruvbox&hide_border=true&bg_color=1d2021&title_color=fe8019&text_color=ebdbb2&langs_count=8" height="140" />
-</div>
-
----
-
-<div align="center">
-  <sub>🪵 Typed in cozy Gruvbox comfort with <a href="https://github.com/Ratul-NotFound/Github-Overview-Maker">Git View Pro</a></sub>
+  <sub>🪵 Built with <a href="https://github.com/Ratul-NotFound/Github-Overview-Maker">Git View Pro</a></sub>
 </div>

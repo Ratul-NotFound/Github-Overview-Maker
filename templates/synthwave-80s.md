@@ -1,9 +1,9 @@
 <div align="center">
-  <img src="https://komarev.com/ghpvc/?username=YOUR_USERNAME&label=OUTRUN+RADAR&color=ff2a85&style=for-the-badge" alt="Profile Views" />
+  <img src="https://komarev.com/ghpvc/?username=YOUR_USERNAME&label=PROFILE+VIEWS&color=ff2a85&style=for-the-badge" alt="Profile Views" />
 </div>
 
 <div align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=24,26,30&height=220&section=header&text=%F0%9F%8C%B4+YOUR_NAME&fontSize=36&fontColor=ff2a85&fontAlignY=38&desc=SYNTHWAVE+DEVELOPER+%7C+Full-Stack%20Developer%20%E2%80%A2%20Open%20Source%20Build&descAlignY=62&descSize=15&descColor=ff9e00&animation=fadeIn" width="100%"/>
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=24,26,30&height=220&section=header&text=%F0%9F%8C%B4+YOUR_NAME&fontSize=36&fontColor=ff2a85&fontAlignY=38&desc=FULL-STACK+DEVELOPER+%7C+Full-Stack%20Developer%20%E2%80%A2%20Open%20Source%20Build&descAlignY=62&descSize=15&descColor=ff9e00&animation=fadeIn" width="100%"/>
 </div>
 
 <div align="center">
@@ -16,20 +16,20 @@
 
 ---
 
-### 🌴 Outrun Frequency & Tracklist
+```text
+╔══════════════════════════════════════════════════════════════╗
+║                 🌴  ABOUT ME & CURRENT FOCUS  🌴              ║
+╠══════════════════════════════════════════════════════════════╣
+║  CURRENT PROJECT: Open-source developer tools and scalable w ║
+║  LEARNING       : Rust, TypeScript internals & cloud-native  ║
+║  ASK ME ABOUT   : React, Next.js, Node.js, API design & web  ║
+║  FUN FACT       : I code best with good coffee and lo-fi mus ║
+╚══════════════════════════════════════════════════════════════╝
+```
 
-| Frequency | Broadcast & Direction |
-|:---:|:---|
-| 📻 **Current Synthesizer** | Open-source developer tools and scalable web applications |
-| 🕹️ **Exploring Horizons** | Rust, TypeScript internals & cloud-native architecture |
-| ⚡ **Talk Retro Tech** | React, Next.js, Node.js, API design & web performance |
-| 📼 **Cassette Trivia** | I code best with good coffee and lo-fi music ☕ |
+### ⚡ Skills & Technologies
 
----
-
-### ⚡ 80s Cyber Deck & Stack
-
-| Domain | Technologies & Toolchain |
+| Category | Technologies |
 |:---|:---|
 | **💻 Languages** | <a href="https://skillicons.dev"><img src="https://skillicons.dev/icons?i=ts,js,rust,go,python&theme=dark" /></a> |
 | **🎨 Frontend & UI** | <a href="https://skillicons.dev"><img src="https://skillicons.dev/icons?i=react,nextjs,tailwind&theme=dark" /></a> |
@@ -39,25 +39,25 @@
 
 ---
 
-### 🏎️ Turbo-Charged Projects
+### 🏎️ Featured Projects
 
-| 🚀 Project / Showcase | ⚡ Stack & Architecture | 🌐 Deployments & Source |
-|:---|:---|:---|
-| **[DevPulse](https://github.com/YOUR_USERNAME/devpulse)**<br/><sub>Real-time GitHub statistics, commit streak analytics, and developer productivity dashboard.</sub> | `TypeScript, React, Next.js, TailwindCSS` | <a href="https://devpulse.io"><img src="https://img.shields.io/badge/Live_App-0070f3?style=flat-square&logo=vercel&logoColor=white" /></a> <a href="https://github.com/YOUR_USERNAME/devpulse"><img src="https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white" /></a> <img src="https://img.shields.io/badge/Stars-⭐_1.4k-yellow?style=flat-square" /> |
-| **[QuickAPI](https://github.com/YOUR_USERNAME/quick-api)**<br/><sub>Production-ready backend API starter kit with authentication, rate limiting, and caching.</sub> | `Node.js, Express, PostgreSQL, Redis, Docker` | <a href="https://quickapi.dev"><img src="https://img.shields.io/badge/Live_App-0070f3?style=flat-square&logo=vercel&logoColor=white" /></a> <a href="https://github.com/YOUR_USERNAME/quick-api"><img src="https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white" /></a> <img src="https://img.shields.io/badge/Stars-⭐_850-yellow?style=flat-square" /> |
-| **[TaskFlow](https://github.com/YOUR_USERNAME/taskflow)**<br/><sub>Minimalist Kanban project manager with drag-and-drop workflow and offline support.</sub> | `React, Zustand, Web APIs, Vite` | <a href="https://taskflow.app"><img src="https://img.shields.io/badge/Live_App-0070f3?style=flat-square&logo=vercel&logoColor=white" /></a> <a href="https://github.com/YOUR_USERNAME/taskflow"><img src="https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white" /></a> <img src="https://img.shields.io/badge/Stars-⭐_620-yellow?style=flat-square" /> |
+* 🌴 **[DevPulse](https://github.com/YOUR_USERNAME/devpulse)** &nbsp;•&nbsp; Real-time GitHub statistics, commit streak analytics, and developer productivity dashboard. *(`TypeScript, React, Next.js, TailwindCSS`)*<br/>
+  ➔ <a href="https://devpulse.io"><img src="https://img.shields.io/badge/Live_Demo-ff2a85?style=flat-square&logo=vercel&logoColor=white" /></a> <a href="https://github.com/YOUR_USERNAME/devpulse"><img src="https://img.shields.io/badge/Source_Code-ff9e00?style=flat-square&logo=github&logoColor=white" /></a>
 
+* 🌴 **[QuickAPI](https://github.com/YOUR_USERNAME/quick-api)** &nbsp;•&nbsp; Production-ready backend API starter kit with authentication, rate limiting, and caching. *(`Node.js, Express, PostgreSQL, Redis, Docker`)*<br/>
+  ➔ <a href="https://quickapi.dev"><img src="https://img.shields.io/badge/Live_Demo-ff2a85?style=flat-square&logo=vercel&logoColor=white" /></a> <a href="https://github.com/YOUR_USERNAME/quick-api"><img src="https://img.shields.io/badge/Source_Code-ff9e00?style=flat-square&logo=github&logoColor=white" /></a>
+
+* 🌴 **[TaskFlow](https://github.com/YOUR_USERNAME/taskflow)** &nbsp;•&nbsp; Minimalist Kanban project manager with drag-and-drop workflow and offline support. *(`React, Zustand, Web APIs, Vite`)*<br/>
+  ➔ <a href="https://taskflow.app"><img src="https://img.shields.io/badge/Live_Demo-ff2a85?style=flat-square&logo=vercel&logoColor=white" /></a> <a href="https://github.com/YOUR_USERNAME/taskflow"><img src="https://img.shields.io/badge/Source_Code-ff9e00?style=flat-square&logo=github&logoColor=white" /></a>
 
 ---
 
-### 📈 Grid Acceleration Activity
+### 📈 GitHub Activity
 
 <div align="center">
   <img src="https://github-readme-activity-graph.vercel.app/graph?username=YOUR_USERNAME&theme=react-dark&hide_border=true&area=true" width="100%" />
 </div>
 
-
-### 📊 Synth Performance Metrics
 
 <div align="center">
   <img src="https://github-readme-stats.vercel.app/api?username=YOUR_USERNAME&show_icons=true&theme=synthwave&hide_border=true&bg_color=0e0720&title_color=ff2a85&icon_color=ff9e00&text_color=e2e8f0&rank_icon=github&include_all_commits=true" height="165" />
@@ -65,14 +65,8 @@
   <img src="https://github-readme-streak-stats.herokuapp.com/?user=YOUR_USERNAME&theme=synthwave&hide_border=true&background=0e0720&ring=ff2a85&fire=ff9e00&currStreakLabel=ff2a85&sideLabels=e2e8f0" height="165" />
 </div>
 
-<div align="center">
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=YOUR_USERNAME&layout=compact&theme=synthwave&hide_border=true&bg_color=0e0720&title_color=ff2a85&text_color=e2e8f0&langs_count=8" height="140" />
-</div>
-
----
-
 <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=24,26,30&height=80&section=footer" width="100%"/>
 
 <div align="center">
-  <sub>🌴 Outrun aesthetic synthesized with <a href="https://github.com/Ratul-NotFound/Github-Overview-Maker">Git View Pro</a></sub>
+  <sub>🌴 Built with <a href="https://github.com/Ratul-NotFound/Github-Overview-Maker">Git View Pro</a></sub>
 </div>

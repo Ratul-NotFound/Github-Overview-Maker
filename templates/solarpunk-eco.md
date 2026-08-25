@@ -1,11 +1,11 @@
 <div align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,12,18&height=200&section=header&text=%F0%9F%8C%B1+YOUR_NAME&fontSize=34&fontColor=ffffff&fontAlignY=40&desc=SOLARPUNK+ARCHITECT+%7C+Full-Stack%20Developer%20%E2%80%A2%20Open%20Source%20Build&descAlignY=64&descSize=15&descColor=10b981&animation=fadeIn" width="100%"/>
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,12,18&height=200&section=header&text=%F0%9F%8C%B1+YOUR_NAME&fontSize=34&fontColor=ffffff&fontAlignY=40&desc=FULL-STACK+DEVELOPER+%7C+Full-Stack%20Developer%20%E2%80%A2%20Open%20Source%20Build&descAlignY=64&descSize=15&descColor=10b981&animation=fadeIn" width="100%"/>
 </div>
 
 <div align="center">
-  <img src="https://komarev.com/ghpvc/?username=YOUR_USERNAME&label=Solar+Harvest&color=10b981&style=flat-square" />
+  <img src="https://komarev.com/ghpvc/?username=YOUR_USERNAME&label=Profile+Views&color=10b981&style=flat-square" />
   &nbsp;&nbsp;
-  <img src="https://img.shields.io/badge/Renewable-Open%20Source-f59e0b?style=flat-square&logo=leaf&logoColor=white" />
+  <img src="https://img.shields.io/badge/Open%20Source-Contributor-f59e0b?style=flat-square&logo=leaf&logoColor=white" />
 </div>
 
 <div align="center">
@@ -18,20 +18,20 @@
 
 ---
 
-### 🌱 Biosphere Log & Focus
+### 🌱 About Me & Current Focus
 
-| Sector | Cultivation Detail |
-|:---|:---|
-| 🌿 **Nurturing Project** | Open-source developer tools and scalable web applications |
-| ☀️ **Absorbing Light** | Rust, TypeScript internals & cloud-native architecture |
-| 🌻 **Seed Conversations** | React, Next.js, Node.js, API design & web performance |
-| 🐝 **Ecosystem Note** | I code best with good coffee and lo-fi music ☕ |
+> *Building sustainable, user-friendly, and high-performance software for the web.*
+
+- 🌿 **Current Project:** Open-source developer tools and scalable web applications
+- ☀️ **Currently Learning:** Rust, TypeScript internals & cloud-native architecture
+- 🌻 **Ask Me About:** React, Next.js, Node.js, API design & web performance
+- 🐝 **Fun Fact:** I code best with good coffee and lo-fi music ☕
 
 ---
 
-### 🌿 Bio-Digital Toolset
+### 🌿 Skills & Technologies
 
-| Domain | Technologies & Toolchain |
+| Category | Technologies |
 |:---|:---|
 | **💻 Languages** | <a href="https://skillicons.dev"><img src="https://skillicons.dev/icons?i=ts,js,rust,go,python&theme=dark" /></a> |
 | **🎨 Frontend & UI** | <a href="https://skillicons.dev"><img src="https://skillicons.dev/icons?i=react,nextjs,tailwind&theme=dark" /></a> |
@@ -41,25 +41,25 @@
 
 ---
 
-### 🌻 Flourishing Initiatives
+### 🌻 Featured Projects
 
-| 🚀 Project / Showcase | ⚡ Stack & Architecture | 🌐 Deployments & Source |
-|:---|:---|:---|
-| **[DevPulse](https://github.com/YOUR_USERNAME/devpulse)**<br/><sub>Real-time GitHub statistics, commit streak analytics, and developer productivity dashboard.</sub> | `TypeScript, React, Next.js, TailwindCSS` | <a href="https://devpulse.io"><img src="https://img.shields.io/badge/Live_App-0070f3?style=flat-square&logo=vercel&logoColor=white" /></a> <a href="https://github.com/YOUR_USERNAME/devpulse"><img src="https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white" /></a> <img src="https://img.shields.io/badge/Stars-⭐_1.4k-yellow?style=flat-square" /> |
-| **[QuickAPI](https://github.com/YOUR_USERNAME/quick-api)**<br/><sub>Production-ready backend API starter kit with authentication, rate limiting, and caching.</sub> | `Node.js, Express, PostgreSQL, Redis, Docker` | <a href="https://quickapi.dev"><img src="https://img.shields.io/badge/Live_App-0070f3?style=flat-square&logo=vercel&logoColor=white" /></a> <a href="https://github.com/YOUR_USERNAME/quick-api"><img src="https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white" /></a> <img src="https://img.shields.io/badge/Stars-⭐_850-yellow?style=flat-square" /> |
-| **[TaskFlow](https://github.com/YOUR_USERNAME/taskflow)**<br/><sub>Minimalist Kanban project manager with drag-and-drop workflow and offline support.</sub> | `React, Zustand, Web APIs, Vite` | <a href="https://taskflow.app"><img src="https://img.shields.io/badge/Live_App-0070f3?style=flat-square&logo=vercel&logoColor=white" /></a> <a href="https://github.com/YOUR_USERNAME/taskflow"><img src="https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white" /></a> <img src="https://img.shields.io/badge/Stars-⭐_620-yellow?style=flat-square" /> |
+* 🌿 **[DevPulse](https://github.com/YOUR_USERNAME/devpulse)** — Real-time GitHub statistics, commit streak analytics, and developer productivity dashboard. *(`TypeScript, React, Next.js, TailwindCSS`)*<br/>
+  ➔ <a href="https://devpulse.io"><img src="https://img.shields.io/badge/Live_Demo-10b981?style=flat-square&logo=vercel&logoColor=white" /></a> <a href="https://github.com/YOUR_USERNAME/devpulse"><img src="https://img.shields.io/badge/Source-f59e0b?style=flat-square&logo=github&logoColor=black" /></a>
 
+* 🌿 **[QuickAPI](https://github.com/YOUR_USERNAME/quick-api)** — Production-ready backend API starter kit with authentication, rate limiting, and caching. *(`Node.js, Express, PostgreSQL, Redis, Docker`)*<br/>
+  ➔ <a href="https://quickapi.dev"><img src="https://img.shields.io/badge/Live_Demo-10b981?style=flat-square&logo=vercel&logoColor=white" /></a> <a href="https://github.com/YOUR_USERNAME/quick-api"><img src="https://img.shields.io/badge/Source-f59e0b?style=flat-square&logo=github&logoColor=black" /></a>
+
+* 🌿 **[TaskFlow](https://github.com/YOUR_USERNAME/taskflow)** — Minimalist Kanban project manager with drag-and-drop workflow and offline support. *(`React, Zustand, Web APIs, Vite`)*<br/>
+  ➔ <a href="https://taskflow.app"><img src="https://img.shields.io/badge/Live_Demo-10b981?style=flat-square&logo=vercel&logoColor=white" /></a> <a href="https://github.com/YOUR_USERNAME/taskflow"><img src="https://img.shields.io/badge/Source-f59e0b?style=flat-square&logo=github&logoColor=black" /></a>
 
 ---
 
-### 📈 Solar Yield Activity
+### 📈 GitHub Activity
 
 <div align="center">
   <img src="https://github-readme-activity-graph.vercel.app/graph?username=YOUR_USERNAME&theme=react-dark&hide_border=true&area=true" width="100%" />
 </div>
 
-
-### 📊 Biosphere Yield Metrics
 
 <div align="center">
   <img src="https://github-readme-stats.vercel.app/api?username=YOUR_USERNAME&show_icons=true&theme=tokyonight&hide_border=true&bg_color=081611&title_color=10b981&icon_color=f59e0b&text_color=a7f3d0&rank_icon=github&include_all_commits=true" height="165" />
@@ -68,11 +68,5 @@
 </div>
 
 <div align="center">
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=YOUR_USERNAME&layout=compact&theme=tokyonight&hide_border=true&bg_color=081611&title_color=10b981&text_color=a7f3d0&langs_count=8" height="140" />
-</div>
-
----
-
-<div align="center">
-  <sub>🌱 Nurtured in the open-source greenhouse with <a href="https://github.com/Ratul-NotFound/Github-Overview-Maker">Git View Pro</a></sub>
+  <sub>🌱 Built with <a href="https://github.com/Ratul-NotFound/Github-Overview-Maker">Git View Pro</a></sub>
 </div>

@@ -1,11 +1,11 @@
 <div align="center">
-  <img src="https://capsule-render.vercel.app/api?type=soft&color=gradient&customColorList=20,24,26,28&height=200&section=header&text=%E2%9C%A6+YOUR_NAME+%E2%9C%A6&fontSize=36&fontColor=e0e7ff&fontAlignY=40&desc=INTERSTELLAR+DEVELOPER+%7C+Full-Stack%20Developer%20%E2%80%A2%20Open%20Source%20&descAlignY=64&descSize=14&descColor=818cf8&animation=fadeIn" width="100%"/>
+  <img src="https://capsule-render.vercel.app/api?type=soft&color=gradient&customColorList=20,24,26,28&height=200&section=header&text=%E2%9C%A6+YOUR_NAME+%E2%9C%A6&fontSize=36&fontColor=e0e7ff&fontAlignY=40&desc=FULL-STACK+DEVELOPER+%7C+Full-Stack%20Developer%20%E2%80%A2%20Open%20Source%20&descAlignY=64&descSize=14&descColor=818cf8&animation=fadeIn" width="100%"/>
 </div>
 
 <div align="center">
-  <img src="https://komarev.com/ghpvc/?username=YOUR_USERNAME&label=STARSHIP+VISITS&color=818cf8&style=flat-square" />
+  <img src="https://komarev.com/ghpvc/?username=YOUR_USERNAME&label=PROFILE+VIEWS&color=818cf8&style=flat-square" />
   &nbsp;&nbsp;
-  <img src="https://img.shields.io/badge/Status-Exploring%20the%20Cosmos-4f46e5?style=flat-square" />
+  <img src="https://img.shields.io/badge/Status-Open%20to%20Work-4f46e5?style=flat-square" />
 </div>
 
 <div align="center">
@@ -18,24 +18,22 @@
 
 ---
 
-### 🪐 Starship Mission Log
+### 🪐 About Me & Current Focus
 
 ```
   ╔══════════════════════════════════════════════════╗
-  ║  STARDATE: 2026-08-25         SECTOR: DEPLOYED ║
+  ║  STATUS: ACTIVE             LOCATION: REMOTE     ║
   ╠══════════════════════════════════════════════════╣
-  ║  MISSION FOCUS: Open-source developer tools and  ║
-  ║  ASTRAL STUDY : Rust, TypeScript internals & cl  ║
-  ║  COMM CHANNEL : React, Next.js, Node.js, API de  ║
-  ║  WARP FUEL    : I code best with good coffee an  ║
+  ║  CURRENT PROJECT: Open-source developer tools a  ║
+  ║  CURRENT LEARNING: Rust, TypeScript internals &  ║
+  ║  ASK ME ABOUT   : React, Next.js, Node.js, API   ║
+  ║  FUN FACT       : I code best with good coffee   ║
   ╚══════════════════════════════════════════════════╝
 ```
 
----
+### 🌌 Skills & Technologies
 
-### 🌌 Constellation Tech Matrix
-
-| Domain | Technologies & Toolchain |
+| Category | Technologies |
 |:---|:---|
 | **💻 Languages** | <a href="https://skillicons.dev"><img src="https://skillicons.dev/icons?i=ts,js,rust,go,python&theme=dark" /></a> |
 | **🎨 Frontend & UI** | <a href="https://skillicons.dev"><img src="https://skillicons.dev/icons?i=react,nextjs,tailwind&theme=dark" /></a> |
@@ -45,29 +43,27 @@
 
 ---
 
-### 🛰️ Orbital Missions & Satellites
+### 🛰️ Featured Projects
 
-| 🚀 Project / Showcase | ⚡ Stack & Architecture | 🌐 Deployments & Source |
-|:---|:---|:---|
-| **[DevPulse](https://github.com/YOUR_USERNAME/devpulse)**<br/><sub>Real-time GitHub statistics, commit streak analytics, and developer productivity dashboard.</sub> | `TypeScript, React, Next.js, TailwindCSS` | <a href="https://devpulse.io"><img src="https://img.shields.io/badge/Live_App-0070f3?style=flat-square&logo=vercel&logoColor=white" /></a> <a href="https://github.com/YOUR_USERNAME/devpulse"><img src="https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white" /></a> <img src="https://img.shields.io/badge/Stars-⭐_1.4k-yellow?style=flat-square" /> |
-| **[QuickAPI](https://github.com/YOUR_USERNAME/quick-api)**<br/><sub>Production-ready backend API starter kit with authentication, rate limiting, and caching.</sub> | `Node.js, Express, PostgreSQL, Redis, Docker` | <a href="https://quickapi.dev"><img src="https://img.shields.io/badge/Live_App-0070f3?style=flat-square&logo=vercel&logoColor=white" /></a> <a href="https://github.com/YOUR_USERNAME/quick-api"><img src="https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white" /></a> <img src="https://img.shields.io/badge/Stars-⭐_850-yellow?style=flat-square" /> |
-| **[TaskFlow](https://github.com/YOUR_USERNAME/taskflow)**<br/><sub>Minimalist Kanban project manager with drag-and-drop workflow and offline support.</sub> | `React, Zustand, Web APIs, Vite` | <a href="https://taskflow.app"><img src="https://img.shields.io/badge/Live_App-0070f3?style=flat-square&logo=vercel&logoColor=white" /></a> <a href="https://github.com/YOUR_USERNAME/taskflow"><img src="https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white" /></a> <img src="https://img.shields.io/badge/Stars-⭐_620-yellow?style=flat-square" /> |
+* 🛰️ **[DevPulse](https://github.com/YOUR_USERNAME/devpulse)** — Real-time GitHub statistics, commit streak analytics, and developer productivity dashboard. *(`TypeScript, React, Next.js, TailwindCSS`)*<br/>
+  ➔ [⚡ Live Demo](https://devpulse.io) &nbsp;•&nbsp; [💻 Source Code](https://github.com/YOUR_USERNAME/devpulse)
 
+* 🛰️ **[QuickAPI](https://github.com/YOUR_USERNAME/quick-api)** — Production-ready backend API starter kit with authentication, rate limiting, and caching. *(`Node.js, Express, PostgreSQL, Redis, Docker`)*<br/>
+  ➔ [⚡ Live Demo](https://quickapi.dev) &nbsp;•&nbsp; [💻 Source Code](https://github.com/YOUR_USERNAME/quick-api)
+
+* 🛰️ **[TaskFlow](https://github.com/YOUR_USERNAME/taskflow)** — Minimalist Kanban project manager with drag-and-drop workflow and offline support. *(`React, Zustand, Web APIs, Vite`)*<br/>
+  ➔ [⚡ Live Demo](https://taskflow.app) &nbsp;•&nbsp; [💻 Source Code](https://github.com/YOUR_USERNAME/taskflow)
 
 ---
 
-### 🌠 Pulsar Activity Wave
+### 🌠 GitHub Activity
 
 <div align="center">
   <img src="https://github-readme-activity-graph.vercel.app/graph?username=YOUR_USERNAME&theme=react-dark&hide_border=true&area=true" width="100%" />
 </div>
 
 
-### 🔭 Deep Space Telemetry
-
-<div align="center">
-  <img src="https://github-profile-trophy.vercel.app/?username=YOUR_USERNAME&theme=onedark&no-frame=true&no-bg=true&margin-w=8&column=7" width="100%" />
-</div>
+### 🔭 GitHub Stats & Streak
 
 <div align="center">
   <img src="https://github-readme-stats.vercel.app/api?username=YOUR_USERNAME&show_icons=true&theme=tokyonight&hide_border=true&bg_color=04020f&title_color=818cf8&icon_color=38bdf8&text_color=e0e7ff&rank_icon=github" height="160" />
@@ -75,12 +71,8 @@
   <img src="https://github-readme-streak-stats.herokuapp.com/?user=YOUR_USERNAME&theme=tokyonight&hide_border=true&background=04020f&ring=818cf8&fire=38bdf8&currStreakLabel=818cf8&sideLabels=e0e7ff" height="160" />
 </div>
 
-<div align="center">
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=YOUR_USERNAME&layout=compact&theme=tokyonight&hide_border=true&bg_color=04020f&title_color=818cf8&text_color=e0e7ff&langs_count=8" height="140" />
-</div>
-
 <img src="https://capsule-render.vercel.app/api?type=soft&color=gradient&customColorList=20,24,26,28&height=80&section=footer" width="100%"/>
 
 <div align="center">
-  <sub>✦ Launched into orbit with <a href="https://github.com/Ratul-NotFound/Github-Overview-Maker">Git View Pro</a></sub>
+  <sub>✦ Built with <a href="https://github.com/Ratul-NotFound/Github-Overview-Maker">Git View Pro</a></sub>
 </div>

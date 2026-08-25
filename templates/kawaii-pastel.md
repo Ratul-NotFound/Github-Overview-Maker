@@ -6,14 +6,14 @@
 
 ✿ ─── ─── ─── ─── ─── ─── ─── ─── ─── ✿
 
-*🌸 Welcome to my cozy digital garden! I build delightful software ♡*
+### *🌸 Welcome to my profile! I build clean, reliable software with care ♡*
 
 ✿ ─── ─── ─── ─── ─── ─── ─── ─── ─── ✿
 
 </div>
 
 <div align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Quicksand&weight=600&size=20&duration=3000&pause=1000&color=F472B6&center=true&vCenter=true&width=750&height=48&lines=Welcome+to+my+cozy+corner+%E2%9C%A8;Building%20modern%2C%20scalable%20web%20applications%20%E2%9A%A1;Full-Stack%20TypeScript%2C%20React%20%26%20Node.js%20Developer%20%F0%9F%9A%80;Open-source%20contributor%20%26%20lifelong%20learner%20%F0%9F%92%A1" alt="Kawaii Typing"/>
+  <img src="https://readme-typing-svg.demolab.com?font=Quicksand&weight=600&size=20&duration=3000&pause=1000&color=F472B6&center=true&vCenter=true&width=750&height=48&lines=Welcome+to+my+profile+%E2%9C%A8;Building%20modern%2C%20scalable%20web%20applications%20%E2%9A%A1;Full-Stack%20TypeScript%2C%20React%20%26%20Node.js%20Developer%20%F0%9F%9A%80;Open-source%20contributor%20%26%20lifelong%20learner%20%F0%9F%92%A1" alt="Kawaii Typing"/>
 </div>
 
 <div align="center">
@@ -22,21 +22,19 @@
 
 ---
 
-### 🍵 Cozy Corner Diary
+### 🍵 About Me
 
 > *I code best with good coffee and lo-fi music ☕* ✨
 
-| ✿ Daily Log | Status |
-|:---:|:---|
-| 🌸 **Brewing** | Open-source developer tools and scalable web applications |
-| 📖 **Reading** | Rust, TypeScript internals & cloud-native architecture |
-| 💌 **Say Hi!** | React, Next.js, Node.js, API design & web performance |
+- 🌸 **What I'm Building:** Open-source developer tools and scalable web applications
+- 📖 **What I'm Learning:** Rust, TypeScript internals & cloud-native architecture
+- 💌 **Ask Me About:** React, Next.js, Node.js, API design & web performance
 
 ---
 
-### 🧁 Sweet Toolkit
+### 🧁 Skills & Technologies
 
-| Domain | Technologies & Toolchain |
+| Category | Technologies |
 |:---|:---|
 | **💻 Languages** | <a href="https://skillicons.dev"><img src="https://skillicons.dev/icons?i=ts,js,rust,go,python&theme=dark" /></a> |
 | **🎨 Frontend & UI** | <a href="https://skillicons.dev"><img src="https://skillicons.dev/icons?i=react,nextjs,tailwind&theme=dark" /></a> |
@@ -46,25 +44,33 @@
 
 ---
 
-### 🌷 Sakura Garden Projects
+### 🌷 Featured Projects
 
-| 🚀 Project / Showcase | ⚡ Stack & Architecture | 🌐 Deployments & Source |
-|:---|:---|:---|
-| **[DevPulse](https://github.com/YOUR_USERNAME/devpulse)**<br/><sub>Real-time GitHub statistics, commit streak analytics, and developer productivity dashboard.</sub> | `TypeScript, React, Next.js, TailwindCSS` | <a href="https://devpulse.io"><img src="https://img.shields.io/badge/Live_App-0070f3?style=flat-square&logo=vercel&logoColor=white" /></a> <a href="https://github.com/YOUR_USERNAME/devpulse"><img src="https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white" /></a> <img src="https://img.shields.io/badge/Stars-⭐_1.4k-yellow?style=flat-square" /> |
-| **[QuickAPI](https://github.com/YOUR_USERNAME/quick-api)**<br/><sub>Production-ready backend API starter kit with authentication, rate limiting, and caching.</sub> | `Node.js, Express, PostgreSQL, Redis, Docker` | <a href="https://quickapi.dev"><img src="https://img.shields.io/badge/Live_App-0070f3?style=flat-square&logo=vercel&logoColor=white" /></a> <a href="https://github.com/YOUR_USERNAME/quick-api"><img src="https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white" /></a> <img src="https://img.shields.io/badge/Stars-⭐_850-yellow?style=flat-square" /> |
-| **[TaskFlow](https://github.com/YOUR_USERNAME/taskflow)**<br/><sub>Minimalist Kanban project manager with drag-and-drop workflow and offline support.</sub> | `React, Zustand, Web APIs, Vite` | <a href="https://taskflow.app"><img src="https://img.shields.io/badge/Live_App-0070f3?style=flat-square&logo=vercel&logoColor=white" /></a> <a href="https://github.com/YOUR_USERNAME/taskflow"><img src="https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white" /></a> <img src="https://img.shields.io/badge/Stars-⭐_620-yellow?style=flat-square" /> |
+#### 🌷 **[DevPulse](https://github.com/YOUR_USERNAME/devpulse)**
+> Real-time GitHub statistics, commit streak analytics, and developer productivity dashboard.<br/>
+> <sub>`TypeScript, React, Next.js, TailwindCSS`</sub><br/>
+> ➔ [🌸 Live Demo](https://devpulse.io) &nbsp;•&nbsp; [💻 Source Code](https://github.com/YOUR_USERNAME/devpulse)
 
+#### 🌸 **[QuickAPI](https://github.com/YOUR_USERNAME/quick-api)**
+> Production-ready backend API starter kit with authentication, rate limiting, and caching.<br/>
+> <sub>`Node.js, Express, PostgreSQL, Redis, Docker`</sub><br/>
+> ➔ [🌸 Live Demo](https://quickapi.dev) &nbsp;•&nbsp; [💻 Source Code](https://github.com/YOUR_USERNAME/quick-api)
+
+#### 🌼 **[TaskFlow](https://github.com/YOUR_USERNAME/taskflow)**
+> Minimalist Kanban project manager with drag-and-drop workflow and offline support.<br/>
+> <sub>`React, Zustand, Web APIs, Vite`</sub><br/>
+> ➔ [🌸 Live Demo](https://taskflow.app) &nbsp;•&nbsp; [💻 Source Code](https://github.com/YOUR_USERNAME/taskflow)
 
 ---
 
-### 🌸 Contribution Blossoms
+### 🌸 GitHub Activity
 
 <div align="center">
   <img src="https://github-readme-activity-graph.vercel.app/graph?username=YOUR_USERNAME&theme=react-dark&hide_border=true&area=true" width="100%" />
 </div>
 
 
-### 🎀 Sweet Statistics
+### 🎀 GitHub Stats
 
 <div align="center">
   <img src="https://github-readme-stats.vercel.app/api?username=YOUR_USERNAME&show_icons=true&theme=dracula&hide_border=true&bg_color=160e20&title_color=f472b6&icon_color=c084fc&text_color=fbcfe8&rank_icon=github" height="160" />
@@ -72,16 +78,8 @@
   <img src="https://github-readme-streak-stats.herokuapp.com/?user=YOUR_USERNAME&theme=dracula&hide_border=true&background=160e20&ring=f472b6&fire=c084fc&currStreakLabel=f472b6&sideLabels=fbcfe8" height="160" />
 </div>
 
-<div align="center">
-  <img src="https://github-profile-trophy.vercel.app/?username=YOUR_USERNAME&theme=dracula&no-frame=true&no-bg=true&margin-w=8&column=7" width="100%" />
-</div>
-
-<div align="center">
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=YOUR_USERNAME&layout=compact&theme=dracula&hide_border=true&bg_color=160e20&title_color=f472b6&text_color=fbcfe8&langs_count=8" height="140" />
-</div>
-
 <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=34,36,44&height=80&section=footer" width="100%"/>
 
 <div align="center">
-  <sub>💖 Crafted with love using <a href="https://github.com/Ratul-NotFound/Github-Overview-Maker">Git View Pro</a></sub>
+  <sub>💖 Built with <a href="https://github.com/Ratul-NotFound/Github-Overview-Maker">Git View Pro</a></sub>
 </div>

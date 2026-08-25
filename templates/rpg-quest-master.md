@@ -13,36 +13,30 @@
 ---
 
 ```yaml
-╔══════════════════════════════════════════════════╗
-║       ⚜️  ADVENTURER'S GUILD REGISTRY  ⚜️        ║
-╠══════════════════════════════════════════════════╣
-║  PLAYER   : YOUR_NAME                            ║
-║  HANDLE   : @YOUR_USERNAME                       ║
-║  CLASS    : Senior Full-Stack Architect          ║
-║  EXP      : 99.4% [S-RANK ARCHMAGE TIER]         ║
-╠══════════════════════════════════════════════════╣
-║  HP (Focus)     : [████████████████████] 9999/9999 ║
-║  MANA (Coffee)  : [████████████████░░░░] 8500/9999 ║
-║  PASSIVE TRAITS : [Clean Code +50%] [Speed +40%] ║
-╚══════════════════════════════════════════════════╝
+╔══════════════════════════════════════════════════════════════╗
+║             ⚜️  DEVELOPER PROFILE & STATS  ⚜️               ║
+╠══════════════════════════════════════════════════════════════╣
+║  DEVELOPER: YOUR_NAME                                      ║
+║  ROLE     : Full-Stack Developer • Open Source Builder     ║
+║  FOCUS (Energy) : [████████████████████] 100% (High Focus)     ║
+║  FUEL (Coffee)  : [████████████████░░░░] 85% (Espresso)        ║
+║  EXPERIENCE     : Level 99 Full-Stack Developer              ║
+║  KEY STRENGTHS  : Clean Code, Fast Performance, Scalability    ║
+╚══════════════════════════════════════════════════════════════╝
 ```
 
----
+### 📜 About Me & Current Quests
 
-### 📜 Guild Directives & Active Quests
-
-| Quest Type | Objective & Details |
-|:---:|:---|
-| ⚔️ **Main Quest** | Open-source developer tools and scalable web applications |
-| 📖 **Ancient Tomes** | Rust, TypeScript internals & cloud-native architecture |
-| 💬 **Sage Council** | React, Next.js, Node.js, API design & web performance |
-| ⚡ **Secret Scroll** | I code best with good coffee and lo-fi music ☕ |
+- ⚔️ **Current Project:** Open-source developer tools and scalable web applications
+- 📖 **Currently Learning:** Rust, TypeScript internals & cloud-native architecture
+- 💬 **Ask Me About:** React, Next.js, Node.js, API design & web performance
+- ⚡ **Fun Fact:** I code best with good coffee and lo-fi music ☕
 
 ---
 
-### 🧙‍♂️ Spellbook & Relic Inventory
+### 🧙‍♂️ Skills & Technologies
 
-| Domain | Technologies & Toolchain |
+| Category | Technologies |
 |:---|:---|
 | **💻 Languages** | <a href="https://skillicons.dev"><img src="https://skillicons.dev/icons?i=ts,js,rust,go,python&theme=dark" /></a> |
 | **🎨 Frontend & UI** | <a href="https://skillicons.dev"><img src="https://skillicons.dev/icons?i=react,nextjs,tailwind&theme=dark" /></a> |
@@ -52,25 +46,33 @@
 
 ---
 
-### ⚔️ Completed Quests & Shipped Projects
+### 🏆 Featured Projects & Quests
 
-| 🚀 Project / Showcase | ⚡ Stack & Architecture | 🌐 Deployments & Source |
-|:---|:---|:---|
-| **[DevPulse](https://github.com/YOUR_USERNAME/devpulse)**<br/><sub>Real-time GitHub statistics, commit streak analytics, and developer productivity dashboard.</sub> | `TypeScript, React, Next.js, TailwindCSS` | <a href="https://devpulse.io"><img src="https://img.shields.io/badge/Live_App-0070f3?style=flat-square&logo=vercel&logoColor=white" /></a> <a href="https://github.com/YOUR_USERNAME/devpulse"><img src="https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white" /></a> <img src="https://img.shields.io/badge/Stars-⭐_1.4k-yellow?style=flat-square" /> |
-| **[QuickAPI](https://github.com/YOUR_USERNAME/quick-api)**<br/><sub>Production-ready backend API starter kit with authentication, rate limiting, and caching.</sub> | `Node.js, Express, PostgreSQL, Redis, Docker` | <a href="https://quickapi.dev"><img src="https://img.shields.io/badge/Live_App-0070f3?style=flat-square&logo=vercel&logoColor=white" /></a> <a href="https://github.com/YOUR_USERNAME/quick-api"><img src="https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white" /></a> <img src="https://img.shields.io/badge/Stars-⭐_850-yellow?style=flat-square" /> |
-| **[TaskFlow](https://github.com/YOUR_USERNAME/taskflow)**<br/><sub>Minimalist Kanban project manager with drag-and-drop workflow and offline support.</sub> | `React, Zustand, Web APIs, Vite` | <a href="https://taskflow.app"><img src="https://img.shields.io/badge/Live_App-0070f3?style=flat-square&logo=vercel&logoColor=white" /></a> <a href="https://github.com/YOUR_USERNAME/taskflow"><img src="https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white" /></a> <img src="https://img.shields.io/badge/Stars-⭐_620-yellow?style=flat-square" /> |
+#### ⚔️ **[DevPulse](https://github.com/YOUR_USERNAME/devpulse)**
+> **Description:** Real-time GitHub statistics, commit streak analytics, and developer productivity dashboard.<br/>
+> **Tech Stack:** `TypeScript, React, Next.js, TailwindCSS`<br/>
+> ➔ [⚡ Live Demo](https://devpulse.io) &nbsp;•&nbsp; [💻 Source Code](https://github.com/YOUR_USERNAME/devpulse)
 
+#### ⚔️ **[QuickAPI](https://github.com/YOUR_USERNAME/quick-api)**
+> **Description:** Production-ready backend API starter kit with authentication, rate limiting, and caching.<br/>
+> **Tech Stack:** `Node.js, Express, PostgreSQL, Redis, Docker`<br/>
+> ➔ [⚡ Live Demo](https://quickapi.dev) &nbsp;•&nbsp; [💻 Source Code](https://github.com/YOUR_USERNAME/quick-api)
+
+#### ⚔️ **[TaskFlow](https://github.com/YOUR_USERNAME/taskflow)**
+> **Description:** Minimalist Kanban project manager with drag-and-drop workflow and offline support.<br/>
+> **Tech Stack:** `React, Zustand, Web APIs, Vite`<br/>
+> ➔ [⚡ Live Demo](https://taskflow.app) &nbsp;•&nbsp; [💻 Source Code](https://github.com/YOUR_USERNAME/taskflow)
 
 ---
 
-### 🌌 Astral Leyline Resonance
+### 📈 GitHub Activity
 
 <div align="center">
   <img src="https://github-readme-activity-graph.vercel.app/graph?username=YOUR_USERNAME&theme=react-dark&hide_border=true&area=true" width="100%" />
 </div>
 
 
-### 🏆 Guild Trophies & Battle Records
+### 🏆 GitHub Stats & Trophies
 
 <div align="center">
   <img src="https://github-profile-trophy.vercel.app/?username=YOUR_USERNAME&theme=onedark&no-frame=true&no-bg=true&margin-w=8&column=7" width="100%" />
@@ -83,13 +85,9 @@
 </div>
 
 <div align="center">
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=YOUR_USERNAME&layout=compact&theme=synthwave&hide_border=true&bg_color=100c1a&title_color=fbbf24&text_color=e2e8f0&langs_count=8" height="140" />
-</div>
-
-<div align="center">
   <img src="https://capsule-render.vercel.app/api?type=soft&color=gradient&customColorList=2,6,12&height=80&section=footer" width="100%"/>
 </div>
 
 <div align="center">
-  <sub>⚜️ Forged at the Guild with <a href="https://github.com/Ratul-NotFound/Github-Overview-Maker">Git View Pro</a></sub>
+  <sub>⚜️ Built with <a href="https://github.com/Ratul-NotFound/Github-Overview-Maker">Git View Pro</a></sub>
 </div>

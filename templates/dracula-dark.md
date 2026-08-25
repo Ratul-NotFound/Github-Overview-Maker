@@ -1,9 +1,9 @@
 <div align="center">
-  <img src="https://komarev.com/ghpvc/?username=YOUR_USERNAME&label=CASTLE+VISITORS&color=ff79c6&style=for-the-badge" alt="Profile Views" />
+  <img src="https://komarev.com/ghpvc/?username=YOUR_USERNAME&label=PROFILE+VIEWS&color=ff79c6&style=for-the-badge" alt="Profile Views" />
 </div>
 
 <div align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=28,30,34&height=220&section=header&text=%F0%9F%A7%9B+YOUR_NAME&fontSize=36&fontColor=ff79c6&fontAlignY=38&desc=DRACULA+NIGHT+BUILDER+%7C+Full-Stack%20Developer%20%E2%80%A2%20Open%20Source%20Build&descAlignY=62&descSize=15&descColor=50fa7b&animation=fadeIn" width="100%"/>
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=28,30,34&height=220&section=header&text=%F0%9F%A7%9B+YOUR_NAME&fontSize=36&fontColor=ff79c6&fontAlignY=38&desc=FULL-STACK+DEVELOPER+%7C+Full-Stack%20Developer%20%E2%80%A2%20Open%20Source%20Build&descAlignY=62&descSize=15&descColor=50fa7b&animation=fadeIn" width="100%"/>
 </div>
 
 <div align="center">
@@ -16,20 +16,18 @@
 
 ---
 
-### 🧛 Vampire Crypt Registry
+### 🧛 About Me & Current Focus
 
-| Protocol | Status |
-|:---|:---|
-| 🦇 **Midnight Project** | Open-source developer tools and scalable web applications |
-| 🍷 **Nocturnal Study** | Rust, TypeScript internals & cloud-native architecture |
-| ⚡ **Dark Knowledge** | React, Next.js, Node.js, API design & web performance |
-| 🔮 **Crypt Trivia** | I code best with good coffee and lo-fi music ☕ |
+- 🦇 **Current Project:** Open-source developer tools and scalable web applications
+- 🍷 **Currently Learning:** Rust, TypeScript internals & cloud-native architecture
+- ⚡ **Ask Me About:** React, Next.js, Node.js, API design & web performance
+- 🔮 **Fun Fact:** I code best with good coffee and lo-fi music ☕
 
 ---
 
-### ⚡ Arcane Grimoire & Tech
+### ⚡ Skills & Technologies
 
-| Domain | Technologies & Toolchain |
+| Category | Technologies |
 |:---|:---|
 | **💻 Languages** | <a href="https://skillicons.dev"><img src="https://skillicons.dev/icons?i=ts,js,rust,go,python&theme=dark" /></a> |
 | **🎨 Frontend & UI** | <a href="https://skillicons.dev"><img src="https://skillicons.dev/icons?i=react,nextjs,tailwind&theme=dark" /></a> |
@@ -39,25 +37,25 @@
 
 ---
 
-### 🩸 High-Stakes Artifacts
+### 🩸 Featured Projects
 
-| 🚀 Project / Showcase | ⚡ Stack & Architecture | 🌐 Deployments & Source |
-|:---|:---|:---|
-| **[DevPulse](https://github.com/YOUR_USERNAME/devpulse)**<br/><sub>Real-time GitHub statistics, commit streak analytics, and developer productivity dashboard.</sub> | `TypeScript, React, Next.js, TailwindCSS` | <a href="https://devpulse.io"><img src="https://img.shields.io/badge/Live_App-0070f3?style=flat-square&logo=vercel&logoColor=white" /></a> <a href="https://github.com/YOUR_USERNAME/devpulse"><img src="https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white" /></a> <img src="https://img.shields.io/badge/Stars-⭐_1.4k-yellow?style=flat-square" /> |
-| **[QuickAPI](https://github.com/YOUR_USERNAME/quick-api)**<br/><sub>Production-ready backend API starter kit with authentication, rate limiting, and caching.</sub> | `Node.js, Express, PostgreSQL, Redis, Docker` | <a href="https://quickapi.dev"><img src="https://img.shields.io/badge/Live_App-0070f3?style=flat-square&logo=vercel&logoColor=white" /></a> <a href="https://github.com/YOUR_USERNAME/quick-api"><img src="https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white" /></a> <img src="https://img.shields.io/badge/Stars-⭐_850-yellow?style=flat-square" /> |
-| **[TaskFlow](https://github.com/YOUR_USERNAME/taskflow)**<br/><sub>Minimalist Kanban project manager with drag-and-drop workflow and offline support.</sub> | `React, Zustand, Web APIs, Vite` | <a href="https://taskflow.app"><img src="https://img.shields.io/badge/Live_App-0070f3?style=flat-square&logo=vercel&logoColor=white" /></a> <a href="https://github.com/YOUR_USERNAME/taskflow"><img src="https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white" /></a> <img src="https://img.shields.io/badge/Stars-⭐_620-yellow?style=flat-square" /> |
+* 🦇 **[DevPulse](https://github.com/YOUR_USERNAME/devpulse)** — Real-time GitHub statistics, commit streak analytics, and developer productivity dashboard. *(`TypeScript, React, Next.js, TailwindCSS`)*<br/>
+  ➔ <a href="https://devpulse.io"><img src="https://img.shields.io/badge/Live_Demo-ff79c6?style=flat-square&logo=vercel&logoColor=white" /></a> <a href="https://github.com/YOUR_USERNAME/devpulse"><img src="https://img.shields.io/badge/Source-50fa7b?style=flat-square&logo=github&logoColor=black" /></a>
 
+* 🦇 **[QuickAPI](https://github.com/YOUR_USERNAME/quick-api)** — Production-ready backend API starter kit with authentication, rate limiting, and caching. *(`Node.js, Express, PostgreSQL, Redis, Docker`)*<br/>
+  ➔ <a href="https://quickapi.dev"><img src="https://img.shields.io/badge/Live_Demo-ff79c6?style=flat-square&logo=vercel&logoColor=white" /></a> <a href="https://github.com/YOUR_USERNAME/quick-api"><img src="https://img.shields.io/badge/Source-50fa7b?style=flat-square&logo=github&logoColor=black" /></a>
+
+* 🦇 **[TaskFlow](https://github.com/YOUR_USERNAME/taskflow)** — Minimalist Kanban project manager with drag-and-drop workflow and offline support. *(`React, Zustand, Web APIs, Vite`)*<br/>
+  ➔ <a href="https://taskflow.app"><img src="https://img.shields.io/badge/Live_Demo-ff79c6?style=flat-square&logo=vercel&logoColor=white" /></a> <a href="https://github.com/YOUR_USERNAME/taskflow"><img src="https://img.shields.io/badge/Source-50fa7b?style=flat-square&logo=github&logoColor=black" /></a>
 
 ---
 
-### 📈 Moonlit Velocity
+### 📈 GitHub Activity
 
 <div align="center">
   <img src="https://github-readme-activity-graph.vercel.app/graph?username=YOUR_USERNAME&theme=dracula&hide_border=true&area=true" width="100%" />
 </div>
 
-
-### 📊 Dracula Telemetry
 
 <div align="center">
   <img src="https://github-readme-stats.vercel.app/api?username=YOUR_USERNAME&show_icons=true&theme=dracula&hide_border=true&bg_color=181a20&title_color=ff79c6&icon_color=50fa7b&text_color=f8f8f2&rank_icon=github&include_all_commits=true" height="165" />
@@ -66,11 +64,5 @@
 </div>
 
 <div align="center">
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=YOUR_USERNAME&layout=compact&theme=dracula&hide_border=true&bg_color=181a20&title_color=ff79c6&text_color=f8f8f2&langs_count=8" height="140" />
-</div>
-
----
-
-<div align="center">
-  <sub>🧛 Forged in the midnight shadows with <a href="https://github.com/Ratul-NotFound/Github-Overview-Maker">Git View Pro</a></sub>
+  <sub>🧛 Built with <a href="https://github.com/Ratul-NotFound/Github-Overview-Maker">Git View Pro</a></sub>
 </div>
