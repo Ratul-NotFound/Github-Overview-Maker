@@ -600,44 +600,94 @@ function attachEventListeners() {
 }
 
 // -------------------------------------------------------------
-// HELPER: BUILD PROJECTS SECTION (LAYOUT-AWARE)
-// -------------------------------------------------------------
+// =============================================================
+// ENHANCED GENERATOR LAYER (14 HIGH-CREATIVITY ARCHETYPES)
+// =============================================================
+
+function buildCategorizedSkills(selectedSkills, arch, format = "table") {
+  if (!selectedSkills || selectedSkills.length === 0) return "";
+  
+  const categories = {
+    languages: { name: "💻 Languages", items: [] },
+    frontend: { name: "🎨 Frontend & UI", items: [] },
+    backend: { name: "⚙️ Backend & APIs", items: [] },
+    database: { name: "🗄️ Database & Storage", items: [] },
+    devops: { name: "☁️ Cloud & DevOps", items: [] },
+    tools: { name: "🛠️ Tools & Platforms", items: [] }
+  };
+
+  const isLight = state.themeMode === "light";
+  const iconTheme = (isLight || arch.id === "minimal") ? "light" : "dark";
+
+  selectedSkills.forEach(sId => {
+    const found = APP_DATA.techStack.find(t => t.id === sId);
+    if (found && categories[found.category]) {
+      categories[found.category].items.push(sId);
+    } else {
+      categories.tools.items.push(sId);
+    }
+  });
+
+  const activeCats = Object.values(categories).filter(c => c.items.length > 0);
+  if (activeCats.length === 0) {
+    return `<div align="center">\n  <a href="https://skillicons.dev">\n    <img src="https://skillicons.dev/icons?i=${selectedSkills.join(",")}&theme=${iconTheme}&perline=10" />\n  </a>\n</div>\n\n`;
+  }
+
+  if (format === "table") {
+    let md = `| Domain | Technologies & Toolchain |\n|:---|:---|\n`;
+    activeCats.forEach(cat => {
+      const iconsUrl = `https://skillicons.dev/icons?i=${cat.items.join(",")}&theme=${iconTheme}`;
+      md += `| **${cat.name}** | <a href="https://skillicons.dev"><img src="${iconsUrl}" /></a> |\n`;
+    });
+    return md + "\n";
+  } else if (format === "list") {
+    let md = "";
+    activeCats.forEach(cat => {
+      const iconsUrl = `https://skillicons.dev/icons?i=${cat.items.join(",")}&theme=${iconTheme}`;
+      md += `**${cat.name}**<br/>\n<a href="https://skillicons.dev"><img src="${iconsUrl}" /></a>\n\n`;
+    });
+    return md;
+  } else {
+    let md = `<div align="center">\n`;
+    activeCats.forEach(cat => {
+      const iconsUrl = `https://skillicons.dev/icons?i=${cat.items.join(",")}&theme=${iconTheme}`;
+      md += `  <a href="https://skillicons.dev"><img src="${iconsUrl}" /></a><br/>\n`;
+    });
+    md += `</div>\n\n`;
+    return md;
+  }
+}
+
 function buildProjectsMarkdown(u, arch, style) {
   if (!state.toggles.projects || state.projects.length === 0) return "";
   let out = "";
 
-  if (style === "table") {
-    out += `| 🚀 Project / System | ⚡ Tech & Architecture | 🔗 Links |\n`;
-    out += `|:---|:---|:---|\n`;
-    state.projects.forEach(p => {
-      const demo = p.demoUrl ? `[⚡ Live Demo](${p.demoUrl}) • ` : "";
-      const repo = `[💻 Source](https://github.com/${u}/${p.repo || p.name})`;
-      out += `| **${p.name}**<br/><sub>${p.desc}</sub> | \`${p.tags}\` | ${demo}${repo} |\n`;
-    });
-    out += `\n`;
-  } else if (style === "pinned") {
+  if (style === "pinned") {
     out += `<div align="center">\n`;
     state.projects.forEach(p => {
+      const pinTheme = state.themeMode === "light" ? "default" : (arch.id === "minimal" ? "dark" : (arch.id === "neofetch" || arch.id === "matrix" ? "matrix" : (arch.id === "dracula" ? "dracula" : (arch.id === "nordic" ? "nord" : (arch.id === "gruvbox" ? "gruvbox" : "tokyonight")))));
       out += `  <a href="https://github.com/${u}/${p.repo || p.name}">\n`;
-      out += `    <img src="https://github-readme-stats.vercel.app/api/pin/?username=${u}&repo=${p.repo || p.name}&theme=${arch.id === "minimal" ? "dark" : (arch.id === "neofetch" ? "matrix" : "tokyonight")}&hide_border=true" />\n`;
+      out += `    <img src="https://github-readme-stats.vercel.app/api/pin/?username=${u}&repo=${p.repo || p.name}&theme=${pinTheme}&hide_border=true" />\n`;
       out += `  </a>\n`;
     });
     out += `</div>\n\n`;
   } else if (style === "minimal") {
     state.projects.forEach((p, i) => {
       const num = String(i + 1).padStart(2, "0");
-      const demo = p.demoUrl ? `[demo](${p.demoUrl}) / ` : "";
-      const repo = `[code](https://github.com/${u}/${p.repo || p.name})`;
-      out += `- **[${num}] ${p.name}** — ${p.desc} *(\`${p.tags}\`)* ➔ ${demo}${repo}\n`;
+      const demo = p.demoUrl ? `[⚡ Live Demo](${p.demoUrl}) &nbsp;•&nbsp; ` : "";
+      const repo = `[💻 Repository](https://github.com/${u}/${p.repo || p.name})`;
+      out += `**[${num}] [${p.name}](https://github.com/${u}/${p.repo || p.name})** &nbsp;·&nbsp; <sub>\`${p.tags}\`</sub><br/>\n`;
+      out += `> ${p.desc}<br/>\n`;
+      out += `> ➔ ${demo}${repo}\n\n`;
     });
-    out += `\n`;
   } else {
-    // Default Bento Matrix
-    out += `| 📦 **System & Core Spec** | 🌐 **Deployment & Artifacts** |\n|:---|:---|\n`;
+    // High-impact Bento Table
+    out += `| 🚀 Project / Showcase | ⚡ Stack & Architecture | 🌐 Deployments & Source |\n|:---|:---|:---|\n`;
     state.projects.forEach(p => {
       const demoBadge = p.demoUrl ? `<a href="${p.demoUrl}"><img src="https://img.shields.io/badge/Live_App-0070f3?style=flat-square&logo=vercel&logoColor=white" /></a> ` : "";
       const repoBadge = `<a href="https://github.com/${u}/${p.repo || p.name}"><img src="https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white" /></a>`;
-      out += `| **${p.name}**<br/><sub>${p.desc}</sub><br/>\`${p.tags}\` | ${demoBadge}${repoBadge} |\n`;
+      const starsBadge = p.stars ? ` <img src="https://img.shields.io/badge/Stars-⭐_${p.stars}-yellow?style=flat-square" />` : "";
+      out += `| **[${p.name}](https://github.com/${u}/${p.repo || p.name})**<br/><sub>${p.desc}</sub> | \`${p.tags}\` | ${demoBadge}${repoBadge}${starsBadge} |\n`;
     });
     out += `\n`;
   }
@@ -645,9 +695,6 @@ function buildProjectsMarkdown(u, arch, style) {
   return out;
 }
 
-// -------------------------------------------------------------
-// HELPER: DYNAMIC WIDGET THEMES (LIGHT / DARK AWARE)
-// -------------------------------------------------------------
 function getWidgetTheme(arch) {
   const isLight = state.themeMode === "light";
   if (isLight) {
@@ -711,9 +758,6 @@ function getWidgetTheme(arch) {
   };
 }
 
-// -------------------------------------------------------------
-// HELPER: BUILD CONTRIBUTION GRAPH
-// -------------------------------------------------------------
 function buildGraphMarkdown(u, arch, mode) {
   if (!state.toggles.graphs) return "";
   const wt = getWidgetTheme(arch);
@@ -729,39 +773,41 @@ function buildGraphMarkdown(u, arch, mode) {
     out += `<div align="center">\n  <img src="https://github-readme-activity-graph.vercel.app/graph?username=${u}&theme=${wt.activityTheme}&hide_border=true&area=true" width="100%" />\n</div>\n\n`;
     out += `<div align="center">\n  <img src="https://github-readme-streak-stats.herokuapp.com/?user=${u}&theme=${wt.streakTheme}&background=${wt.streakBg}&ring=${wt.streakRing}&fire=${wt.streakFire}&currStreakLabel=${wt.streakLabel}&sideLabels=${wt.streakSide}&hide_border=true" height="165" />\n</div>\n\n`;
   } else {
-    // Default Activity Graph Wave
     out += `<div align="center">\n  <img src="https://github-readme-activity-graph.vercel.app/graph?username=${u}&theme=${wt.activityTheme}&hide_border=true&area=true" width="100%" />\n</div>\n\n`;
   }
 
   return out;
 }
 
-// -----------------------------------// NEW_GENERATOR_SECTION_START
 function generateMarkdown() {
   const u = state.username || "alexdev";
   const name = state.name || "Alex Vance";
-  const headline = state.headline || "Full-Stack Architect";
+  const headline = state.headline || "Full-Stack Developer • Open Source Builder";
   const arch = APP_DATA.archetypes[state.currentArchetype] || APP_DATA.archetypes.cyberpunk;
-  const skillsStr = state.selectedSkills.join(",");
   const pStyle = state.projectStyle;
   const gStyle = state.graphStyle;
+  const wt = getWidgetTheme(arch);
 
-  function buildSocialBadges(style) {
+  function buildSocialBadges(style = "for-the-badge") {
     const b = [];
-    if (state.socials.linkedin)  b.push(`<a href="https://linkedin.com/in/${state.socials.linkedin}"><img src="https://img.shields.io/badge/LinkedIn-%230077B5.svg?style=${style}&logo=linkedin&logoColor=white"/></a>`);
-    if (state.socials.twitter)   b.push(`<a href="https://x.com/${state.socials.twitter}"><img src="https://img.shields.io/badge/X-black.svg?style=${style}&logo=X&logoColor=white"/></a>`);
-    if (state.socials.discord)   b.push(`<a href="https://discord.gg"><img src="https://img.shields.io/badge/Discord-%235865F2.svg?style=${style}&logo=discord&logoColor=white"/></a>`);
-    if (state.socials.portfolio) b.push(`<a href="${state.socials.portfolio}"><img src="https://img.shields.io/badge/Portfolio-000000?style=${style}&logo=vercel&logoColor=white"/></a>`);
+    if (state.socials.linkedin)  b.push(`<a href="https://linkedin.com/in/${state.socials.linkedin}" target="_blank"><img src="https://img.shields.io/badge/LinkedIn-%230077B5.svg?style=${style}&logo=linkedin&logoColor=white"/></a>`);
+    if (state.socials.twitter)   b.push(`<a href="https://x.com/${state.socials.twitter}" target="_blank"><img src="https://img.shields.io/badge/X-black.svg?style=${style}&logo=X&logoColor=white"/></a>`);
+    if (state.socials.discord)   b.push(`<a href="https://discord.gg" target="_blank"><img src="https://img.shields.io/badge/Discord-%235865F2.svg?style=${style}&logo=discord&logoColor=white"/></a>`);
+    if (state.socials.portfolio) b.push(`<a href="${state.socials.portfolio}" target="_blank"><img src="https://img.shields.io/badge/Portfolio-000000?style=${style}&logo=vercel&logoColor=white"/></a>`);
     if (state.socials.email)     b.push(`<a href="mailto:${state.socials.email}"><img src="https://img.shields.io/badge/Email-D14836?style=${style}&logo=gmail&logoColor=white"/></a>`);
+    if (state.sponsors.buyMeCoffee) b.push(`<a href="https://buymeacoffee.com/${state.sponsors.buyMeCoffee}" target="_blank"><img src="https://img.shields.io/badge/Buy_Me_A_Coffee-FFDD00?style=${style}&logo=buy-me-a-coffee&logoColor=black"/></a>`);
     return b;
   }
 
   switch (state.currentArchetype) {
 
+    // ─────────────────────────────────────────────────────────────
+    // 1. TERMINAL CLI (NEOFETCH)
+    // ─────────────────────────────────────────────────────────────
     case "neofetch": {
       let md = "";
       if (state.toggles.views) {
-        md += `<div align="center">\n  <img src="https://komarev.com/ghpvc/?username=${u}&label=PROFILE+SESSIONS&color=00ff66&style=flat-square" alt="Profile Views"/>\n</div>\n\n`;
+        md += `<div align="center">\n  <img src="https://komarev.com/ghpvc/?username=${u}&label=TERMINAL+SESSIONS&color=00ff66&style=flat-square" alt="Profile Views"/>\n</div>\n\n`;
       }
       md += "```ansi\n";
       md += `   /\\_/\\        ${u}@archlinux-zen [x86_64]\n`;
@@ -769,11 +815,10 @@ function generateMarkdown() {
       md += `   > ^ <        OS       : Arch Linux 6.10 Rolling\n`;
       md += `                Host     : ${name}\n`;
       md += `                Role     : ${headline}\n`;
-      md += `                Kernel   : zen-6.10.4 // Performance\n`;
-      md += `                Shell    : zsh 5.9 + oh-my-zsh\n`;
-      md += `                Memory   : 64GB DDR5 @6400MHz\n`;
+      md += `                Shell    : zsh 5.9 (x86_64-pc-linux-gnu)\n`;
+      md += `                Editor   : Neovim v0.10.0 + Lua\n`;
       md += `                Uptime   : 99.99% Continuous Delivery\n`;
-      md += `                Fuel     : Cold Brew Concentrate ☕\n`;
+      md += `                Fuel     : Fresh Dark Roast Espresso ☕\n`;
       md += "```\n\n";
 
       if (state.toggles.typing && state.typingLines.length > 0) {
@@ -788,38 +833,42 @@ function generateMarkdown() {
       md += `---\n\n`;
 
       if (state.toggles.statusBio) {
+        md += `### 💻 Terminal Session & Focus\n\n`;
         md += "```bash\n";
-        md += `┌──(root㉿dev)-[~/focus-matrix]\n└─$ cat current_session.json\n`;
+        md += `┌──(root㉿dev)-[~/workspace]\n└─$ cat current_focus.json\n`;
         md += "```\n";
         md += "```json\n{\n";
-        md += `  "status"      : "🟢 Active & Shipping",\n`;
-        md += `  "working_on"  : "${state.statusBio.working}",\n`;
-        md += `  "learning"    : "${state.statusBio.learning}",\n`;
-        md += `  "ask_me_about": "${state.statusBio.askMe}",\n`;
-        md += `  "fun_fact"    : "${state.statusBio.funFact}"\n`;
+        md += `  "status"        : "🟢 Active & Shipping",\n`;
+        md += `  "building"      : "${state.statusBio.working}",\n`;
+        md += `  "learning"      : "${state.statusBio.learning}",\n`;
+        md += `  "ask_me_about"  : "${state.statusBio.askMe}",\n`;
+        md += `  "fun_fact"      : "${state.statusBio.funFact}"\n`;
         md += `}\n\`\`\`\n\n`;
         md += `---\n\n`;
       }
 
       if (state.selectedSkills.length > 0) {
+        md += `### 🛠️ Installed Packages & Toolchain\n\n`;
         md += "```bash\n";
-        md += `┌──(root㉿dev)-[~/arsenal]\n└─$ pkg query --installed --verbose\n`;
+        md += `┌──(root㉿dev)-[~/toolchain]\n└─$ pacman -Q --categorized\n`;
         md += "```\n\n";
-        md += `<div align="center">\n  <a href="https://skillicons.dev">\n    <img src="https://skillicons.dev/icons?i=${skillsStr}&perline=10" />\n  </a>\n</div>\n\n`;
+        md += buildCategorizedSkills(state.selectedSkills, arch, "table");
         md += `---\n\n`;
       }
 
       if (state.toggles.projects && state.projects.length > 0) {
+        md += `### 📦 Running Containers & Shipped Projects\n\n`;
         md += "```bash\n";
-        md += `┌──(root㉿dev)-[~/containers]\n└─$ docker ps --all --format "table {{.Names}}\\t{{.Image}}\\t{{.Status}}"\n`;
+        md += `┌──(root㉿dev)-[~/services]\n└─$ docker ps --format "table {{.Names}}\\t{{.Status}}\\t{{.Ports}}"\n`;
         md += "```\n\n";
         md += buildProjectsMarkdown(u, arch, pStyle);
         md += `\n---\n\n`;
       }
 
       if (state.toggles.graphs) {
+        md += `### 📈 Activity Monitor\n\n`;
         md += "```bash\n";
-        md += `┌──(root㉿dev)-[~/telemetry]\n└─$ btop --stream --git-activity\n`;
+        md += `┌──(root㉿dev)-[~/telemetry]\n└─$ btop --live --git-commits\n`;
         md += "```\n\n";
         md += buildGraphMarkdown(u, arch, gStyle);
         md += `\n`;
@@ -827,27 +876,30 @@ function generateMarkdown() {
 
       if (state.toggles.stats) {
         md += `<div align="center">\n`;
-        md += `  <img src="https://github-readme-stats.vercel.app/api?username=${u}&show_icons=true&theme=merko&hide_border=true&bg_color=0a0e0b&title_color=00ff66&icon_color=00cc55&text_color=22c55e&rank_icon=github" height="160" />\n`;
+        md += `  <img src="https://github-readme-stats.vercel.app/api?username=${u}&show_icons=true&theme=merko&hide_border=true&bg_color=0a0e0b&title_color=00ff66&icon_color=00cc55&text_color=22c55e&rank_icon=github" height="165" />\n`;
         md += `  &nbsp;\n`;
-        md += `  <img src="https://github-readme-streak-stats.herokuapp.com/?user=${u}&theme=merko&hide_border=true&background=0a0e0b&ring=00ff66&fire=00dd55&currStreakLabel=00ff66&sideLabels=00cc55" height="160" />\n`;
+        md += `  <img src="https://github-readme-streak-stats.herokuapp.com/?user=${u}&theme=merko&hide_border=true&background=0a0e0b&ring=00ff66&fire=00dd55&currStreakLabel=00ff66&sideLabels=00cc55" height="165" />\n`;
         md += `</div>\n\n`;
         md += `<div align="center">\n  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=${u}&layout=compact&theme=merko&hide_border=true&bg_color=0a0e0b&title_color=00ff66&text_color=22c55e&langs_count=8" height="140" />\n</div>\n\n`;
       }
 
       if (state.toggles.viralBadge) {
-        md += `<div align="center">\n  <code>[ SYS_OK ] &nbsp; Crafted with <a href="https://github.com/Ratul-NotFound/Github-Overview-Maker">Git View Pro</a> &nbsp; [ EOF ]</code>\n</div>\n`;
+        md += `<div align="center">\n  <code>[ 0x00_SYS_OK ] &nbsp; Built with <a href="https://github.com/Ratul-NotFound/Github-Overview-Maker">Git View Pro</a> &nbsp; [ EOF ]</code>\n</div>\n`;
       }
       return md;
     }
 
+    // ─────────────────────────────────────────────────────────────
+    // 2. MODERN BENTO GRID
+    // ─────────────────────────────────────────────────────────────
     case "bento": {
       let md = "";
       if (state.toggles.header) {
-        md += `<div align="center">\n  <img src="https://capsule-render.vercel.app/api?type=slice&color=gradient&customColorList=10,20,30&height=180&section=header&text=${encodeURIComponent(name)}&fontSize=38&fontColor=ffffff&fontAlignY=45&desc=${encodeURIComponent(headline.slice(0,50))}&descAlignY=68&descSize=15&descColor=38bdf8&animation=fadeIn" width="100%"/>\n</div>\n\n`;
+        md += `<div align="center">\n  <img src="https://capsule-render.vercel.app/api?type=slice&color=gradient&customColorList=10,20,30&height=190&section=header&text=${encodeURIComponent(name)}&fontSize=38&fontColor=ffffff&fontAlignY=42&desc=${encodeURIComponent(headline.slice(0,50))}&descAlignY=66&descSize=15&descColor=38bdf8&animation=fadeIn" width="100%"/>\n</div>\n\n`;
       }
 
       if (state.toggles.views) {
-        md += `<div align="center">\n  <img src="https://komarev.com/ghpvc/?username=${u}&label=Profile+Views&color=38bdf8&style=flat-square" />\n  &nbsp;&nbsp;\n  <img src="https://img.shields.io/badge/Status-Open%20to%20Work-22c55e?style=flat-square&logo=checkmarx&logoColor=white" />\n  &nbsp;&nbsp;\n  <img src="https://img.shields.io/badge/Based%20in-Remote%20%F0%9F%8C%8D-6366f1?style=flat-square" />\n</div>\n\n`;
+        md += `<div align="center">\n  <img src="https://komarev.com/ghpvc/?username=${u}&label=Profile+Views&color=38bdf8&style=flat-square" />\n  &nbsp;&nbsp;\n  <img src="https://img.shields.io/badge/Status-Open%20to%20Opportunities-22c55e?style=flat-square&logo=checkmarx&logoColor=white" />\n  &nbsp;&nbsp;\n  <img src="https://img.shields.io/badge/Location-Remote%20%F0%9F%8C%8D-6366f1?style=flat-square" />\n</div>\n\n`;
       }
 
       if (state.toggles.typing && state.typingLines.length > 0) {
@@ -862,36 +914,35 @@ function generateMarkdown() {
       md += `---\n\n`;
 
       if (state.toggles.statusBio) {
-        md += `## 🚀 About Me\n\n`;
-        md += `| &nbsp; | &nbsp; |\n|:---|:---|\n`;
-        md += `| 🎯 **Currently Building** | ${state.statusBio.working} |\n`;
-        md += `| 📚 **Deep Diving Into** | ${state.statusBio.learning} |\n`;
-        md += `| 💬 **Ask Me About** | ${state.statusBio.askMe} |\n`;
-        md += `| ⚡ **Fun Fact** | ${state.statusBio.funFact} |\n`;
-        md += `| 🟢 **Availability** | Open to strategic collaborations |\n\n`;
+        md += `### 🍱 Executive Summary\n\n`;
+        md += `| Overview & Status | Key Details |\n|:---|:---|\n`;
+        md += `| 🚀 **Current Focus** | ${state.statusBio.working} |\n`;
+        md += `| 📚 **Exploring** | ${state.statusBio.learning} |\n`;
+        md += `| 💬 **Inquiries & Collabs** | ${state.statusBio.askMe} |\n`;
+        md += `| ⚡ **Fun Fact** | ${state.statusBio.funFact} |\n\n`;
         md += `---\n\n`;
       }
 
       if (state.selectedSkills.length > 0) {
-        md += `## 🛠️ Tech Stack & Toolchain\n\n`;
-        md += `<div align="center">\n  <a href="https://skillicons.dev">\n    <img src="https://skillicons.dev/icons?i=${skillsStr}&perline=10" />\n  </a>\n</div>\n\n`;
+        md += `### 🛠️ Production Toolchain\n\n`;
+        md += buildCategorizedSkills(state.selectedSkills, arch, "table");
         md += `---\n\n`;
       }
 
       if (state.toggles.projects && state.projects.length > 0) {
-        md += `## 📦 Featured Projects\n\n`;
+        md += `### 📦 Featured Production Systems\n\n`;
         md += buildProjectsMarkdown(u, arch, pStyle);
         md += `\n---\n\n`;
       }
 
       if (state.toggles.graphs) {
-        md += `## 📈 Contribution Activity\n\n`;
+        md += `### 📈 Contribution Velocity\n\n`;
         md += buildGraphMarkdown(u, arch, gStyle);
         md += `\n`;
       }
 
       if (state.toggles.stats) {
-        md += `## 📊 GitHub Statistics\n\n`;
+        md += `### 📊 GitHub Activity & Metrics\n\n`;
         md += `<div align="center">\n`;
         md += `  <img src="https://github-readme-stats.vercel.app/api?username=${u}&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0f172a&title_color=38bdf8&icon_color=818cf8&text_color=cbd5e1&rank_icon=github&include_all_commits=true" height="165" />\n`;
         md += `  &nbsp;\n`;
@@ -902,14 +953,17 @@ function generateMarkdown() {
       }
 
       if (state.toggles.viralBadge) {
-        md += `<div align="center">\n  <sub>🍱 Engineered with <a href="https://github.com/Ratul-NotFound/Github-Overview-Maker">Git View Pro</a></sub>\n</div>\n`;
+        md += `<div align="center">\n  <sub>🍱 Crafted with <a href="https://github.com/Ratul-NotFound/Github-Overview-Maker">Git View Pro</a></sub>\n</div>\n`;
       }
       return md;
     }
 
+    // ─────────────────────────────────────────────────────────────
+    // 3. RPG QUEST MASTER
+    // ─────────────────────────────────────────────────────────────
     case "rpg": {
       let md = "";
-      md += `<div align="center">\n  <img src="https://capsule-render.vercel.app/api?type=soft&color=gradient&customColorList=2,6,12&height=200&section=header&text=%E2%9A%9C%EF%B8%8F+${encodeURIComponent(name.toUpperCase())}+%E2%9A%9C%EF%B8%8F&fontSize=32&fontColor=fbbf24&fontAlignY=42&desc=LEVEL+99+ARCHMAGE+%7C+${encodeURIComponent(headline.slice(0,35))}&descAlignY=65&descSize=14&descColor=ec4899&animation=fadeIn" width="100%"/>\n</div>\n\n`;
+      md += `<div align="center">\n  <img src="https://capsule-render.vercel.app/api?type=soft&color=gradient&customColorList=2,6,12&height=210&section=header&text=%E2%9A%9C%EF%B8%8F+${encodeURIComponent(name.toUpperCase())}+%E2%9A%9C%EF%B8%8F&fontSize=32&fontColor=fbbf24&fontAlignY=42&desc=LEVEL+99+DEVELOPER+%7C+${encodeURIComponent(headline.slice(0,35))}&descAlignY=65&descSize=14&descColor=ec4899&animation=fadeIn" width="100%"/>\n</div>\n\n`;
 
       if (state.toggles.typing && state.typingLines.length > 0) {
         const lp = state.typingLines.map(l => encodeURIComponent(l)).join(";");
@@ -927,51 +981,47 @@ function generateMarkdown() {
       md += `║       ⚜️  ADVENTURER'S GUILD REGISTRY  ⚜️        ║\n`;
       md += `╠══════════════════════════════════════════════════╣\n`;
       md += `║  PLAYER   : ${name.padEnd(36)} ║\n`;
-      md += `║  USERNAME : @${u.padEnd(35)} ║\n`;
-      md += `║  CLASS    : Senior Code Sorcerer & Infra Wizard  ║\n`;
-      md += `║  GUILD    : Open Source Brotherhood              ║\n`;
+      md += `║  HANDLE   : @${u.padEnd(35)} ║\n`;
+      md += `║  CLASS    : Senior Full-Stack Architect          ║\n`;
+      md += `║  EXP      : 99.4% [S-RANK ARCHMAGE TIER]         ║\n`;
       md += `╠══════════════════════════════════════════════════╣\n`;
-      md += `║  HP    ████████████████████ 9999/9999  [ MAX ]   ║\n`;
-      md += `║  MANA  ████████████████░░░░ 8500/9999  [ HI  ]   ║\n`;
-      md += `║  EXP   ████████████████████ SENIOR [ S-RANK ]    ║\n`;
-      md += `╠══════════════════════════════════════════════════╣\n`;
-      md += `║  PASSIVE I   : Clean Architecture Mastery  +50% ║\n`;
-      md += `║  PASSIVE II  : Sub-ms Latency Aura         +40% ║\n`;
-      md += `║  PASSIVE III : Infinite Coffee Endurance   +999  ║\n`;
+      md += `║  HP (Focus)     : [████████████████████] 9999/9999 ║\n`;
+      md += `║  MANA (Coffee)  : [████████████████░░░░] 8500/9999 ║\n`;
+      md += `║  PASSIVE TRAITS : [Clean Code +50%] [Speed +40%] ║\n`;
       md += `╚══════════════════════════════════════════════════╝\n`;
       md += "```\n\n";
       md += `---\n\n`;
 
       if (state.toggles.statusBio) {
-        md += `## 📜 Active Guild Directives\n\n`;
-        md += `| Quest Type | Mission |\n|:---:|:---|\n`;
+        md += `### 📜 Guild Directives & Active Quests\n\n`;
+        md += `| Quest Type | Objective & Details |\n|:---:|:---|\n`;
         md += `| ⚔️ **Main Quest** | ${state.statusBio.working} |\n`;
-        md += `| 📖 **Ancient Tome Study** | ${state.statusBio.learning} |\n`;
-        md += `| 💬 **Sage's Council** | ${state.statusBio.askMe} |\n`;
+        md += `| 📖 **Ancient Tomes** | ${state.statusBio.learning} |\n`;
+        md += `| 💬 **Sage Council** | ${state.statusBio.askMe} |\n`;
         md += `| ⚡ **Secret Scroll** | ${state.statusBio.funFact} |\n\n`;
         md += `---\n\n`;
       }
 
       if (state.selectedSkills.length > 0) {
-        md += `## 🧙‍♂️ Spellbook & Relic Inventory\n\n`;
-        md += `<div align="center">\n  <a href="https://skillicons.dev">\n    <img src="https://skillicons.dev/icons?i=${skillsStr}&perline=10" />\n  </a>\n</div>\n\n`;
+        md += `### 🧙‍♂️ Spellbook & Relic Inventory\n\n`;
+        md += buildCategorizedSkills(state.selectedSkills, arch, "table");
         md += `---\n\n`;
       }
 
       if (state.toggles.projects && state.projects.length > 0) {
-        md += `## ⚔️ Completed Quest Log\n\n`;
+        md += `### ⚔️ Completed Quests & Shipped Projects\n\n`;
         md += buildProjectsMarkdown(u, arch, pStyle);
         md += `\n---\n\n`;
       }
 
       if (state.toggles.graphs) {
-        md += `## 🌌 Astral Leyline Resonance\n\n`;
+        md += `### 🌌 Astral Leyline Resonance\n\n`;
         md += buildGraphMarkdown(u, arch, gStyle);
         md += `\n`;
       }
 
       if (state.toggles.stats) {
-        md += `## 🏆 Guild Trophies & Battle Records\n\n`;
+        md += `### 🏆 Guild Trophies & Battle Records\n\n`;
         md += `<div align="center">\n  <img src="https://github-profile-trophy.vercel.app/?username=${u}&theme=onedark&no-frame=true&no-bg=true&margin-w=8&column=7" width="100%" />\n</div>\n\n`;
         md += `<div align="center">\n`;
         md += `  <img src="https://github-readme-stats.vercel.app/api?username=${u}&show_icons=true&theme=synthwave&hide_border=true&bg_color=100c1a&title_color=fbbf24&icon_color=ec4899&text_color=e2e8f0&rank_icon=github" height="160" />\n`;
@@ -988,13 +1038,16 @@ function generateMarkdown() {
       return md;
     }
 
+    // ─────────────────────────────────────────────────────────────
+    // 4. RETRO 8-BIT ARCADE
+    // ─────────────────────────────────────────────────────────────
     case "arcade8bit": {
       let md = "";
       md += `<div align="center">\n  <img src="https://capsule-render.vercel.app/api?type=rect&color=gradient&customColorList=2,5,9&height=160&section=header&text=%F0%9F%95%B9%EF%B8%8F+${encodeURIComponent(name.toUpperCase())}+%F0%9F%95%B9%EF%B8%8F&fontSize=30&fontColor=facc15&fontAlignY=50" width="100%"/>\n</div>\n\n`;
 
       if (state.toggles.typing && state.typingLines.length > 0) {
         const lp = state.typingLines.map(l => encodeURIComponent(l)).join(";");
-        md += `<div align="center">\n  <img src="https://readme-typing-svg.demolab.com?font=Press+Start+2P&size=13&duration=3000&pause=1200&color=FACC15&center=true&vCenter=true&width=750&height=55&lines=INSERT+COIN+TO+CONTINUE...;${lp}" alt="8bit typing"/>\n</div>\n\n`;
+        md += `<div align="center">\n  <img src="https://readme-typing-svg.demolab.com?font=Press+Start+2P&size=13&duration=3000&pause=1200&color=FACC15&center=true&vCenter=true&width=750&height=55&lines=INSERT+COIN+TO+PLAY;${lp}" alt="8bit typing"/>\n</div>\n\n`;
       }
 
       const sbArcade = buildSocialBadges("flat-square");
@@ -1010,8 +1063,8 @@ function generateMarkdown() {
       md += `│  RANK  │  PLAYER                     │  SCORE    │  TIER    │\n`;
       md += `│─────────────────────────────────────────────────────────────│\n`;
       md += `│  #1    │  ${name.toUpperCase().slice(0,25).padEnd(25)}  │  999,999  │  ★ LEGEND │\n`;
-      md += `│  #2    │  GITHUB_COPILOT              │  850,000  │  ★ PRO   │\n`;
-      md += `│  #3    │  LINUS_TORVALDS              │  740,000  │  ★ MSTR  │\n`;
+      md += `│  #2    │  GITHUB_COMMUNITY           │  850,000  │  ★ PRO   │\n`;
+      md += `│  #3    │  OPEN_SOURCE_BUILDER        │  740,000  │  ★ MASTER │\n`;
       md += `│─────────────────────────────────────────────────────────────│\n`;
       md += `│            ► PRESS START TO JOIN THE LEADERBOARD ◄          │\n`;
       md += `└─────────────────────────────────────────────────────────────┘\n`;
@@ -1019,12 +1072,12 @@ function generateMarkdown() {
       md += `---\n\n`;
 
       if (state.toggles.statusBio) {
-        md += `## 🎮 Player Status\n\n`;
+        md += `### 🎮 Player 1 Status\n\n`;
         md += "```\n";
         md += `  ┌──────────────────────────────────────────────┐\n`;
-        md += `  │  CURRENT MISSION  : ${state.statusBio.working.slice(0,24).padEnd(24)}  │\n`;
-        md += `  │  SKILL TRAINING   : ${state.statusBio.learning.slice(0,24).padEnd(24)}  │\n`;
-        md += `  │  PLAYER HOTLINE   : ${state.statusBio.askMe.slice(0,24).padEnd(24)}  │\n`;
+        md += `  │  CURRENT STAGE    : ${state.statusBio.working.slice(0,24).padEnd(24)}  │\n`;
+        md += `  │  SKILL UPGRADE    : ${state.statusBio.learning.slice(0,24).padEnd(24)}  │\n`;
+        md += `  │  CO-OP HOTLINE    : ${state.statusBio.askMe.slice(0,24).padEnd(24)}  │\n`;
         md += `  │  CHEAT CODE       : ${state.statusBio.funFact.slice(0,24).padEnd(24)}  │\n`;
         md += `  └──────────────────────────────────────────────┘\n`;
         md += "```\n\n";
@@ -1032,19 +1085,19 @@ function generateMarkdown() {
       }
 
       if (state.selectedSkills.length > 0) {
-        md += `## 👾 Power-Ups & Equipped Items\n\n`;
-        md += `<div align="center">\n  <a href="https://skillicons.dev">\n    <img src="https://skillicons.dev/icons?i=${skillsStr}&perline=10" />\n  </a>\n</div>\n\n`;
+        md += `### 👾 Power-Ups & Equipped Items\n\n`;
+        md += buildCategorizedSkills(state.selectedSkills, arch, "table");
         md += `---\n\n`;
       }
 
       if (state.toggles.projects && state.projects.length > 0) {
-        md += `## 🕹️ Cleared Stages (Shipped Projects)\n\n`;
+        md += `### 🕹️ Cleared Stages (Shipped Projects)\n\n`;
         md += buildProjectsMarkdown(u, arch, pStyle);
         md += `\n---\n\n`;
       }
 
       if (state.toggles.graphs) {
-        md += `## 📊 Pixel Activity Stream\n\n`;
+        md += `### 📊 Pixel Activity Stream\n\n`;
         md += buildGraphMarkdown(u, arch, gStyle);
         md += `\n`;
       }
@@ -1065,10 +1118,13 @@ function generateMarkdown() {
       return md;
     }
 
+    // ─────────────────────────────────────────────────────────────
+    // 5. KAWAII PASTEL SAKURA
+    // ─────────────────────────────────────────────────────────────
     case "kawaii": {
       let md = "";
       md += `<div align="center">\n  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=34,36,44&height=200&section=header&text=%F0%9F%8C%B8+${encodeURIComponent(name)}+%F0%9F%8C%B8&fontSize=34&fontColor=ffffff&fontAlignY=40&desc=(%E3%81%A5%EF%BD%A1%E2%97%94%E2%80%BF%E2%80%BF%E2%97%94%EF%BD%A1)%E3%81%A5+%E2%9C%A7+${encodeURIComponent(headline.slice(0,30))}&descAlignY=65&descSize=14&descColor=f9a8d4&animation=twinkling" width="100%"/>\n</div>\n\n`;
-      md += `<div align="center">\n\n✿ ─── ─── ─── ─── ─── ─── ─── ─── ─── ✿\n\n*🌸 Welcome to my cozy digital garden! I build with heart ♡*\n\n✿ ─── ─── ─── ─── ─── ─── ─── ─── ─── ✿\n\n</div>\n\n`;
+      md += `<div align="center">\n\n✿ ─── ─── ─── ─── ─── ─── ─── ─── ─── ✿\n\n*🌸 Welcome to my cozy digital garden! I build delightful software ♡*\n\n✿ ─── ─── ─── ─── ─── ─── ─── ─── ─── ✿\n\n</div>\n\n`;
 
       if (state.toggles.typing && state.typingLines.length > 0) {
         const lp = state.typingLines.map(l => encodeURIComponent(l)).join(";");
@@ -1082,9 +1138,9 @@ function generateMarkdown() {
       md += `---\n\n`;
 
       if (state.toggles.statusBio) {
-        md += `## 🍵 Cozy Corner\n\n`;
+        md += `### 🍵 Cozy Corner Diary\n\n`;
         md += `> *${state.statusBio.funFact}* ✨\n\n`;
-        md += `| ✿ | |\n|:---:|:---|\n`;
+        md += `| ✿ Daily Log | Status |\n|:---:|:---|\n`;
         md += `| 🌸 **Brewing** | ${state.statusBio.working} |\n`;
         md += `| 📖 **Reading** | ${state.statusBio.learning} |\n`;
         md += `| 💌 **Say Hi!** | ${state.statusBio.askMe} |\n\n`;
@@ -1092,25 +1148,25 @@ function generateMarkdown() {
       }
 
       if (state.selectedSkills.length > 0) {
-        md += `## 🧁 Cozy Toolkit\n\n`;
-        md += `<div align="center">\n  <a href="https://skillicons.dev">\n    <img src="https://skillicons.dev/icons?i=${skillsStr}&perline=10" />\n  </a>\n</div>\n\n`;
+        md += `### 🧁 Sweet Toolkit\n\n`;
+        md += buildCategorizedSkills(state.selectedSkills, arch, "table");
         md += `---\n\n`;
       }
 
       if (state.toggles.projects && state.projects.length > 0) {
-        md += `## 🌷 Sakura Garden Projects\n\n`;
+        md += `### 🌷 Sakura Garden Projects\n\n`;
         md += buildProjectsMarkdown(u, arch, pStyle);
         md += `\n---\n\n`;
       }
 
       if (state.toggles.graphs) {
-        md += `## 🌸 Contribution Blossoms\n\n`;
+        md += `### 🌸 Contribution Blossoms\n\n`;
         md += buildGraphMarkdown(u, arch, gStyle);
         md += `\n`;
       }
 
       if (state.toggles.stats) {
-        md += `## 🎀 Sweet Statistics\n\n`;
+        md += `### 🎀 Sweet Statistics\n\n`;
         md += `<div align="center">\n`;
         md += `  <img src="https://github-readme-stats.vercel.app/api?username=${u}&show_icons=true&theme=dracula&hide_border=true&bg_color=160e20&title_color=f472b6&icon_color=c084fc&text_color=fbcfe8&rank_icon=github" height="160" />\n`;
         md += `  &nbsp;\n`;
@@ -1127,9 +1183,12 @@ function generateMarkdown() {
       return md;
     }
 
+    // ─────────────────────────────────────────────────────────────
+    // 6. COSMIC DEEP SPACE (AURORA)
+    // ─────────────────────────────────────────────────────────────
     case "aurora": {
       let md = "";
-      md += `<div align="center">\n  <img src="https://capsule-render.vercel.app/api?type=soft&color=gradient&customColorList=20,24,26,28&height=200&section=header&text=%E2%9C%A6+${encodeURIComponent(name.toUpperCase())}+%E2%9C%A6&fontSize=36&fontColor=e0e7ff&fontAlignY=40&desc=INTERSTELLAR+COMMANDER+%7C+${encodeURIComponent(headline.slice(0,35))}&descAlignY=64&descSize=14&descColor=818cf8&animation=fadeIn" width="100%"/>\n</div>\n\n`;
+      md += `<div align="center">\n  <img src="https://capsule-render.vercel.app/api?type=soft&color=gradient&customColorList=20,24,26,28&height=200&section=header&text=%E2%9C%A6+${encodeURIComponent(name.toUpperCase())}+%E2%9C%A6&fontSize=36&fontColor=e0e7ff&fontAlignY=40&desc=INTERSTELLAR+DEVELOPER+%7C+${encodeURIComponent(headline.slice(0,35))}&descAlignY=64&descSize=14&descColor=818cf8&animation=fadeIn" width="100%"/>\n</div>\n\n`;
 
       if (state.toggles.views) {
         md += `<div align="center">\n  <img src="https://komarev.com/ghpvc/?username=${u}&label=STARSHIP+VISITS&color=818cf8&style=flat-square" />\n  &nbsp;&nbsp;\n  <img src="https://img.shields.io/badge/Status-Exploring%20the%20Cosmos-4f46e5?style=flat-square" />\n</div>\n\n`;
@@ -1147,40 +1206,40 @@ function generateMarkdown() {
       md += `---\n\n`;
 
       if (state.toggles.statusBio) {
-        md += `## 🪐 Starship Mission Log\n\n`;
+        md += `### 🪐 Starship Mission Log\n\n`;
         md += "```\n";
         md += `  ╔══════════════════════════════════════════════════╗\n`;
-        md += `  ║  STARDATE: ${new Date().toISOString().split('T')[0]}         SECTOR: ACTIVE ║\n`;
+        md += `  ║  STARDATE: ${new Date().toISOString().split('T')[0]}         SECTOR: DEPLOYED ║\n`;
         md += `  ╠══════════════════════════════════════════════════╣\n`;
-        md += `  ║  WARP SECTOR  : ${state.statusBio.working.slice(0,31).padEnd(31)}  ║\n`;
+        md += `  ║  MISSION FOCUS: ${state.statusBio.working.slice(0,31).padEnd(31)}  ║\n`;
         md += `  ║  ASTRAL STUDY : ${state.statusBio.learning.slice(0,31).padEnd(31)}  ║\n`;
         md += `  ║  COMM CHANNEL : ${state.statusBio.askMe.slice(0,31).padEnd(31)}  ║\n`;
-        md += `  ║  SHIP FUEL    : ${state.statusBio.funFact.slice(0,31).padEnd(31)}  ║\n`;
+        md += `  ║  WARP FUEL    : ${state.statusBio.funFact.slice(0,31).padEnd(31)}  ║\n`;
         md += `  ╚══════════════════════════════════════════════════╝\n`;
         md += "```\n\n";
         md += `---\n\n`;
       }
 
       if (state.selectedSkills.length > 0) {
-        md += `## 🌌 Constellation Tech Matrix\n\n`;
-        md += `<div align="center">\n  <a href="https://skillicons.dev">\n    <img src="https://skillicons.dev/icons?i=${skillsStr}&perline=10" />\n  </a>\n</div>\n\n`;
+        md += `### 🌌 Constellation Tech Matrix\n\n`;
+        md += buildCategorizedSkills(state.selectedSkills, arch, "table");
         md += `---\n\n`;
       }
 
       if (state.toggles.projects && state.projects.length > 0) {
-        md += `## 🛰️ Orbital Missions & Satellites\n\n`;
+        md += `### 🛰️ Orbital Missions & Satellites\n\n`;
         md += buildProjectsMarkdown(u, arch, pStyle);
         md += `\n---\n\n`;
       }
 
       if (state.toggles.graphs) {
-        md += `## 🌠 Pulsar Activity Wave\n\n`;
+        md += `### 🌠 Pulsar Activity Wave\n\n`;
         md += buildGraphMarkdown(u, arch, gStyle);
         md += `\n`;
       }
 
       if (state.toggles.stats) {
-        md += `## 🔭 Deep Space Telemetry\n\n`;
+        md += `### 🔭 Deep Space Telemetry\n\n`;
         md += `<div align="center">\n  <img src="https://github-profile-trophy.vercel.app/?username=${u}&theme=onedark&no-frame=true&no-bg=true&margin-w=8&column=7" width="100%" />\n</div>\n\n`;
         md += `<div align="center">\n`;
         md += `  <img src="https://github-readme-stats.vercel.app/api?username=${u}&show_icons=true&theme=tokyonight&hide_border=true&bg_color=04020f&title_color=818cf8&icon_color=38bdf8&text_color=e0e7ff&rank_icon=github" height="160" />\n`;
@@ -1197,13 +1256,16 @@ function generateMarkdown() {
       return md;
     }
 
+    // ─────────────────────────────────────────────────────────────
+    // 7. MINIMAL MONO (SWISS BAUHAUS)
+    // ─────────────────────────────────────────────────────────────
     case "minimal": {
       let md = "";
       md += `<h1 align="center">${name.toUpperCase()}</h1>\n`;
       md += `<p align="center"><strong>${headline}</strong></p>\n\n`;
 
       if (state.toggles.views) {
-        md += `<p align="center">\n  <img src="https://komarev.com/ghpvc/?username=${u}&label=Profile+Views&color=000000&style=flat-square" />\n  &nbsp;\n  <img src="https://img.shields.io/badge/Status-Open%20to%20Work-000000?style=flat-square" />\n</p>\n\n`;
+        md += `<p align="center">\n  <img src="https://komarev.com/ghpvc/?username=${u}&label=Profile+Views&color=000000&style=flat-square" />\n  &nbsp;\n  <img src="https://img.shields.io/badge/Status-Available-000000?style=flat-square" />\n</p>\n\n`;
       }
 
       if (state.toggles.typing && state.typingLines.length > 0) {
@@ -1222,7 +1284,7 @@ function generateMarkdown() {
       md += `---\n\n`;
 
       if (state.toggles.statusBio) {
-        md += `### 01 / FOCUS\n\n`;
+        md += `### 01 / FOCUS & DIRECTION\n\n`;
         md += `- **Currently:** ${state.statusBio.working}\n`;
         md += `- **Researching:** ${state.statusBio.learning}\n`;
         md += `- **Inquiries:** ${state.statusBio.askMe}\n`;
@@ -1231,19 +1293,19 @@ function generateMarkdown() {
       }
 
       if (state.selectedSkills.length > 0) {
-        md += `### 02 / TOOLSET\n\n`;
-        md += `<div align="center">\n  <a href="https://skillicons.dev">\n    <img src="https://skillicons.dev/icons?i=${skillsStr}&perline=10" />\n  </a>\n</div>\n\n`;
+        md += `### 02 / TOOLCHAIN & STACK\n\n`;
+        md += buildCategorizedSkills(state.selectedSkills, arch, "table");
         md += `---\n\n`;
       }
 
       if (state.toggles.projects && state.projects.length > 0) {
         md += `### 03 / SELECTED WORKS\n\n`;
-        md += buildProjectsMarkdown(u, arch, pStyle);
-        md += `\n---\n\n`;
+        md += buildProjectsMarkdown(u, arch, "minimal");
+        md += `---\n\n`;
       }
 
       if (state.toggles.graphs) {
-        md += `### 04 / ACTIVITY\n\n`;
+        md += `### 04 / ACTIVITY & COMMITS\n\n`;
         md += buildGraphMarkdown(u, arch, gStyle);
         md += `\n`;
       }
@@ -1265,13 +1327,16 @@ function generateMarkdown() {
       return md;
     }
 
+    // ─────────────────────────────────────────────────────────────
+    // 8. SYNTHWAVE 80s
+    // ─────────────────────────────────────────────────────────────
     case "synthwave": {
       let md = "";
       if (state.toggles.views) {
         md += `<div align="center">\n  <img src="https://komarev.com/ghpvc/?username=${u}&label=OUTRUN+RADAR&color=ff2a85&style=for-the-badge" alt="Profile Views" />\n</div>\n\n`;
       }
       if (state.toggles.header) {
-        md += `<div align="center">\n  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=24,26,30&height=220&section=header&text=%F0%9F%8C%B4+${encodeURIComponent(name.toUpperCase())}&fontSize=36&fontColor=ff2a85&fontAlignY=38&desc=SYNTHWAVE+ENGINEER+%7C+${encodeURIComponent(headline.slice(0,40))}&descAlignY=62&descSize=15&descColor=ff9e00&animation=fadeIn" width="100%"/>\n</div>\n\n`;
+        md += `<div align="center">\n  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=24,26,30&height=220&section=header&text=%F0%9F%8C%B4+${encodeURIComponent(name.toUpperCase())}&fontSize=36&fontColor=ff2a85&fontAlignY=38&desc=SYNTHWAVE+DEVELOPER+%7C+${encodeURIComponent(headline.slice(0,40))}&descAlignY=62&descSize=15&descColor=ff9e00&animation=fadeIn" width="100%"/>\n</div>\n\n`;
       }
       if (state.toggles.typing && state.typingLines.length > 0) {
         const lp = state.typingLines.map(l => encodeURIComponent(l)).join(";");
@@ -1282,8 +1347,8 @@ function generateMarkdown() {
       md += `---\n\n`;
 
       if (state.toggles.statusBio) {
-        md += `## 🌴 Outrun Frequency & Bio\n\n`;
-        md += `| Frequency | Broadcast |\n|:---:|:---|\n`;
+        md += `### 🌴 Outrun Frequency & Tracklist\n\n`;
+        md += `| Frequency | Broadcast & Direction |\n|:---:|:---|\n`;
         md += `| 📻 **Current Synthesizer** | ${state.statusBio.working} |\n`;
         md += `| 🕹️ **Exploring Horizons** | ${state.statusBio.learning} |\n`;
         md += `| ⚡ **Talk Retro Tech** | ${state.statusBio.askMe} |\n`;
@@ -1291,22 +1356,22 @@ function generateMarkdown() {
         md += `---\n\n`;
       }
       if (state.selectedSkills.length > 0) {
-        md += `## ⚡ 80s Cyber Deck & Stack\n\n`;
-        md += `<div align="center">\n  <a href="https://skillicons.dev">\n    <img src="https://skillicons.dev/icons?i=${skillsStr}&perline=10" />\n  </a>\n</div>\n\n`;
+        md += `### ⚡ 80s Cyber Deck & Stack\n\n`;
+        md += buildCategorizedSkills(state.selectedSkills, arch, "table");
         md += `---\n\n`;
       }
       if (state.toggles.projects && state.projects.length > 0) {
-        md += `## 🏎️ Turbo-Charged Projects\n\n`;
+        md += `### 🏎️ Turbo-Charged Projects\n\n`;
         md += buildProjectsMarkdown(u, arch, pStyle);
         md += `\n---\n\n`;
       }
       if (state.toggles.graphs) {
-        md += `## 📈 Grid Acceleration Telemetry\n\n`;
+        md += `### 📈 Grid Acceleration Activity\n\n`;
         md += buildGraphMarkdown(u, arch, gStyle);
         md += `\n`;
       }
       if (state.toggles.stats) {
-        md += `## 📊 Synth Performance Metrics\n\n`;
+        md += `### 📊 Synth Performance Metrics\n\n`;
         md += `<div align="center">\n`;
         md += `  <img src="https://github-readme-stats.vercel.app/api?username=${u}&show_icons=true&theme=synthwave&hide_border=true&bg_color=0e0720&title_color=ff2a85&icon_color=ff9e00&text_color=e2e8f0&rank_icon=github&include_all_commits=true" height="165" />\n`;
         md += `  &nbsp;\n`;
@@ -1322,6 +1387,9 @@ function generateMarkdown() {
       return md;
     }
 
+    // ─────────────────────────────────────────────────────────────
+    // 9. NORDIC CALM
+    // ─────────────────────────────────────────────────────────────
     case "nordic": {
       let md = "";
       if (state.toggles.header) {
@@ -1339,7 +1407,7 @@ function generateMarkdown() {
       md += `---\n\n`;
 
       if (state.toggles.statusBio) {
-        md += `## ❄️ Nordic Dispatch\n\n`;
+        md += `### ❄️ Nordic Dispatch\n\n`;
         md += `| Project Focus | Status Detail |\n|:---|:---|\n`;
         md += `| 🏔️ **Active Build** | ${state.statusBio.working} |\n`;
         md += `| ❄️ **Exploring Ice** | ${state.statusBio.learning} |\n`;
@@ -1348,22 +1416,22 @@ function generateMarkdown() {
         md += `---\n\n`;
       }
       if (state.selectedSkills.length > 0) {
-        md += `## 🛠️ Stack & Technologies\n\n`;
-        md += `<div align="center">\n  <a href="https://skillicons.dev">\n    <img src="https://skillicons.dev/icons?i=${skillsStr}&theme=dark&perline=10" />\n  </a>\n</div>\n\n`;
+        md += `### 🛠️ Stack & Technologies\n\n`;
+        md += buildCategorizedSkills(state.selectedSkills, arch, "table");
         md += `---\n\n`;
       }
       if (state.toggles.projects && state.projects.length > 0) {
-        md += `## 📦 Open Source Shipments\n\n`;
+        md += `### 📦 Open Source Shipments\n\n`;
         md += buildProjectsMarkdown(u, arch, pStyle);
         md += `\n---\n\n`;
       }
       if (state.toggles.graphs) {
-        md += `## 📈 Glacier Activity\n\n`;
+        md += `### 📈 Glacier Activity\n\n`;
         md += buildGraphMarkdown(u, arch, gStyle);
         md += `\n`;
       }
       if (state.toggles.stats) {
-        md += `## 📊 Nord Metrics\n\n`;
+        md += `### 📊 Nord Metrics\n\n`;
         md += `<div align="center">\n`;
         md += `  <img src="https://github-readme-stats.vercel.app/api?username=${u}&show_icons=true&theme=nord&hide_border=true&bg_color=1a1e28&title_color=88c0d0&icon_color=81a1c1&text_color=d8dee9&rank_icon=github&include_all_commits=true" height="165" />\n`;
         md += `  &nbsp;\n`;
@@ -1378,6 +1446,9 @@ function generateMarkdown() {
       return md;
     }
 
+    // ─────────────────────────────────────────────────────────────
+    // 10. DRACULA DARK
+    // ─────────────────────────────────────────────────────────────
     case "dracula": {
       let md = "";
       if (state.toggles.views) {
@@ -1395,7 +1466,7 @@ function generateMarkdown() {
       md += `---\n\n`;
 
       if (state.toggles.statusBio) {
-        md += `## 🧛 Vampire Crypt Registry\n\n`;
+        md += `### 🧛 Vampire Crypt Registry\n\n`;
         md += `| Protocol | Status |\n|:---|:---|\n`;
         md += `| 🦇 **Midnight Project** | ${state.statusBio.working} |\n`;
         md += `| 🍷 **Nocturnal Study** | ${state.statusBio.learning} |\n`;
@@ -1404,22 +1475,22 @@ function generateMarkdown() {
         md += `---\n\n`;
       }
       if (state.selectedSkills.length > 0) {
-        md += `## ⚡ Arcane Grimoire & Tech\n\n`;
-        md += `<div align="center">\n  <a href="https://skillicons.dev">\n    <img src="https://skillicons.dev/icons?i=${skillsStr}&perline=10" />\n  </a>\n</div>\n\n`;
+        md += `### ⚡ Arcane Grimoire & Tech\n\n`;
+        md += buildCategorizedSkills(state.selectedSkills, arch, "table");
         md += `---\n\n`;
       }
       if (state.toggles.projects && state.projects.length > 0) {
-        md += `## 🩸 High-Stakes Artifacts\n\n`;
+        md += `### 🩸 High-Stakes Artifacts\n\n`;
         md += buildProjectsMarkdown(u, arch, pStyle);
         md += `\n---\n\n`;
       }
       if (state.toggles.graphs) {
-        md += `## 📈 Moonlit Velocity\n\n`;
+        md += `### 📈 Moonlit Velocity\n\n`;
         md += buildGraphMarkdown(u, arch, gStyle);
         md += `\n`;
       }
       if (state.toggles.stats) {
-        md += `## 📊 Dracula Telemetry\n\n`;
+        md += `### 📊 Dracula Telemetry\n\n`;
         md += `<div align="center">\n`;
         md += `  <img src="https://github-readme-stats.vercel.app/api?username=${u}&show_icons=true&theme=dracula&hide_border=true&bg_color=181a20&title_color=ff79c6&icon_color=50fa7b&text_color=f8f8f2&rank_icon=github&include_all_commits=true" height="165" />\n`;
         md += `  &nbsp;\n`;
@@ -1434,6 +1505,9 @@ function generateMarkdown() {
       return md;
     }
 
+    // ─────────────────────────────────────────────────────────────
+    // 11. MATRIX CODE RAIN
+    // ─────────────────────────────────────────────────────────────
     case "matrix": {
       let md = "";
       if (state.toggles.views) {
@@ -1456,32 +1530,32 @@ function generateMarkdown() {
       md += `---\n\n`;
 
       if (state.toggles.statusBio) {
-        md += `## 🟢 Mainframe SysDump\n\n`;
+        md += `### 🟢 Mainframe SysDump\n\n`;
         md += `\`\`\`yaml\n`;
         md += `[SYSTEM_FEED]:\n`;
         md += `  CURRENT_THREAD: "${state.statusBio.working}"\n`;
-        md += `  NEURAL_COMPILE: "${state.statusBio.learning}"\n`;
+        md += `  ACTIVE_STUDY: "${state.statusBio.learning}"\n`;
         md += `  QUERY_ROUTER: "${state.statusBio.askMe}"\n`;
-        md += `  ANOMALY_NOTE: "${state.statusBio.funFact}"\n`;
+        md += `  SYSTEM_NOTE: "${state.statusBio.funFact}"\n`;
         md += `\`\`\`\n\n`;
       }
       if (state.selectedSkills.length > 0) {
-        md += `## ⚡ Injected Binaries & Modules\n\n`;
-        md += `<div align="center">\n  <a href="https://skillicons.dev">\n    <img src="https://skillicons.dev/icons?i=${skillsStr}&perline=10" />\n  </a>\n</div>\n\n`;
+        md += `### ⚡ Injected Binaries & Modules\n\n`;
+        md += buildCategorizedSkills(state.selectedSkills, arch, "table");
         md += `---\n\n`;
       }
       if (state.toggles.projects && state.projects.length > 0) {
-        md += `## 🛰️ Deployed Payloads\n\n`;
+        md += `### 🛰️ Deployed Payloads\n\n`;
         md += buildProjectsMarkdown(u, arch, pStyle);
         md += `\n---\n\n`;
       }
       if (state.toggles.graphs) {
-        md += `## 📈 Stream Activity Telemetry\n\n`;
+        md += `### 📈 Stream Activity Telemetry\n\n`;
         md += buildGraphMarkdown(u, arch, gStyle);
         md += `\n`;
       }
       if (state.toggles.stats) {
-        md += `## 📊 Mainframe Metrics\n\n`;
+        md += `### 📊 Mainframe Metrics\n\n`;
         md += `<div align="center">\n`;
         md += `  <img src="https://github-readme-stats.vercel.app/api?username=${u}&show_icons=true&theme=merko&hide_border=true&bg_color=030a04&title_color=00ff66&icon_color=00dd55&text_color=86efac&rank_icon=github&include_all_commits=true" height="165" />\n`;
         md += `  &nbsp;\n`;
@@ -1496,6 +1570,9 @@ function generateMarkdown() {
       return md;
     }
 
+    // ─────────────────────────────────────────────────────────────
+    // 12. SOLARPUNK BIO-TECH
+    // ─────────────────────────────────────────────────────────────
     case "solarpunk": {
       let md = "";
       if (state.toggles.header) {
@@ -1513,31 +1590,31 @@ function generateMarkdown() {
       md += `---\n\n`;
 
       if (state.toggles.statusBio) {
-        md += `## 🌱 Biosphere Log & Manifesto\n\n`;
+        md += `### 🌱 Biosphere Log & Focus\n\n`;
         md += `| Sector | Cultivation Detail |\n|:---|:---|\n`;
         md += `| 🌿 **Nurturing Project** | ${state.statusBio.working} |\n`;
         md += `| ☀️ **Absorbing Light** | ${state.statusBio.learning} |\n`;
         md += `| 🌻 **Seed Conversations** | ${state.statusBio.askMe} |\n`;
-        md += `| 🐝 **Ecosystem Fact** | ${state.statusBio.funFact} |\n\n`;
+        md += `| 🐝 **Ecosystem Note** | ${state.statusBio.funFact} |\n\n`;
         md += `---\n\n`;
       }
       if (state.selectedSkills.length > 0) {
-        md += `## 🌿 Bio-Digital Toolset\n\n`;
-        md += `<div align="center">\n  <a href="https://skillicons.dev">\n    <img src="https://skillicons.dev/icons?i=${skillsStr}&perline=10" />\n  </a>\n</div>\n\n`;
+        md += `### 🌿 Bio-Digital Toolset\n\n`;
+        md += buildCategorizedSkills(state.selectedSkills, arch, "table");
         md += `---\n\n`;
       }
       if (state.toggles.projects && state.projects.length > 0) {
-        md += `## 🌻 Flourishing Initiatives\n\n`;
+        md += `### 🌻 Flourishing Initiatives\n\n`;
         md += buildProjectsMarkdown(u, arch, pStyle);
         md += `\n---\n\n`;
       }
       if (state.toggles.graphs) {
-        md += `## 📈 Solar Yield Activity\n\n`;
+        md += `### 📈 Solar Yield Activity\n\n`;
         md += buildGraphMarkdown(u, arch, gStyle);
         md += `\n`;
       }
       if (state.toggles.stats) {
-        md += `## 📊 Biosphere Yield Metrics\n\n`;
+        md += `### 📊 Biosphere Yield Metrics\n\n`;
         md += `<div align="center">\n`;
         md += `  <img src="https://github-readme-stats.vercel.app/api?username=${u}&show_icons=true&theme=tokyonight&hide_border=true&bg_color=081611&title_color=10b981&icon_color=f59e0b&text_color=a7f3d0&rank_icon=github&include_all_commits=true" height="165" />\n`;
         md += `  &nbsp;\n`;
@@ -1552,6 +1629,9 @@ function generateMarkdown() {
       return md;
     }
 
+    // ─────────────────────────────────────────────────────────────
+    // 13. GRUVBOX RETRO
+    // ─────────────────────────────────────────────────────────────
     case "gruvbox": {
       let md = "";
       if (state.toggles.views) {
@@ -1559,7 +1639,7 @@ function generateMarkdown() {
       }
       md += "```vim\n";
       md += `" ====================================================\n`;
-      md += `" BUFFER: ~/.config/profiles/${u}.md\n`;
+      md += `" BUFFER: ~/.config/nvim/init.lua\n`;
       md += `" DEVELOPER: ${name} [ ${headline} ]\n`;
       md += `" ====================================================\n`;
       md += "```\n\n";
@@ -1573,7 +1653,7 @@ function generateMarkdown() {
       md += `---\n\n`;
 
       if (state.toggles.statusBio) {
-        md += `## 🪵 Gruvbox Registers & State\n\n`;
+        md += `### 🪵 Gruvbox Registers & State\n\n`;
         md += `\`\`\`lua\n`;
         md += `return {\n`;
         md += `  active_buffer = "${state.statusBio.working}",\n`;
@@ -1584,22 +1664,22 @@ function generateMarkdown() {
         md += `\`\`\`\n\n`;
       }
       if (state.selectedSkills.length > 0) {
-        md += `## ⚙️ Installed Plugins & Toolchains\n\n`;
-        md += `<div align="center">\n  <a href="https://skillicons.dev">\n    <img src="https://skillicons.dev/icons?i=${skillsStr}&perline=10" />\n  </a>\n</div>\n\n`;
+        md += `### ⚙️ Installed Plugins & Toolchains\n\n`;
+        md += buildCategorizedSkills(state.selectedSkills, arch, "table");
         md += `---\n\n`;
       }
       if (state.toggles.projects && state.projects.length > 0) {
-        md += `## 📦 Staged Repositories\n\n`;
+        md += `### 📦 Staged Repositories\n\n`;
         md += buildProjectsMarkdown(u, arch, pStyle);
         md += `\n---\n\n`;
       }
       if (state.toggles.graphs) {
-        md += `## 📈 Commit Trajectory\n\n`;
+        md += `### 📈 Commit Trajectory\n\n`;
         md += buildGraphMarkdown(u, arch, gStyle);
         md += `\n`;
       }
       if (state.toggles.stats) {
-        md += `## 📊 Terminal Analytics\n\n`;
+        md += `### 📊 Terminal Analytics\n\n`;
         md += `<div align="center">\n`;
         md += `  <img src="https://github-readme-stats.vercel.app/api?username=${u}&show_icons=true&theme=gruvbox&hide_border=true&bg_color=1d2021&title_color=fe8019&icon_color=fabd2f&text_color=ebdbb2&rank_icon=github&include_all_commits=true" height="165" />\n`;
         md += `  &nbsp;\n`;
@@ -1614,6 +1694,9 @@ function generateMarkdown() {
       return md;
     }
 
+    // ─────────────────────────────────────────────────────────────
+    // 14. DEFAULT (CYBERPUNK GLOW)
+    // ─────────────────────────────────────────────────────────────
     default: {
       let md = "";
       if (state.toggles.views) {
@@ -1621,7 +1704,7 @@ function generateMarkdown() {
       }
 
       if (state.toggles.header) {
-        md += `<div align="center">\n  <img src="https://capsule-render.vercel.app/api?type=waving&color=auto&customColorList=1,13,24&height=220&section=header&text=${encodeURIComponent(name.toUpperCase())}&fontSize=36&fontColor=ffffff&fontAlignY=38&desc=NEURAL+ARCHITECT+%7C+${encodeURIComponent(headline.slice(0,40))}&descAlignY=62&descSize=15&descColor=00f0ff&animation=fadeIn" width="100%"/>\n</div>\n\n`;
+        md += `<div align="center">\n  <img src="https://capsule-render.vercel.app/api?type=waving&color=auto&customColorList=1,13,24&height=220&section=header&text=${encodeURIComponent(name.toUpperCase())}&fontSize=36&fontColor=ffffff&fontAlignY=38&desc=NEURAL+DEVELOPER+%7C+${encodeURIComponent(headline.slice(0,40))}&descAlignY=62&descSize=15&descColor=00f0ff&animation=fadeIn" width="100%"/>\n</div>\n\n`;
       }
 
       if (state.toggles.typing && state.typingLines.length > 0) {
@@ -1636,8 +1719,8 @@ function generateMarkdown() {
       md += `---\n\n`;
 
       if (state.toggles.statusBio) {
-        md += `## ⚡ About Me & Current Focus\n\n`;
-        md += `| &nbsp; | Status & Details |\n|:---:|:---|\n`;
+        md += `### ⚡ System Status & Current Focus\n\n`;
+        md += `| Protocol | Directives & Details |\n|:---:|:---|\n`;
         md += `| 🎯 **Currently Building** | ${state.statusBio.working} |\n`;
         md += `| 📚 **Currently Learning** | ${state.statusBio.learning} |\n`;
         md += `| 💬 **Ask Me About** | ${state.statusBio.askMe} |\n`;
@@ -1646,25 +1729,25 @@ function generateMarkdown() {
       }
 
       if (state.selectedSkills.length > 0) {
-        md += `## 🛠️ Skills & Technologies\n\n`;
-        md += `<div align="center">\n  <a href="https://skillicons.dev">\n    <img src="https://skillicons.dev/icons?i=${skillsStr}&perline=10" />\n  </a>\n</div>\n\n`;
+        md += `### 🛠️ Skills & Technologies\n\n`;
+        md += buildCategorizedSkills(state.selectedSkills, arch, "table");
         md += `---\n\n`;
       }
 
       if (state.toggles.projects && state.projects.length > 0) {
-        md += `## 🚀 Featured Projects\n\n`;
+        md += `### 🚀 Featured Projects\n\n`;
         md += buildProjectsMarkdown(u, arch, pStyle);
         md += `\n---\n\n`;
       }
 
       if (state.toggles.graphs) {
-        md += `## 📊 Contribution & Activity\n\n`;
+        md += `### 📊 Contribution & Activity\n\n`;
         md += buildGraphMarkdown(u, arch, gStyle);
         md += `\n`;
       }
 
       if (state.toggles.stats) {
-        md += `## 📈 GitHub Metrics & Streak\n\n`;
+        md += `### 📈 GitHub Metrics & Streak\n\n`;
         md += `<div align="center">\n  <img src="https://github-profile-trophy.vercel.app/?username=${u}&theme=radical&no-frame=true&no-bg=true&margin-w=8&column=7" width="100%" />\n</div>\n\n`;
         md += `<div align="center">\n`;
         md += `  <img src="https://github-readme-stats.vercel.app/api?username=${u}&show_icons=true&theme=tokyonight&hide_border=true&bg_color=050811&title_color=00f0ff&icon_color=ff0055&text_color=94a3b8&rank_icon=github&include_all_commits=true" height="165" />\n`;
@@ -1683,6 +1766,7 @@ function generateMarkdown() {
     }
   }
 }
+
 // NEW_GENERATOR_SECTION_END
 
 // MARKDOWN TO HTML RENDERER ENGINE

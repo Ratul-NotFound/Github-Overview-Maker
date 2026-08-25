@@ -1,17 +1,15 @@
 <div align="center">
-  <img src="https://capsule-render.vercel.app/api?type=slice&color=gradient&customColorList=10,20,30&height=190&section=header&text=YOUR_NAME&fontSize=38&fontColor=ffffff&fontAlignY=42&desc=Full-Stack%20Developer%20%E2%80%A2%20Open%20Source%20Builder&descAlignY=66&descSize=15&descColor=38bdf8&animation=fadeIn" width="100%"/>
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,12,18&height=200&section=header&text=%F0%9F%8C%B1+YOUR_NAME&fontSize=34&fontColor=ffffff&fontAlignY=40&desc=SOLARPUNK+ARCHITECT+%7C+Full-Stack%20Developer%20%E2%80%A2%20Open%20Source%20Build&descAlignY=64&descSize=15&descColor=10b981&animation=fadeIn" width="100%"/>
 </div>
 
 <div align="center">
-  <img src="https://komarev.com/ghpvc/?username=YOUR_USERNAME&label=Profile+Views&color=38bdf8&style=flat-square" />
+  <img src="https://komarev.com/ghpvc/?username=YOUR_USERNAME&label=Solar+Harvest&color=10b981&style=flat-square" />
   &nbsp;&nbsp;
-  <img src="https://img.shields.io/badge/Status-Open%20to%20Opportunities-22c55e?style=flat-square&logo=checkmarx&logoColor=white" />
-  &nbsp;&nbsp;
-  <img src="https://img.shields.io/badge/Location-Remote%20%F0%9F%8C%8D-6366f1?style=flat-square" />
+  <img src="https://img.shields.io/badge/Renewable-Open%20Source-f59e0b?style=flat-square&logo=leaf&logoColor=white" />
 </div>
 
 <div align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Inter&weight=600&size=20&duration=3500&pause=800&color=38BDF8&center=true&vCenter=true&width=750&height=48&lines=Building%20modern%2C%20scalable%20web%20applications%20%E2%9A%A1;Full-Stack%20TypeScript%2C%20React%20%26%20Node.js%20Developer%20%F0%9F%9A%80;Open-source%20contributor%20%26%20lifelong%20learner%20%F0%9F%92%A1" alt="Typing SVG"/>
+  <img src="https://readme-typing-svg.demolab.com?font=Plus+Jakarta+Sans&weight=600&size=19&duration=3200&pause=1000&color=10B981&center=true&vCenter=true&width=750&height=48&lines=Building%20modern%2C%20scalable%20web%20applications%20%E2%9A%A1;Full-Stack%20TypeScript%2C%20React%20%26%20Node.js%20Developer%20%F0%9F%9A%80;Open-source%20contributor%20%26%20lifelong%20learner%20%F0%9F%92%A1" alt="Typing SVG"/>
 </div>
 
 <div align="center">
@@ -20,18 +18,18 @@
 
 ---
 
-### 🍱 Executive Summary
+### 🌱 Biosphere Log & Focus
 
-| Overview & Status | Key Details |
+| Sector | Cultivation Detail |
 |:---|:---|
-| 🚀 **Current Focus** | Open-source developer tools and scalable web applications |
-| 📚 **Exploring** | Rust, TypeScript internals & cloud-native architecture |
-| 💬 **Inquiries & Collabs** | React, Next.js, Node.js, API design & web performance |
-| ⚡ **Fun Fact** | I code best with good coffee and lo-fi music ☕ |
+| 🌿 **Nurturing Project** | Open-source developer tools and scalable web applications |
+| ☀️ **Absorbing Light** | Rust, TypeScript internals & cloud-native architecture |
+| 🌻 **Seed Conversations** | React, Next.js, Node.js, API design & web performance |
+| 🐝 **Ecosystem Note** | I code best with good coffee and lo-fi music ☕ |
 
 ---
 
-### 🛠️ Production Toolchain
+### 🌿 Bio-Digital Toolset
 
 | Domain | Technologies & Toolchain |
 |:---|:---|
@@ -43,7 +41,7 @@
 
 ---
 
-### 📦 Featured Production Systems
+### 🌻 Flourishing Initiatives
 
 | 🚀 Project / Showcase | ⚡ Stack & Architecture | 🌐 Deployments & Source |
 |:---|:---|:---|
@@ -54,27 +52,27 @@
 
 ---
 
-### 📈 Contribution Velocity
+### 📈 Solar Yield Activity
 
 <div align="center">
   <img src="https://github-readme-activity-graph.vercel.app/graph?username=YOUR_USERNAME&theme=react-dark&hide_border=true&area=true" width="100%" />
 </div>
 
 
-### 📊 GitHub Activity & Metrics
+### 📊 Biosphere Yield Metrics
 
 <div align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=YOUR_USERNAME&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0f172a&title_color=38bdf8&icon_color=818cf8&text_color=cbd5e1&rank_icon=github&include_all_commits=true" height="165" />
+  <img src="https://github-readme-stats.vercel.app/api?username=YOUR_USERNAME&show_icons=true&theme=tokyonight&hide_border=true&bg_color=081611&title_color=10b981&icon_color=f59e0b&text_color=a7f3d0&rank_icon=github&include_all_commits=true" height="165" />
   &nbsp;
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=YOUR_USERNAME&theme=tokyonight&hide_border=true&background=0f172a&ring=38bdf8&fire=818cf8&currStreakLabel=38bdf8&sideLabels=cbd5e1" height="165" />
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=YOUR_USERNAME&theme=tokyonight&hide_border=true&background=081611&ring=10b981&fire=f59e0b&currStreakLabel=10b981&sideLabels=a7f3d0" height="165" />
 </div>
 
 <div align="center">
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=YOUR_USERNAME&layout=compact&theme=tokyonight&hide_border=true&bg_color=0f172a&title_color=38bdf8&text_color=cbd5e1&langs_count=8" height="140" />
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=YOUR_USERNAME&layout=compact&theme=tokyonight&hide_border=true&bg_color=081611&title_color=10b981&text_color=a7f3d0&langs_count=8" height="140" />
 </div>
 
 ---
 
 <div align="center">
-  <sub>🍱 Crafted with <a href="https://github.com/Ratul-NotFound/Github-Overview-Maker">Git View Pro</a></sub>
+  <sub>🌱 Nurtured in the open-source greenhouse with <a href="https://github.com/Ratul-NotFound/Github-Overview-Maker">Git View Pro</a></sub>
 </div>

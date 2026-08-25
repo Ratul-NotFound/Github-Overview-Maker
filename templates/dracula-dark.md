@@ -1,17 +1,13 @@
 <div align="center">
-  <img src="https://capsule-render.vercel.app/api?type=slice&color=gradient&customColorList=10,20,30&height=190&section=header&text=YOUR_NAME&fontSize=38&fontColor=ffffff&fontAlignY=42&desc=Full-Stack%20Developer%20%E2%80%A2%20Open%20Source%20Builder&descAlignY=66&descSize=15&descColor=38bdf8&animation=fadeIn" width="100%"/>
+  <img src="https://komarev.com/ghpvc/?username=YOUR_USERNAME&label=CASTLE+VISITORS&color=ff79c6&style=for-the-badge" alt="Profile Views" />
 </div>
 
 <div align="center">
-  <img src="https://komarev.com/ghpvc/?username=YOUR_USERNAME&label=Profile+Views&color=38bdf8&style=flat-square" />
-  &nbsp;&nbsp;
-  <img src="https://img.shields.io/badge/Status-Open%20to%20Opportunities-22c55e?style=flat-square&logo=checkmarx&logoColor=white" />
-  &nbsp;&nbsp;
-  <img src="https://img.shields.io/badge/Location-Remote%20%F0%9F%8C%8D-6366f1?style=flat-square" />
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=28,30,34&height=220&section=header&text=%F0%9F%A7%9B+YOUR_NAME&fontSize=36&fontColor=ff79c6&fontAlignY=38&desc=DRACULA+NIGHT+BUILDER+%7C+Full-Stack%20Developer%20%E2%80%A2%20Open%20Source%20Build&descAlignY=62&descSize=15&descColor=50fa7b&animation=fadeIn" width="100%"/>
 </div>
 
 <div align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Inter&weight=600&size=20&duration=3500&pause=800&color=38BDF8&center=true&vCenter=true&width=750&height=48&lines=Building%20modern%2C%20scalable%20web%20applications%20%E2%9A%A1;Full-Stack%20TypeScript%2C%20React%20%26%20Node.js%20Developer%20%F0%9F%9A%80;Open-source%20contributor%20%26%20lifelong%20learner%20%F0%9F%92%A1" alt="Typing SVG"/>
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=20&duration=3000&pause=1000&color=FF79C6&center=true&vCenter=true&width=750&height=48&lines=Building%20modern%2C%20scalable%20web%20applications%20%E2%9A%A1;Full-Stack%20TypeScript%2C%20React%20%26%20Node.js%20Developer%20%F0%9F%9A%80;Open-source%20contributor%20%26%20lifelong%20learner%20%F0%9F%92%A1" alt="Typing SVG"/>
 </div>
 
 <div align="center">
@@ -20,18 +16,18 @@
 
 ---
 
-### 🍱 Executive Summary
+### 🧛 Vampire Crypt Registry
 
-| Overview & Status | Key Details |
+| Protocol | Status |
 |:---|:---|
-| 🚀 **Current Focus** | Open-source developer tools and scalable web applications |
-| 📚 **Exploring** | Rust, TypeScript internals & cloud-native architecture |
-| 💬 **Inquiries & Collabs** | React, Next.js, Node.js, API design & web performance |
-| ⚡ **Fun Fact** | I code best with good coffee and lo-fi music ☕ |
+| 🦇 **Midnight Project** | Open-source developer tools and scalable web applications |
+| 🍷 **Nocturnal Study** | Rust, TypeScript internals & cloud-native architecture |
+| ⚡ **Dark Knowledge** | React, Next.js, Node.js, API design & web performance |
+| 🔮 **Crypt Trivia** | I code best with good coffee and lo-fi music ☕ |
 
 ---
 
-### 🛠️ Production Toolchain
+### ⚡ Arcane Grimoire & Tech
 
 | Domain | Technologies & Toolchain |
 |:---|:---|
@@ -43,7 +39,7 @@
 
 ---
 
-### 📦 Featured Production Systems
+### 🩸 High-Stakes Artifacts
 
 | 🚀 Project / Showcase | ⚡ Stack & Architecture | 🌐 Deployments & Source |
 |:---|:---|:---|
@@ -54,27 +50,27 @@
 
 ---
 
-### 📈 Contribution Velocity
+### 📈 Moonlit Velocity
 
 <div align="center">
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=YOUR_USERNAME&theme=react-dark&hide_border=true&area=true" width="100%" />
+  <img src="https://github-readme-activity-graph.vercel.app/graph?username=YOUR_USERNAME&theme=dracula&hide_border=true&area=true" width="100%" />
 </div>
 
 
-### 📊 GitHub Activity & Metrics
+### 📊 Dracula Telemetry
 
 <div align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=YOUR_USERNAME&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0f172a&title_color=38bdf8&icon_color=818cf8&text_color=cbd5e1&rank_icon=github&include_all_commits=true" height="165" />
+  <img src="https://github-readme-stats.vercel.app/api?username=YOUR_USERNAME&show_icons=true&theme=dracula&hide_border=true&bg_color=181a20&title_color=ff79c6&icon_color=50fa7b&text_color=f8f8f2&rank_icon=github&include_all_commits=true" height="165" />
   &nbsp;
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=YOUR_USERNAME&theme=tokyonight&hide_border=true&background=0f172a&ring=38bdf8&fire=818cf8&currStreakLabel=38bdf8&sideLabels=cbd5e1" height="165" />
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=YOUR_USERNAME&theme=dracula&hide_border=true&background=181a20&ring=ff79c6&fire=50fa7b&currStreakLabel=ff79c6&sideLabels=f8f8f2" height="165" />
 </div>
 
 <div align="center">
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=YOUR_USERNAME&layout=compact&theme=tokyonight&hide_border=true&bg_color=0f172a&title_color=38bdf8&text_color=cbd5e1&langs_count=8" height="140" />
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=YOUR_USERNAME&layout=compact&theme=dracula&hide_border=true&bg_color=181a20&title_color=ff79c6&text_color=f8f8f2&langs_count=8" height="140" />
 </div>
 
 ---
 
 <div align="center">
-  <sub>🍱 Crafted with <a href="https://github.com/Ratul-NotFound/Github-Overview-Maker">Git View Pro</a></sub>
+  <sub>🧛 Forged in the midnight shadows with <a href="https://github.com/Ratul-NotFound/Github-Overview-Maker">Git View Pro</a></sub>
 </div>

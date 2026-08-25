@@ -1,9 +1,16 @@
 <div align="center">
-  <img src="https://capsule-render.vercel.app/api?type=rect&color=gradient&customColorList=2,5,9&height=160&section=header&text=%F0%9F%95%B9%EF%B8%8F+YOUR_NAME+%F0%9F%95%B9%EF%B8%8F&fontSize=30&fontColor=facc15&fontAlignY=50" width="100%"/>
+  <img src="https://komarev.com/ghpvc/?username=YOUR_USERNAME&label=VIM+BUFFER+HITS&color=fe8019&style=flat-square" alt="Profile Views" />
 </div>
 
+```vim
+" ====================================================
+" BUFFER: ~/.config/nvim/init.lua
+" DEVELOPER: YOUR_NAME [ Full-Stack Developer • Open Source Builder ]
+" ====================================================
+```
+
 <div align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Press+Start+2P&size=13&duration=3000&pause=1200&color=FACC15&center=true&vCenter=true&width=750&height=55&lines=INSERT+COIN+TO+PLAY;Building%20modern%2C%20scalable%20web%20applications%20%E2%9A%A1;Full-Stack%20TypeScript%2C%20React%20%26%20Node.js%20Developer%20%F0%9F%9A%80;Open-source%20contributor%20%26%20lifelong%20learner%20%F0%9F%92%A1" alt="8bit typing"/>
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=19&duration=3000&pause=1000&color=FE8019&center=true&vCenter=true&width=750&height=48&lines=Building%20modern%2C%20scalable%20web%20applications%20%E2%9A%A1;Full-Stack%20TypeScript%2C%20React%20%26%20Node.js%20Developer%20%F0%9F%9A%80;Open-source%20contributor%20%26%20lifelong%20learner%20%F0%9F%92%A1" alt="Typing SVG"/>
 </div>
 
 <div align="center">
@@ -12,36 +19,18 @@
 
 ---
 
-```
-┌─────────────────────────────────────────────────────────────┐
-│                🕹️  ARCADE HIGH SCORE BOARD  🕹️               │
-│─────────────────────────────────────────────────────────────│
-│  RANK  │  PLAYER                     │  SCORE    │  TIER    │
-│─────────────────────────────────────────────────────────────│
-│  #1    │  YOUR_NAME                  │  999,999  │  ★ LEGEND │
-│  #2    │  GITHUB_COMMUNITY           │  850,000  │  ★ PRO   │
-│  #3    │  OPEN_SOURCE_BUILDER        │  740,000  │  ★ MASTER │
-│─────────────────────────────────────────────────────────────│
-│            ► PRESS START TO JOIN THE LEADERBOARD ◄          │
-└─────────────────────────────────────────────────────────────┘
+### 🪵 Gruvbox Registers & State
+
+```lua
+return {
+  active_buffer = "Open-source developer tools and scalable web applications",
+  learning_doc  = "Rust, TypeScript internals & cloud-native architecture",
+  query_handler = "React, Next.js, Node.js, API design & web performance",
+  vim_trivia    = "I code best with good coffee and lo-fi music ☕"
+}
 ```
 
----
-
-### 🎮 Player 1 Status
-
-```
-  ┌──────────────────────────────────────────────┐
-  │  CURRENT STAGE    : Open-source developer to  │
-  │  SKILL UPGRADE    : Rust, TypeScript interna  │
-  │  CO-OP HOTLINE    : React, Next.js, Node.js,  │
-  │  CHEAT CODE       : I code best with good co  │
-  └──────────────────────────────────────────────┘
-```
-
----
-
-### 👾 Power-Ups & Equipped Items
+### ⚙️ Installed Plugins & Toolchains
 
 | Domain | Technologies & Toolchain |
 |:---|:---|
@@ -53,7 +42,7 @@
 
 ---
 
-### 🕹️ Cleared Stages (Shipped Projects)
+### 📦 Staged Repositories
 
 | 🚀 Project / Showcase | ⚡ Stack & Architecture | 🌐 Deployments & Source |
 |:---|:---|:---|
@@ -64,27 +53,27 @@
 
 ---
 
-### 📊 Pixel Activity Stream
+### 📈 Commit Trajectory
 
 <div align="center">
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=YOUR_USERNAME&theme=react-dark&hide_border=true&area=true" width="100%" />
+  <img src="https://github-readme-activity-graph.vercel.app/graph?username=YOUR_USERNAME&theme=gruvbox&hide_border=true&area=true" width="100%" />
 </div>
 
 
-<div align="center">
-  <img src="https://github-profile-trophy.vercel.app/?username=YOUR_USERNAME&theme=radical&no-frame=true&no-bg=true&margin-w=8&column=7" width="100%" />
-</div>
+### 📊 Terminal Analytics
 
 <div align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=YOUR_USERNAME&show_icons=true&theme=radical&hide_border=true&bg_color=0d0820&title_color=facc15&icon_color=ff007f&text_color=e2e8f0&rank_icon=github" height="160" />
+  <img src="https://github-readme-stats.vercel.app/api?username=YOUR_USERNAME&show_icons=true&theme=gruvbox&hide_border=true&bg_color=1d2021&title_color=fe8019&icon_color=fabd2f&text_color=ebdbb2&rank_icon=github&include_all_commits=true" height="165" />
   &nbsp;
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=YOUR_USERNAME&theme=radical&hide_border=true&background=0d0820&ring=facc15&fire=ff007f&currStreakLabel=facc15&sideLabels=e2e8f0" height="160" />
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=YOUR_USERNAME&theme=gruvbox&hide_border=true&background=1d2021&ring=fe8019&fire=fabd2f&currStreakLabel=fe8019&sideLabels=ebdbb2" height="165" />
 </div>
 
 <div align="center">
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=YOUR_USERNAME&layout=compact&theme=radical&hide_border=true&bg_color=0d0820&title_color=facc15&text_color=e2e8f0&langs_count=8" height="140" />
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=YOUR_USERNAME&layout=compact&theme=gruvbox&hide_border=true&bg_color=1d2021&title_color=fe8019&text_color=ebdbb2&langs_count=8" height="140" />
 </div>
 
+---
+
 <div align="center">
-  <sub>👾 INSERT COIN • Made with <a href="https://github.com/Ratul-NotFound/Github-Overview-Maker">Git View Pro</a></sub>
+  <sub>🪵 Typed in cozy Gruvbox comfort with <a href="https://github.com/Ratul-NotFound/Github-Overview-Maker">Git View Pro</a></sub>
 </div>

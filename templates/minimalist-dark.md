@@ -1,59 +1,76 @@
 <h1 align="center">YOUR_NAME</h1>
-<p align="center"><strong>01 / IDENTITY</strong> — <em>Full-Stack Architect & Open Source Systems Engineer</em></p>
+<p align="center"><strong>Full-Stack Developer • Open Source Builder</strong></p>
 
 <p align="center">
-  <a href="https://linkedin.com/in/YOUR_LINKEDIN">LinkedIn</a> • 
-  <a href="https://x.com/YOUR_TWITTER">Twitter/X</a> • 
-  <a href="https://yourportfolio.com">Website</a> • 
-  <a href="mailto:you@domain.com">Email</a>
+  <img src="https://komarev.com/ghpvc/?username=YOUR_USERNAME&label=Profile+Views&color=000000&style=flat-square" />
+  &nbsp;
+  <img src="https://img.shields.io/badge/Status-Available-000000?style=flat-square" />
 </p>
 
-<hr style="border: 0; height: 1px; background: #333;" />
+<p align="center">
+  <img src="https://readme-typing-svg.demolab.com?font=IBM+Plex+Mono&size=16&duration=3000&pause=1000&color=000000&center=true&vCenter=true&width=750&height=40&lines=Building%20modern%2C%20scalable%20web%20applications%20%E2%9A%A1;Full-Stack%20TypeScript%2C%20React%20%26%20Node.js%20Developer%20%F0%9F%9A%80;Open-source%20contributor%20%26%20lifelong%20learner%20%F0%9F%92%A1" alt="Minimal Typing"/>
+</p>
 
-### 02 / DIRECTIVES
-
-* **Focus:** Next-generation cloud orchestrators & microservices
-* **Research:** Rust kernel programming & WebGPU shaders
-* **Inquiries:** React, Next.js, Distributed DBs, Rust, Kafka & CI/CD
+<p align="center">[LinkedIn](https://linkedin.com/in/YOUR_LINKEDIN) &nbsp;·&nbsp; [X / Twitter](https://x.com/YOUR_TWITTER) &nbsp;·&nbsp; [Website](https://yourportfolio.com) &nbsp;·&nbsp; [Email](mailto:your_email@example.com)</p>
 
 ---
 
-### 03 / ARSENAL
+### 01 / FOCUS & DIRECTION
 
-<div align="center">
-  <img src="https://img.shields.io/badge/TYPESCRIPT-000000?style=flat-square&logo=typescript&logoColor=white" />
-  <img src="https://img.shields.io/badge/RUST-000000?style=flat-square&logo=rust&logoColor=white" />
-  <img src="https://img.shields.io/badge/GO-000000?style=flat-square&logo=go&logoColor=white" />
-  <img src="https://img.shields.io/badge/REACT-000000?style=flat-square&logo=react&logoColor=white" />
-  <img src="https://img.shields.io/badge/NEXT.JS-000000?style=flat-square&logo=nextdotjs&logoColor=white" />
-  <img src="https://img.shields.io/badge/POSTGRES-000000?style=flat-square&logo=postgresql&logoColor=white" />
-  <img src="https://img.shields.io/badge/DOCKER-000000?style=flat-square&logo=docker&logoColor=white" />
-  <img src="https://img.shields.io/badge/AWS-000000?style=flat-square&logo=amazonwebservices&logoColor=white" />
-</div>
-
-<br/>
-
-### 04 / SELECTED WORKS
-
-**[01] QuantumFlow Engine** — Distributed event streaming in Rust *(`Rust, Kafka, Docker, gRPC`)* ➔ [demo](https://quantumflow.io) / [source](https://github.com/YOUR_USERNAME/quantumflow-engine)
-
-**[02] NeuralCanvas Studio** — Generative AI canvas editor powered by WebGPU *(`TypeScript, React, WebGPU`)* ➔ [demo](https://neuralcanvas.dev) / [source](https://github.com/YOUR_USERNAME/neuralcanvas-studio)
-
-**[03] HyperDB Cloud** — Serverless vector search & document database *(`Go, PostgreSQL, Redis`)* ➔ [demo](https://hyperdb.cloud) / [source](https://github.com/YOUR_USERNAME/hyperdb-cloud)
+- **Currently:** Open-source developer tools and scalable web applications
+- **Researching:** Rust, TypeScript internals & cloud-native architecture
+- **Inquiries:** React, Next.js, Node.js, API design & web performance
+- **Note:** I code best with good coffee and lo-fi music ☕
 
 ---
 
-### 05 / ACTIVITY DYNAMICS
+### 02 / TOOLCHAIN & STACK
+
+| Domain | Technologies & Toolchain |
+|:---|:---|
+| **💻 Languages** | <a href="https://skillicons.dev"><img src="https://skillicons.dev/icons?i=ts,js,rust,go,python&theme=light" /></a> |
+| **🎨 Frontend & UI** | <a href="https://skillicons.dev"><img src="https://skillicons.dev/icons?i=react,nextjs,tailwind&theme=light" /></a> |
+| **🗄️ Database & Storage** | <a href="https://skillicons.dev"><img src="https://skillicons.dev/icons?i=postgres,redis&theme=light" /></a> |
+| **☁️ Cloud & DevOps** | <a href="https://skillicons.dev"><img src="https://skillicons.dev/icons?i=docker,aws&theme=light" /></a> |
+| **🛠️ Tools & Platforms** | <a href="https://skillicons.dev"><img src="https://skillicons.dev/icons?i=git&theme=light" /></a> |
+
+---
+
+### 03 / SELECTED WORKS
+
+**[01] [DevPulse](https://github.com/YOUR_USERNAME/devpulse)** &nbsp;·&nbsp; <sub>`TypeScript, React, Next.js, TailwindCSS`</sub><br/>
+> Real-time GitHub statistics, commit streak analytics, and developer productivity dashboard.<br/>
+> ➔ [⚡ Live Demo](https://devpulse.io) &nbsp;•&nbsp; [💻 Repository](https://github.com/YOUR_USERNAME/devpulse)
+
+**[02] [QuickAPI](https://github.com/YOUR_USERNAME/quick-api)** &nbsp;·&nbsp; <sub>`Node.js, Express, PostgreSQL, Redis, Docker`</sub><br/>
+> Production-ready backend API starter kit with authentication, rate limiting, and caching.<br/>
+> ➔ [⚡ Live Demo](https://quickapi.dev) &nbsp;•&nbsp; [💻 Repository](https://github.com/YOUR_USERNAME/quick-api)
+
+**[03] [TaskFlow](https://github.com/YOUR_USERNAME/taskflow)** &nbsp;·&nbsp; <sub>`React, Zustand, Web APIs, Vite`</sub><br/>
+> Minimalist Kanban project manager with drag-and-drop workflow and offline support.<br/>
+> ➔ [⚡ Live Demo](https://taskflow.app) &nbsp;•&nbsp; [💻 Repository](https://github.com/YOUR_USERNAME/taskflow)
+
+---
+
+### 04 / ACTIVITY & COMMITS
 
 <div align="center">
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=YOUR_USERNAME&theme=react-dark&hide_border=true&area=true" width="100%" />
+  <img src="https://github-readme-activity-graph.vercel.app/graph?username=YOUR_USERNAME&theme=github-dark&hide_border=true&area=true" width="100%" />
+</div>
+
+
+### 05 / METRICS
+
+<div align="center">
+  <img src="https://github-readme-stats.vercel.app/api?username=YOUR_USERNAME&show_icons=true&theme=default&hide_border=true&bg_color=ffffff&title_color=000000&icon_color=000000&text_color=555555&rank_icon=github" height="155" />
+  &nbsp;
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=YOUR_USERNAME&theme=default&hide_border=true&background=ffffff&ring=000000&fire=333333&currStreakLabel=000000&sideLabels=555555" height="155" />
 </div>
 
 <div align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=YOUR_USERNAME&show_icons=true&theme=dark&hide_border=true&bg_color=000000&title_color=ffffff&icon_color=ffffff&text_color=888888" height="150" />
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=YOUR_USERNAME&theme=dark&hide_border=true&background=000000&ring=ffffff&fire=ffffff&currStreakLabel=ffffff" height="150" />
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=YOUR_USERNAME&layout=compact&theme=default&hide_border=true&bg_color=ffffff&title_color=000000&text_color=555555&langs_count=8" height="140" />
 </div>
 
-<div align="center">
-  <sub>Built with <a href="https://github.com/YOUR_USERNAME/Github-overview-components">GitHub Profile Studio</a></sub>
-</div>
+---
+
+<p align="center"><sub>Built with <a href="https://github.com/Ratul-NotFound/Github-Overview-Maker">Git View Pro</a></sub></p>
