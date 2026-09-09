@@ -62,13 +62,13 @@
 ### 📈 GitHub Stats & Streak
 
 <div align="center">
-  <img src="https://github-profile-trophy.vercel.app/?username=YOUR_USERNAME&theme=radical&no-frame=true&no-bg=true&margin-w=8&column=7" width="100%" />
-</div>
-
-<div align="center">
   <img src="https://github-readme-stats.vercel.app/api?username=YOUR_USERNAME&show_icons=true&theme=tokyonight&hide_border=true&bg_color=050811&title_color=00f0ff&icon_color=ff0055&text_color=94a3b8&rank_icon=github&include_all_commits=true" height="165" />
   &nbsp;
   <img src="https://github-readme-streak-stats.herokuapp.com/?user=YOUR_USERNAME&theme=tokyonight&hide_border=true&background=050811&ring=00f0ff&fire=ff0055&currStreakLabel=00f0ff&sideLabels=94a3b8" height="165" />
+</div>
+
+<div align="center">
+  <img src="https://github-profile-trophy.vercel.app/?username=YOUR_USERNAME&theme=radical&no-frame=true&no-bg=true&margin-w=8&column=7" width="100%" />
 </div>
 
 <img src="https://capsule-render.vercel.app/api?type=waving&color=auto&customColorList=1,13,24&height=80&section=footer" width="100%"/>

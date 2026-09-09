@@ -81,5 +81,9 @@
 </div>
 
 <div align="center">
+  <img src="https://github-profile-trophy.vercel.app/?username=YOUR_USERNAME&theme=tokyonight&no-frame=true&no-bg=true&margin_w=8" width="100%" />
+</div>
+
+<div align="center">
   <sub>🍱 Built with <a href="https://github.com/Ratul-NotFound/Github-Overview-Maker">Git View Pro</a></sub>
 </div>

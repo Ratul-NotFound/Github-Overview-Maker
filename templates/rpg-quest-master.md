@@ -75,13 +75,13 @@
 ### 🏆 GitHub Stats & Trophies
 
 <div align="center">
-  <img src="https://github-profile-trophy.vercel.app/?username=YOUR_USERNAME&theme=onedark&no-frame=true&no-bg=true&margin-w=8&column=7" width="100%" />
-</div>
-
-<div align="center">
   <img src="https://github-readme-stats.vercel.app/api?username=YOUR_USERNAME&show_icons=true&theme=synthwave&hide_border=true&bg_color=100c1a&title_color=fbbf24&icon_color=ec4899&text_color=e2e8f0&rank_icon=github" height="160" />
   &nbsp;
   <img src="https://github-readme-streak-stats.herokuapp.com/?user=YOUR_USERNAME&theme=synthwave&hide_border=true&background=100c1a&ring=fbbf24&fire=ec4899&currStreakLabel=fbbf24&sideLabels=e2e8f0" height="160" />
+</div>
+
+<div align="center">
+  <img src="https://github-profile-trophy.vercel.app/?username=YOUR_USERNAME&theme=dracula&no-frame=true&no-bg=true&margin-w=8&column=7" width="100%" />
 </div>
 
 <div align="center">

@@ -84,6 +84,10 @@
   <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=YOUR_USERNAME&layout=compact&theme=merko&hide_border=true&bg_color=0a0e0b&title_color=00ff66&text_color=22c55e&langs_count=8" height="140" />
 </div>
 
+<div align="center">
+  <img src="https://github-profile-trophy.vercel.app/?username=YOUR_USERNAME&theme=matrix&no-frame=true&no-bg=true&margin_w=8" width="100%" />
+</div>
+
 <details>
 <summary><b>📂 View Terminal Aliases & Config</b></summary>
 
